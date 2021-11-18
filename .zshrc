@@ -2,8 +2,6 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 
-#neofetch
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -80,22 +78,29 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git 
-         archlinux
-         enhancd
-         sudo
-         zsh-autosuggestions
-         zsh-syntax-highlighting
-         zsh-history-substring-search
-         zsh-completions
-         history
-         web-search
-         npm
-         git-flow
-         docker
-         docker-compose
-         zsh-docker-aliases
-         mysql-colorize
+
+#Lazy load zsh-nvm
+export NVM_LAZY_LOAD=true
+
+plugins=(
+    git
+    archlinux
+    enhancd
+    sudo
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-history-substring-search
+    zsh-completions
+    history
+    npm
+    git-flow
+    docker
+    docker-compose
+    zsh-docker-aliases
+    mysql-colorize
+    zsh-nvm
+    k
+    autojump
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,6 +134,6 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

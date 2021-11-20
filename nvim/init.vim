@@ -113,6 +113,9 @@ let g:UltiSnipsListSnippets="<C-_>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
+" Coc Settings
+so ~/.config/nvim/coc.vim
+
 " Maps
 let mapleader=" "
 

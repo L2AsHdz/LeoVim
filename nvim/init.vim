@@ -14,7 +14,7 @@ set smartindent " habilita el identado inteligente
 set cindent " Identacion de llaves
 set showmatch " Señala [{()}]
 set autoread " Recarga el archivo si es modificado por una fuente externa
-set clipboard=unnamedplus " Habilita el portapapeles en el sistema
+set clipboard+=unnamedplus " Habilita el portapapeles en el sistema
 set cmdheight=1
 set noswapfile
 
@@ -51,7 +51,7 @@ set showcmd
 
 set termguicolors "Activa true colors en la terminal
 
-call plug#begin('~/.local.share')
+call plug#begin('~/.vim/plugins')
 
 " Themes
 Plug 'ghifarit53/tokyonight-vim' " Theme for neovim
@@ -65,6 +65,15 @@ Plug 'sheerun/vim-polyglot' " Resaltado de sintaxis
 " Tree
 Plug 'preservim/nerdtree' " File system explorer for vim
 Plug 'Xuyuanp/nerdtree-git-plugin' " Show git status on NERDTree
+
+" Typing
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-surround'
+
+" Autocomplete
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " IDE
 Plug 'easymotion/vim-easymotion'
@@ -98,9 +107,11 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 let g:airline_theme='base16_black_metal'
 
-
-" Coc Settings
-let g:coc_global_extensions = ['coc-git', 'coc-html', 'coc-tsserver']
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<C-_>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 
 " Maps
 let mapleader=" "

@@ -41,7 +41,7 @@ set foldlevelstart=10 " Dobla a partir de 10.
 set foldnestmax=10  " Máximo de 10
 set foldmethod=indent " Basado en identado
 
-set encoding=utf-8 " Habilita utf-8
+" set encoding=utf-8 " Habilita utf-8
 set laststatus=2
 
 " Display options
@@ -59,9 +59,17 @@ Plug 'ghifarit53/tokyonight-vim' " Theme for neovim
 Plug 'vim-airline/vim-airline' " StatusBar for neovim
 Plug 'vim-airline/vim-airline-themes' " Themes for airline
 
+" Syntax
+Plug 'sheerun/vim-polyglot' " Resaltado de sintaxis
+
+" Tree
+Plug 'preservim/nerdtree' " File system explorer for vim
+Plug 'Xuyuanp/nerdtree-git-plugin' " Show git status on NERDTree
+
 " IDE
 Plug 'easymotion/vim-easymotion'
-Plug 'preservim/nerdtree' " File system explorer for vim
+Plug 'ryanoasis/vim-devicons' " Icons for plugins neovim
+Plug 'christoomey/vim-tmux-navigator' " Navegacion entre pestañas
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Snippets and adittional text editing support
 
 call plug#end()
@@ -73,7 +81,14 @@ let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
 
 "NERDTree Settings
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=1 " Cerrar al abrir un archivo
+let NERDTreeShowHidden=1 " Mostrar archivos ocultos
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let NERDTreeShowLineNumbers=1
+let NERDTreeMapOpenInTab='\t'
+let g:NERDTreeGitStatusUseNerdFonts = 1 " Use nerdfonts for nerd-tree-git-plugin
 
 " Airline Settings
 let g:airline_powerline_fonts = 1
@@ -90,5 +105,15 @@ let g:coc_global_extensions = ['coc-git', 'coc-html', 'coc-tsserver']
 " Maps
 let mapleader=" "
 
+" Atajos perozonalizados
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>W :wq<CR>
+nmap <Leader>Q :q!<CR>
+nmap <Leader>bb :bd<CR>
+
+"Busqueda con easymotion
 nmap <Leader>s <Plug>(easymotion-s2)
+
+"Abrir NERDTreeFind
 nmap <Leader>nt :NERDTreeFind<CR>

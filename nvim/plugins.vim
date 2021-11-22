@@ -19,6 +19,7 @@ Plug 'sheerun/vim-polyglot' " Resaltado de sintaxis
 " Tree
 Plug 'preservim/nerdtree' " File system explorer for vim
 Plug 'Xuyuanp/nerdtree-git-plugin' " Show git status on NERDTree
+Plug 'kevinhwang91/rnvimr'
 
 " Typing
 Plug 'jiangmiao/auto-pairs'

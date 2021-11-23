@@ -1,4 +1,4 @@
-
+" Autoinstalacion de Plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugins')
 " Themes
 Plug 'ghifarit53/tokyonight-vim' " Theme for neovim
 
+" Airline
 Plug 'vim-airline/vim-airline' " StatusBar for neovim
 Plug 'vim-airline/vim-airline-themes' " Themes for airline
 
@@ -36,4 +37,7 @@ Plug 'ryanoasis/vim-devicons' " Icons for plugins neovim
 Plug 'christoomey/vim-tmux-navigator' " Navegacion entre pestañas
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Snippets and adittional text editing support
 
+" Busqueda
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
 call plug#end()

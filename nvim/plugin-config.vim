@@ -4,9 +4,9 @@ let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
 
 "EasyMotion
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-let g:EasyMotion_smartcase = 1 " Turn on case-insensitive feature
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+" let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" let g:EasyMotion_smartcase = 1 " Turn on case-insensitive feature
+" let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 "NERDTree Settings
 let NERDTreeQuitOnOpen=1 " Cerrar al abrir un archivo
@@ -44,7 +44,7 @@ let g:incsearch#auto_nohlsearch = 1
 " GitGutter
 let g:gitgutter_set_sign_backgrounds = 1
 let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '<'

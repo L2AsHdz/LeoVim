@@ -32,14 +32,14 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " IDE
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons' " Icons for plugins neovim
 Plug 'christoomey/vim-tmux-navigator' " Navegacion entre pestañas
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Snippets and adittional text editing support
 
 " Busqueda
 Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
+" Plug 'haya14busa/incsearch-easymotion.vim'
 
 "Comentarios
 Plug 'tpope/vim-commentary'

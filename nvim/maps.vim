@@ -16,13 +16,13 @@ nnoremap <leader>k :bnext<CR>
 nnoremap <leader>j :bprevious<CR>
 
 "easymotion
-nmap <Leader>s <Plug>(easymotion-s2)
-nmap <Leader><Leader>l <Plug>(easymotion-lineforward)
-nmap <Leader><Leader>j <Plug>(easymotion-j)
-nmap <Leader><Leader>k <Plug>(easymotion-k)
-nmap <Leader><Leader>h <Plug>(easymotion-linebackward)
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+" nmap <Leader>s <Plug>(easymotion-s2)
+" nmap <Leader><Leader>l <Plug>(easymotion-lineforward)
+" nmap <Leader><Leader>j <Plug>(easymotion-j)
+" nmap <Leader><Leader>k <Plug>(easymotion-k)
+" nmap <Leader><Leader>h <Plug>(easymotion-linebackward)
+" map  <Leader>f <Plug>(easymotion-bd-f)
+" nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 "Atajos NERDTreeFind
 nnoremap <Leader>nt :NERDTreeFind<CR>
@@ -40,9 +40,9 @@ nnoremap <Leader>ft :CocSearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-map <Leader>/ <Plug>(incsearch-easymotion-/)
-map <Leader>? <Plug>(incsearch-easymotion-?)
-map <Leader>g/ <Plug>(incsearch-easymotion-stay)
+" map <Leader>/ <Plug>(incsearch-easymotion-/)
+" map <Leader>? <Plug>(incsearch-easymotion-?)
+" map <Leader>g/ <Plug>(incsearch-easymotion-stay)
 
 "vim-commentary
 nnoremap <Leader><Leader>/ :Commentary<CR>

@@ -40,4 +40,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Snippets and adittional text e
 " Busqueda
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
+
+"Comentarios
+Plug 'tpope/vim-commentary'
+
+" Git
+Plug 'airblade/vim-gitgutter'
+Plug 'jreybert/vimagit'
+
 call plug#end()

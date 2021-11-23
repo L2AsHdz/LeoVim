@@ -18,6 +18,7 @@ set showmatch                   " Señala [{()}]
 set autoread                    " Recarga el archivo si es modificado por una fuente externa
 set clipboard+=unnamedplus      " Habilita el portapapeles en el sistema
 set formatoptions-=cro          " Stop newline continution of comment
+set updatetime=200              " Change updatetime
 set cmdheight=1
 set noswapfile
 

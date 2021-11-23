@@ -44,3 +44,18 @@ map <Leader>/ <Plug>(incsearch-easymotion-/)
 map <Leader>? <Plug>(incsearch-easymotion-?)
 map <Leader>g/ <Plug>(incsearch-easymotion-stay)
 
+"vim-commentary
+nnoremap <Leader><Leader>/ :Commentary<CR>
+vnoremap <Leader><Leader>/ :Commentary<CR>
+
+"GitGutter and vimagit
+" Jump between hunks
+nmap <Leader>gn <Plug>(GitGutterNextHunk)  " git next
+nmap <Leader>gp <Plug>(GitGutterPrevHunk)  " git previous
+
+" Hunk-add and hunk-revert for chunk staging
+nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
+nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
+
+" Open vimagit pane
+nnoremap <leader>gs :Magit<CR>       " git status

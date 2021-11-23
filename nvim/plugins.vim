@@ -48,4 +48,6 @@ Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
 
+Plug 'phaazon/hop.nvim'
+
 call plug#end()

@@ -59,3 +59,15 @@ nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
 
 " Open vimagit pane
 nnoremap <leader>gs :Magit<CR>       " git status
+
+" Hop
+nnoremap <Leader><Leader>w :HopWord<CR>
+nnoremap <Leader>/ :HopPattern<CR>
+nnoremap <Leader>s :HopChar2<CR>
+nnoremap <Leader>S :HopChar1<CR>
+nnoremap <Leader>l :HopLineStart<CR>
+nnoremap <Leader>L :HopLine<CR>
+
+" faster scrolling
+nnoremap <Leader><Leader>j 10<C-e>
+nnoremap <Leader><Leader>k 10<C-y>

@@ -50,3 +50,5 @@ let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '<'
 highlight SignColumn guibg=bg
 
+"Hop
+:lua require'hop'.setup()

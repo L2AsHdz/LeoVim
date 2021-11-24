@@ -54,4 +54,14 @@ Plug 'phaazon/hop.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+"mutiple-cursors
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+"IdentLine
+Plug 'Yggdroot/indentLine'
+
+"Emmet
+Plug 'mattn/emmet-vim'
+
+
 call plug#end()

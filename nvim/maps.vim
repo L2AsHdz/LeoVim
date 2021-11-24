@@ -75,3 +75,8 @@ nnoremap <Leader><Leader>k 10<C-y>
 "fzf
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
+
+"vim-visual-multi
+" nmap   <C-LeftMouse>         <Plug>(VM-Mouse-Cursor)
+" nmap   <C-RightMouse>        <Plug>(VM-Mouse-Word)  
+" nmap   <M-C-RightMouse>      <Plug>(VM-Mouse-Column)

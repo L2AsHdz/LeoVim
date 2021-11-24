@@ -24,3 +24,7 @@ default_linemode devicons
 
 set show_hidden true
 
+
+Install fzf
+pacin the_silver_searcher
+pacin fzf

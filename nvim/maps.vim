@@ -71,3 +71,7 @@ nnoremap <Leader>L :HopLine<CR>
 " faster scrolling
 nnoremap <Leader><Leader>j 10<C-e>
 nnoremap <Leader><Leader>k 10<C-y>
+
+"fzf
+nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader>fb :Buffers<CR>

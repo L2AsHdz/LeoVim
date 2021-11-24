@@ -80,3 +80,7 @@ nnoremap <Leader>fb :Buffers<CR>
 " nmap   <C-LeftMouse>         <Plug>(VM-Mouse-Cursor)
 " nmap   <C-RightMouse>        <Plug>(VM-Mouse-Word)  
 " nmap   <M-C-RightMouse>      <Plug>(VM-Mouse-Column)
+
+"Startify
+nnoremap <Leader>ss :SSave<CR>
+nnoremap <Leader>ls :SClose<CR>

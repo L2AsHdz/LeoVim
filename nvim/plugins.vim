@@ -63,5 +63,7 @@ Plug 'Yggdroot/indentLine'
 "Emmet
 Plug 'mattn/emmet-vim'
 
+"Startify
+Plug 'mhinz/vim-startify'
 
 call plug#end()

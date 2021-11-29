@@ -6,8 +6,8 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>W :wq<CR>
 nnoremap <Leader>Q :q!<CR>
-nnoremap <Leader>bb :bd<CR>
-nnoremap <Leader>BB :bd!<CR>
+nnoremap <Leader>bb :Sayonara<CR>
+" nnoremap <Leader>BB :bd!<CR>
 
 " Moverse al buffer siguiente con <líder> + l
 nnoremap <leader>k :bnext<CR>
@@ -72,9 +72,17 @@ nnoremap <Leader>L :HopLine<CR>
 nnoremap <Leader><Leader>j 10<C-e>
 nnoremap <Leader><Leader>k 10<C-y>
 
+" split resize
+nnoremap <Leader>, 10<C-w>>
+nnoremap <Leader>. 10<C-w><
+
 "fzf
 nnoremap <Leader>ff :Files<CR>
 nnoremap <Leader>fb :Buffers<CR>
+
+"fzf-checkout
+nnoremap <Leader>fr :GBranches<CR>
+nnoremap<Leader>ft :GTags<CR>
 
 "vim-visual-multi
 " nmap   <C-LeftMouse>         <Plug>(VM-Mouse-Cursor)
@@ -84,3 +92,4 @@ nnoremap <Leader>fb :Buffers<CR>
 "Startify
 nnoremap <Leader>ss :SSave<CR>
 nnoremap <Leader>ls :SClose<CR>
+

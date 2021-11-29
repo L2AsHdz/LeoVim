@@ -66,4 +66,13 @@ Plug 'mattn/emmet-vim'
 "Startify
 Plug 'mhinz/vim-startify'
 
+"Sayonara
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+
+"fzf-checkout
+Plug 'stsewd/fzf-checkout.vim'
+
+"targets.vim
+" Plug 'wellle/targets.vim'
+
 call plug#end()

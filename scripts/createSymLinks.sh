@@ -14,3 +14,6 @@ ln -sv ~/.dotfiles/nvim/maps.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/plugin-config.vim ~/.config/nvim
 
 ln -sv ~/.dotfiles/rc.conf ~/.config/ranger
+
+ln -sv ~/.dotfiles/.ssh/id_ed25519 ~/.ssh
+ln -sv ~/.dotfiles/.ssh/id_ed25519.pub ~/.ssh

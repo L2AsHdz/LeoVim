@@ -17,3 +17,5 @@
 	minRacyThreshold = 3216 microseconds
 [alias]
 	logg = log --oneline --graph --decorate
+[core]
+	editor = nano

@@ -1,9 +1,4 @@
-#docker
 #kite
-#intellij
-#Jdownloader2
-#gparted
-#spotify-tui
 
 #Solucionar problema con la hora
 sudo timedatectl set-local-rtc 1
@@ -53,7 +48,17 @@ zsh
 source ~/.zshrc
 
 #instalar varios paquetes de pacman
-pacin neofetch jdk-openjdk vlc pacman-contrib gnome-keyring libsecret flameshot uget aria2 tldr speedtest-cli
+pacin neofetch jdk-openjdk vlc pacman-contrib gnome-keyring libsecret flameshot uget aria2 tldr speedtest-cli telegram-desktop exa docker docker-compose mesa-utils pulseaudio-equalizer-ladspa
+pacin unrar zip unzip p7zip lzip arj sharutils lzop unace lrzip xz cabextract lha lz4 gzip bzip2 libreoffice
+
+#fuentes
+yain nerd-fonts-monoid nerd-fonts-inconsolata-go nerd-fonts-mononoki nerd-fonts-fira-code nerd-fonts-space-mono nerd-fonts-overpass
+
+#instalar varios paquetes de yay
+yain visual-studio-code-bin brave-bin google-chrome jetbrains-toolbox jdownloader2 spotify knemo downgrade
+
+#spotify-tui
+yain spotify-tui
 
 #mariadb
 pacin mariadb
@@ -61,8 +66,39 @@ mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 ctlstart mysql
 sudo mysql_secure_installation
 
-#instalar varios paquetes de yay
-yain visual-studio-code-bin brave-bin google-chrome
+#docker and docker-compose
+pacin docker docker-compose
+sudo usermod -aG docker $USER
+
+#neovim
+pacin neovim ranger xsel ripgrep ueberzug the_silver_searcher
+python -m ensurepip --upgrade
+python -m pip install --upgrade pip
+python3 -m pip install --user --upgrade pynvim
+npmg neovim
+
+# Install angular-cli
+npmg @angular/cli
+npmg npm-check-updates
+
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
+
+#add to rc.conf
+# set preview_images_method ueberzug
+#set show_hidden true
+
+mkdir ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/coc.vim ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/plugins.vim ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/settings.vim ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/maps.vim ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/plugin-config.vim ~/.config/nvim
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 #tlp
 pacin tlp tlp-rdw

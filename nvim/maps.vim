@@ -56,7 +56,7 @@ nmap <Leader>gp <Plug>(GitGutterPrevHunk)  " git previous
 " Hunk-add and hunk-revert for chunk staging
 nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
 nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
-
+nmap <Leader>gh <Plug>(GitGutterPreviewHunk)
 " Open vimagit pane
 nnoremap <leader>gs :Magit<CR>       " git status
 
@@ -82,7 +82,7 @@ nnoremap <Leader>fb :Buffers<CR>
 
 "fzf-checkout
 nnoremap <Leader>fr :GBranches<CR>
-nnoremap<Leader>ft :GTags<CR>
+nnoremap<Leader>ftg :GTags<CR>
 
 "vim-visual-multi
 " nmap   <C-LeftMouse>         <Plug>(VM-Mouse-Cursor)

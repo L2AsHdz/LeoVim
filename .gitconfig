@@ -18,4 +18,4 @@
 [alias]
 	logg = log --oneline --graph --decorate
 [core]
-	editor = nano
+	editor = nvim

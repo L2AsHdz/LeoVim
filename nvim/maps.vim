@@ -29,12 +29,13 @@ nnoremap <Leader>nt :NERDTreeFind<CR>
 nnoremap <Leader>r :NERDTreeRefreshRoot<CR>
 nnoremap <silent> <leader>n :nohlsearch<CR>
 :imap ii <Esc>
+:vmap vv <Esc>
 
 "Ranger
 nnoremap <Leader>rg :RnvimrToggle<CR>
 
 "Atajos Coc
-nnoremap <Leader>ft :CocSearch 
+nnoremap <Leader>ft :CocSearch -S 
 
 " incsearch
 map /  <Plug>(incsearch-forward)
@@ -54,8 +55,8 @@ nmap <Leader>gn <Plug>(GitGutterNextHunk)  " git next
 nmap <Leader>gp <Plug>(GitGutterPrevHunk)  " git previous
 
 " Hunk-add and hunk-revert for chunk staging
-nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
-nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
+nmap <Leader>ga <Plug>(GitGutterStageHunk)
+nmap <Leader>gu <Plug>(GitGutterUndoHunk)
 nmap <Leader>gh <Plug>(GitGutterPreviewHunk)
 " Open vimagit pane
 nnoremap <leader>gs :Magit<CR>       " git status

@@ -97,6 +97,12 @@ ln -sv ~/.dotfiles/nvim/settings.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/maps.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/plugin-config.vim ~/.config/nvim
 
+#Install coc extensions
+mkdir -p ~/.config/coc/extensions
+cd ~/.config/coc/extensions
+ln -sv ~/.dotfiles/nvim/package.json ~/.config/coc/extensions
+npm i
+
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 

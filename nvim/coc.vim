@@ -1,3 +1,4 @@
+let g:coc_node_path = '/home/asael/.nvm/versions/node/v14.18.2/bin/node'
 " TextEdit might fail if hidden is not set.
 set hidden
 

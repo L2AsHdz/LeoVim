@@ -83,6 +83,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 export NVM_LAZY_LOAD=true
 
 plugins=(
+    zsh-nvm
     git
     archlinux
     enhancd
@@ -98,7 +99,6 @@ plugins=(
     docker-compose
     zsh-docker-aliases
     mysql-colorize
-    zsh-nvm
     k
     autojump
 )

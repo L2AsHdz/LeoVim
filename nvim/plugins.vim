@@ -67,39 +67,68 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Snippets and adittional text e
 " Plug 'easymotion/vim-easymotion'
 " Plug 'haya14busa/incsearch-easymotion.vim'
 
-" Busqueda
+"Busqueda
+"Provides simple improved incremental searching
+"https://github.com/haya14busa/incsearch.vim
 Plug 'haya14busa/incsearch.vim'
 
 "Comentarios
+"Comment and uncomment
+"https://github.com/tpope/vim-commentary
 Plug 'tpope/vim-commentary'
 
-" Git
+"gitgutter
+"https://github.com/airblade/vim-gitgutter
 Plug 'airblade/vim-gitgutter'
+
+"vimagit
+"Ease your git workflow within vim
+"https://github.com/jreybert/vimagit
 Plug 'jreybert/vimagit'
 
+"Hop
+"Neovim motions on speed!
+"https://github.com/phaazon/hop.nvim
 Plug 'phaazon/hop.nvim'
 
 "fzf
+"General-purpose command-line fuzzy finder.
+"https://github.com/junegunn/fzf.vim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+"fzf-checkout
+"Manage branches and tags with fzf
+"https://github.com/stsewd/fzf-checkout.vim
+Plug 'stsewd/fzf-checkout.vim'
+
 "mutiple-cursors
+"https://github.com/mg979/vim-visual-multi
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 "IdentLine
+"https://github.com/Yggdroot/indentLine
 Plug 'Yggdroot/indentLine'
 
 "Emmet
+"Provides support for expanding abbreviations similar to emmet
+"https://github.com/mattn/emmet-vim
 Plug 'mattn/emmet-vim'
 
+"CssColor
+"A very fast, multi-syntax context-sensitive color name highlighter
+"https://github.com/ap/vim-css-color
+Plug 'ap/vim-css-color'
+
 "Startify
+"Provides a start screen for Vim and Neovim
+"https://github.com/mhinz/vim-startify
 Plug 'mhinz/vim-startify'
 
 "Sayonara
+"Provides a single command that deletes the current buffer and handles the current window in a smart way
+"https://github.com/mhinz/vim-sayonara
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
-
-"fzf-checkout
-Plug 'stsewd/fzf-checkout.vim'
 
 "targets.vim
 " Plug 'wellle/targets.vim'
@@ -108,5 +137,9 @@ Plug 'stsewd/fzf-checkout.vim'
 "A NeoVim plugin for saving your work before the world collapses or you type :qa!
 "https://github.com/Pocco81/AutoSave.nvim
 Plug 'Pocco81/AutoSave.nvim'
+
+"LastPlace
+"Move cursor to last edit location when reopening files
+Plug 'farmergreg/vim-lastplace'
 
 call plug#end()

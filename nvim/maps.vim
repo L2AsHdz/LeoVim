@@ -37,6 +37,10 @@ nnoremap <Leader>rg :RnvimrToggle<CR>
 "Atajos Coc
 nnoremap <Leader>ft :CocSearch -S 
 
+"ALE
+nmap <silent> <Leader>ep <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>en <Plug>(ale_next_wrap)
+
 " incsearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)

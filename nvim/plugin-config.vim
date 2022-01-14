@@ -1,7 +1,7 @@
 " Theme Settings
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
-colorscheme tokyonight
+colorscheme dracula
 
 "EasyMotion
 " let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -39,6 +39,15 @@ let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 " Coc Settings
 so ~/.config/nvim/coc.vim
 
+"ALE
+let g:ale_disable_lsp=1
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_lint_on_enter = 0
+let g:ale_sign_priority = 15
+" let g:ale_sign_column_always = 1
+
 "incsearch
 let g:incsearch#auto_nohlsearch = 1
 
@@ -50,7 +59,16 @@ let g:gitgutter_sign_removed = ''
 let g:gitgutter_sign_removed_first_line = ''
 let g:gitgutter_sign_modified_removed = ''
 let g:gitgutter_terminal_reports_focus=0
+let g:gitgutter_sign_priority = 12
 highlight SignColumn guibg=bg
+
+"Blamer
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+
+"git-messenger
+let g:git_messenger_floating_win_opts = { 'border': 'single' }
+let g:git_messenger_popup_content_margins = v:false
 
 "Hop
 :lua require'hop'.setup()

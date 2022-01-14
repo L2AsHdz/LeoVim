@@ -9,7 +9,11 @@ call plug#begin('~/.vim/plugins')
 
 " Themes
 " Theme for neovim
-" https://github.com/ghifarit53/tokyonight-vim
+"https://github.com/artanikin/vim-synthwave84
+Plug 'artanikin/vim-synthwave84'
+"https://github.com/dracula/vim
+Plug 'dracula/vim', { 'as': 'dracula' }
+"https://github.com/ghifarit53/tokyonight-vim
 Plug 'ghifarit53/tokyonight-vim'
 
 "Airline & airline-themes
@@ -28,8 +32,10 @@ Plug 'sheerun/vim-polyglot' " Resaltado de sintaxis
 "The NERDTree is a file system explorer for the Vim editor
 "https://github.com/preservim/nerdtree
 "https://github.com/Xuyuanp/nerdtree-git-plugin
+"https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
 Plug 'preservim/nerdtree' " File system explorer for vim
 Plug 'Xuyuanp/nerdtree-git-plugin' " Show git status on NERDTree
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "Syntax for common file extendions
 
 "rnvimr
 "Rnvimr is a NeoVim plugin that allows you to use Ranger in a floating window
@@ -64,6 +70,11 @@ Plug 'christoomey/vim-tmux-navigator' " Navegacion entre pestañas
 "https://github.com/neoclide/coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Snippets and adittional text editing support
 
+"ALE
+"Is a plugin providing linting (syntax checking and semantic errors) in NeoVim
+"https://github.com/dense-analysis/ale
+Plug 'dense-analysis/ale'
+
 " Plug 'easymotion/vim-easymotion'
 " Plug 'haya14busa/incsearch-easymotion.vim'
 
@@ -85,6 +96,16 @@ Plug 'airblade/vim-gitgutter'
 "Ease your git workflow within vim
 "https://github.com/jreybert/vimagit
 Plug 'jreybert/vimagit'
+
+"Blamer
+"A git blame plugin for (neo)vim inspired by VS Code's GitLens plugin
+"https://github.com/APZelos/blamer.nvim
+Plug 'APZelos/blamer.nvim'
+
+"git-messenger
+"Reveal the hidden message from Git under the cursor quickly
+"https://github.com/rhysd/git-messenger.vim
+Plug 'rhysd/git-messenger.vim'
 
 "Hop
 "Neovim motions on speed!

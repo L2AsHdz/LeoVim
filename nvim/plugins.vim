@@ -70,6 +70,11 @@ Plug 'christoomey/vim-tmux-navigator' " Navegacion entre pestañas
 "https://github.com/psliwka/vim-smoothie
 Plug 'psliwka/vim-smoothie'
 
+"stabilize.nvim
+"Neovim plugin to stabilize buffer content on window open/close events
+"https://github.com/luukvbaal/stabilize.nvim
+Plug 'luukvbaal/stabilize.nvim'
+
 "ConquerOfCompletion
 "True snippet and additional text editing support
 "https://github.com/neoclide/coc.nvim

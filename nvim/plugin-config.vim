@@ -70,9 +70,6 @@ let g:blamer_delay = 500
 let g:git_messenger_floating_win_opts = { 'border': 'single' }
 let g:git_messenger_popup_content_margins = v:false
 
-"Hop
-:lua require'hop'.setup()
-
 "Emmet
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
@@ -115,6 +112,8 @@ let g:startify_custom_header = [
 
 "Autosave
 lua << EOF
+require'hop'.setup()
+require("stabilize").setup()
 local autosave = require("autosave")
 
 autosave.setup(

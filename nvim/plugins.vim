@@ -65,6 +65,11 @@ Plug 'ryanoasis/vim-devicons'
 "https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator' " Navegacion entre pestañas
 
+"vim-smothie
+"Smooth scrolling for Vim done right
+"https://github.com/psliwka/vim-smoothie
+Plug 'psliwka/vim-smoothie'
+
 "ConquerOfCompletion
 "True snippet and additional text editing support
 "https://github.com/neoclide/coc.nvim
@@ -111,6 +116,11 @@ Plug 'rhysd/git-messenger.vim'
 "Neovim motions on speed!
 "https://github.com/phaazon/hop.nvim
 Plug 'phaazon/hop.nvim'
+
+"rename-vim
+"Rename a buffer
+"https://github.com/danro/rename.vim
+Plug 'danro/rename.vim'
 
 "fzf
 "General-purpose command-line fuzzy finder.

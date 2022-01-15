@@ -35,7 +35,7 @@ nnoremap <silent> <leader>n :nohlsearch<CR>
 nnoremap <Leader>rg :RnvimrToggle<CR>
 
 "Atajos Coc
-nnoremap <Leader>ft :CocSearch -S 
+so ~/.config/nvim/coc-maps.vim
 
 "ALE
 nmap <silent> <Leader>ep <Plug>(ale_previous_wrap)

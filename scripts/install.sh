@@ -47,6 +47,10 @@ chsh -s $(which zsh)
 zsh
 source ~/.zshrc
 
+nvm install 14
+nvm use 14
+node --version
+
 #instalar varios paquetes de pacman
 pacin neofetch jdk-openjdk vlc pacman-contrib gnome-keyring libsecret flameshot uget aria2 tldr speedtest-cli telegram-desktop exa docker docker-compose mesa-utils pulseaudio-equalizer-ladspa
 pacin unrar zip unzip p7zip lzip arj sharutils lzop unace lrzip xz cabextract lha lz4 gzip bzip2 libreoffice
@@ -90,8 +94,9 @@ echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
 
 mkdir ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/coc.vim ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/coc/coc.vim ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/coc/coc-settings.json ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/coc/coc-maps.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/plugins.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/settings.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/maps.vim ~/.config/nvim
@@ -100,7 +105,7 @@ ln -sv ~/.dotfiles/nvim/plugin-config.vim ~/.config/nvim
 #Install coc extensions
 mkdir -p ~/.config/coc/extensions
 cd ~/.config/coc/extensions
-ln -sv ~/.dotfiles/nvim/package.json ~/.config/coc/extensions
+ln -sv ~/.dotfiles/nvim/coc/package.json ~/.config/coc/extensions
 npm i
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

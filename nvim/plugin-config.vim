@@ -114,6 +114,17 @@ let g:startify_custom_header = [
 lua << EOF
 require'hop'.setup()
 require("stabilize").setup()
+
+require'nvim-web-devicons'.setup {
+  default = true;
+}
+
+require("bufferline").setup{
+  options = {
+    separator_style = "slant"
+  }
+}
+
 local autosave = require("autosave")
 
 autosave.setup(

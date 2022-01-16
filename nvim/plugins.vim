@@ -16,6 +16,18 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 "https://github.com/ghifarit53/tokyonight-vim
 Plug 'ghifarit53/tokyonight-vim'
 
+"Icons for neovim
+"https://github.com/ryanoasis/vim-devicons
+Plug 'ryanoasis/vim-devicons'
+"https://github.com/kyazdani42/nvim-web-devicons
+Plug 'kyazdani42/nvim-web-devicons'
+
+"Bufferline
+"https://github.com/akinsho/bufferline.nvim
+Plug 'akinsho/bufferline.nvim'
+
+Plug 'dstein64/vim-startuptime'
+
 "Airline & airline-themes
 "Status bar and themes for it, for neovim
 "https://github.com/vim-airline/vim-airline
@@ -55,10 +67,6 @@ Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'
 "https://github.com/honza/vim-snippets
 Plug 'honza/vim-snippets'
-
-"Icons for neovim
-"https://github.com/ryanoasis/vim-devicons
-Plug 'ryanoasis/vim-devicons'
 
 "TmuxNavigator
 "The plugin will allow you to navigate seamlessly between vim and tmux splits using a consistent set of hotkeys

@@ -32,8 +32,14 @@ nnoremap <silent><leader>mj :BufferLineMovePrev<CR>
 nnoremap <silent><leader>bl :BufferLinePick<CR>
 
 "Atajos NERDTreeFind
-nnoremap <Leader>nt :NERDTreeFind<CR>
-nnoremap <Leader>r :NERDTreeRefreshRoot<CR>
+" nnoremap <Leader>nt :NERDTreeFind<CR>
+" nnoremap <Leader>r :NERDTreeRefreshRoot<CR>
+
+"nvim-tree
+nnoremap <leader>nt :NvimTreeToggle<CR>
+nnoremap <leader>nr :NvimTreeRefresh<CR>
+nnoremap <leader>nf :NvimTreeFindFile<CR>
+
 nnoremap <silent> <leader>n :nohlsearch<CR>
 :imap ii <Esc>
 :vmap vv <Esc>
@@ -106,4 +112,5 @@ nnoremap <Leader>. 10<C-w><
 "Startify
 nnoremap <Leader>Ss :SSave<CR>
 nnoremap <Leader>Sc :SClose<CR>
+nnoremap <leader>Sd :SDelete<CR>
 

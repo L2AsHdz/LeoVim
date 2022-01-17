@@ -1,13 +1,32 @@
 require'hop'.setup()
 require("stabilize").setup()
-
+require('nvim-tree').setup({
+    update_focused_file = {
+        enable = true,
+        update_cwd = false,
+        ignore_list = {}
+    },
+    view = {
+        number = true,
+        relativenumber = true,
+        signcolumn = 'yes'
+    }
+})
 require'nvim-web-devicons'.setup {
   default = true;
 }
 
 require("bufferline").setup{
   options = {
-    separator_style = "slant"
+    separator_style = "slant",
+    offsets = {
+        {
+            filetype = "NvimTree",
+            text = 'NvimTree - File Explorer',
+            highlight = "Directory",
+            text_align = "center"
+        }
+    }
   }
 }
 

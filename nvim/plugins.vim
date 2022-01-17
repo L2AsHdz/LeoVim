@@ -28,12 +28,15 @@ Plug 'akinsho/bufferline.nvim'
 
 Plug 'dstein64/vim-startuptime'
 
+"Lualine
+Plug 'nvim-lualine/lualine.nvim'
+
 "Airline & airline-themes
 "Status bar and themes for it, for neovim
 "https://github.com/vim-airline/vim-airline
 "https://github.com/vim-airline/vim-airline-themes
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 "vim-polyglot
 "A collection of language packs for Vim
@@ -45,9 +48,14 @@ Plug 'sheerun/vim-polyglot' " Resaltado de sintaxis
 "https://github.com/preservim/nerdtree
 "https://github.com/Xuyuanp/nerdtree-git-plugin
 "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
-Plug 'preservim/nerdtree' " File system explorer for vim
-Plug 'Xuyuanp/nerdtree-git-plugin' " Show git status on NERDTree
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "Syntax for common file extendions
+" Plug 'preservim/nerdtree' " File system explorer for vim
+" Plug 'Xuyuanp/nerdtree-git-plugin' " Show git status on NERDTree
+"Plug 'kyazdani42/nvim-tree.lua' Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "Syntax for common file extendions
+
+"nvim-tree
+"A File Explorer For Neovim Written In Lua
+"https://github.com/kyazdani42/nvim-tree.lua
+Plug 'kyazdani42/nvim-tree.lua'
 
 "rnvimr
 "Rnvimr is a NeoVim plugin that allows you to use Ranger in a floating window

@@ -10,10 +10,10 @@ nnoremap <Leader>bb :Sayonara<CR>
 " nnoremap <Leader>BB :bd!<CR>
 
 " Moverse al buffer siguiente con <líder> + l
-nnoremap <leader>k :bnext<CR>
+" nnoremap <leader>k :bnext<CR>
 
 " Moverse al buffer anterior con <líder> + j
-nnoremap <leader>j :bprevious<CR>
+" nnoremap <leader>j :bprevious<CR>
 
 "easymotion
 " nmap <Leader>s <Plug>(easymotion-s2)
@@ -23,6 +23,13 @@ nnoremap <leader>j :bprevious<CR>
 " nmap <Leader><Leader>h <Plug>(easymotion-linebackward)
 " map  <Leader>f <Plug>(easymotion-bd-f)
 " nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+"Bufferline
+nnoremap <silent><leader>k :BufferLineCycleNext<CR>
+nnoremap <silent><leader>j :BufferLineCyclePrev<CR>
+nnoremap <silent><leader>mk :BufferLineMoveNext<CR>
+nnoremap <silent><leader>mj :BufferLineMovePrev<CR>
+nnoremap <silent><leader>bl :BufferLinePick<CR>
 
 "Atajos NERDTreeFind
 nnoremap <Leader>nt :NERDTreeFind<CR>

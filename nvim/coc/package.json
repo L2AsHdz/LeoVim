@@ -6,6 +6,7 @@
     "coc-eslint": ">=1.5.2",
     "coc-git": ">=2.4.4",
     "coc-html": ">=1.6.0",
+    "coc-lua": ">=1.0.1",
     "coc-marketplace": ">=1.8.1",
     "coc-sh": ">=0.6.1",
     "coc-snippets": ">=2.4.7",

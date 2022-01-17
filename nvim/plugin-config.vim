@@ -42,7 +42,7 @@ so ~/.config/nvim/coc.vim
 "ALE
 let g:ale_disable_lsp=1
 let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
+let g:ale_sign_warning = '*'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_enter = 0
 let g:ale_sign_priority = 15
@@ -110,38 +110,4 @@ let g:startify_custom_header = [
   " \'  ',
   " \'  ',  
 
-"Autosave
-lua << EOF
-require'hop'.setup()
-require("stabilize").setup()
-
-require'nvim-web-devicons'.setup {
-  default = true;
-}
-
-require("bufferline").setup{
-  options = {
-    separator_style = "slant"
-  }
-}
-
-local autosave = require("autosave")
-
-autosave.setup(
-    {
-        enabled = true,
-        execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
-        events = {"InsertLeave", "TextChanged"},
-        conditions = {
-            exists = true,
-            filename_is_not = {},
-            filetype_is_not = {},
-            modifiable = true
-        },
-        write_all_buffers = false,
-        on_off_commands = true,
-        clean_command_line_interval = 0,
-        debounce_delay = 135
-    }
-)
-EOF
+lua require('plugin-config')

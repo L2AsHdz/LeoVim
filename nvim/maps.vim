@@ -7,6 +7,27 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>W :wq<CR>
 nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader>bb :Sayonara<CR>
+nnoremap <leader>bo :%bd\|e#\|bd#<CR>
+nnoremap <silent> <leader>n :nohlsearch<CR>
+:imap ii <Esc>
+:vmap vv <Esc>
+
+"Mover linea actual o lineas seleccionadas
+nnoremap <A-down> :m+1<CR>==
+nnoremap <A-up> :m-2<CR>==
+inoremap <A-down> <Esc>:m+1<CR>==gi
+inoremap <A-up> <Esc>:m-2<CR>==gi
+vnoremap <A-down> :m '>+1<CR>gv=gv
+vnoremap <A-up> :m '<-2<CR>gv=gv
+
+"Duplicar linea actual o lineas seleccionadas
+nnoremap <C-S-down> :t+0<CR>==
+nnoremap <C-S-up> :t-1<CR>==
+inoremap <C-S-down> <Esc>:t+0<CR>==a
+inoremap <C-S-up> <Esc>:t-1<CR>==a
+vnoremap <C-S-down> :t '>+0<CR>gv=gv
+vnoremap <C-S-up> :t '<-1<CR>gv=gv
+
 " nnoremap <Leader>BB :bd!<CR>
 
 " Moverse al buffer siguiente con <líder> + l
@@ -39,10 +60,6 @@ nnoremap <silent><leader>bl :BufferLinePick<CR>
 nnoremap <leader>nt :NvimTreeToggle<CR>
 nnoremap <leader>nr :NvimTreeRefresh<CR>
 nnoremap <leader>nf :NvimTreeFindFile<CR>
-
-nnoremap <silent> <leader>n :nohlsearch<CR>
-:imap ii <Esc>
-:vmap vv <Esc>
 
 "Ranger
 nnoremap <Leader>rg :RnvimrToggle<CR>
@@ -103,11 +120,6 @@ nnoremap <Leader><Leader>k 10<C-y>
 " split resize
 nnoremap <Leader>, 10<C-w>>
 nnoremap <Leader>. 10<C-w><
-
-"vim-visual-multi
-" nmap   <C-LeftMouse>         <Plug>(VM-Mouse-Cursor)
-" nmap   <C-RightMouse>        <Plug>(VM-Mouse-Word)  
-" nmap   <M-C-RightMouse>      <Plug>(VM-Mouse-Column)
 
 "Startify
 nnoremap <Leader>Ss :SSave<CR>

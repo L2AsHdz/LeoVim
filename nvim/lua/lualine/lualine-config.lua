@@ -4,30 +4,34 @@
 
 -- stylua: ignore
 local colors = {
-  blue   = '#80a0ff',
-  cyan   = '#79dac8',
-  black  = '#080808',
-  white  = '#c6c6c6',
-  red    = '#ff5189',
-  violet = '#d183e8',
-  grey   = '#303030',
+  black         = '#090D1B',
+  white         = '#FBFBFE',
+  red           = '#eb3b5a',
+  blue          = '#4b7bec',
+  cyan          = '#00d2d3',
+  grey          = '#576574',
+  orange        = '#fe8019',
+  green         = '#44bd32',
+  error         = '#c23616'
 }
 
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.violet },
+    a = { fg = colors.black, bg = colors.red },
     b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.black, bg = colors.black },
+    c = { fg = colors.white, bg = colors.black },
   },
 
   insert = { a = { fg = colors.black, bg = colors.blue } },
   visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
+  replace = { a = { fg = colors.black, bg = colors.orange } },
+  command = { a = { fg = colors.black, bg = colors.green } },
 
   inactive = {
-    a = { fg = colors.white, bg = colors.black },
+    a = { fg = colors.white, bg = colors.grey },
     b = { fg = colors.white, bg = colors.black },
     c = { fg = colors.black, bg = colors.black },
+    z = { fg = colors.white, bg = colors.grey },
   },
 }
 
@@ -39,10 +43,37 @@ require('lualine').setup({
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
+      { 'mode', separator = { left = '' }, right_padding = 2,
+        fmt = function(str)
+          if str == "NORMAL" then
+            return ' ' .. str
+          elseif str == "INSERT" then
+            return ' ' .. str
+          elseif str == "VISUAL" or str == "V-LINE" then
+            return '﯎ ' .. str
+          elseif str == "REPLACE" then
+            return '﯒ ' .. str
+          elseif str == "COMMAND" then
+            return ' ' .. str
+          elseif str == "SELECT" then
+            return '濾' .. str
+          else
+            return ' ' .. str
+          end
+        end
+      },
     },
     lualine_b = { 'branch', 'diff' },
-    lualine_c = { 'fileformat' },
+    lualine_c = {
+      {
+        'diagnostics',
+        sources = { 'ale' },
+        sections = { 'error' },
+        symbols = { error = ' '},
+        diagnostics_color = { error = { fg = colors.white, bg = colors.error } },
+        separator = { right = '' }
+      }
+    },
     lualine_x = {},
     lualine_y = { 'filetype', 'filename' },
     lualine_z = {

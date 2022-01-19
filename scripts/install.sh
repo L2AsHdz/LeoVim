@@ -18,7 +18,6 @@ ln -sv ~/.dotfiles/.gitconfig ~
 
 mkdir ~/.ssh
 sudo chmod 755 ~/.ssh
-ln -sv ~/.dotfiles/.ssh/id_ed25519 ~/.ssh
 ln -sv ~/.dotfiles/.ssh/id_ed25519.pub ~/.ssh
 sudo chmod 600 ~/.ssh/id_ed25519
 sudo chmod 600 ~/.ssh/id_ed25519.pub
@@ -89,7 +88,7 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger
 ln -sv ~/.dotfiles/rc.conf ~/.config/ranger/
 
 mkdir ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim
+# ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/coc/coc.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/coc/coc-settings.json ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/coc/coc-maps.vim ~/.config/nvim
@@ -97,6 +96,17 @@ ln -sv ~/.dotfiles/nvim/plugins.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/settings.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/maps.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/plugin-config.vim ~/.config/nvim
+ln -sv ~/.dotfiles.nvim/plugins/utils.vim ~/.config/nvim
+ln -sv ~/.dotfiles.nvim/plugins/gittools.vim ~/.config/nvim
+ln -sv ~/.dotfiles.nvim/plugins/devtools.vim ~/.config/nvim
+ln -sv ~/.dotfiles.nvim/plugins/visual.vim ~/.config/nvim
+
+mkdir ~/.config/nvim/lua
+mkdir ~/.config/nvim/lua/lualine
+ln -sv ~/.dotfiles/nvim/init.lua ~/.config/nvim
+ln -sv ~/.dotfiles/nvim/lua/plugin-config.lua ~/.config/nvim/lua
+ln -sv ~/.dotfiles/nvim/lua/settings.lua ~/.config/nvim/lua
+ln -sv ~/.dotfiles/nvim/lua/lualine/lualine-config.lua ~/.config/nvim/lua/lualine/
 
 #Install coc extensions
 mkdir -p ~/.config/coc/extensions

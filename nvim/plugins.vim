@@ -26,10 +26,17 @@ Plug 'kyazdani42/nvim-web-devicons'
 "https://github.com/akinsho/bufferline.nvim
 Plug 'akinsho/bufferline.nvim'
 
+"StartupTime
+"https://github.com/dstein64/vim-startuptime
 Plug 'dstein64/vim-startuptime'
 
 "Lualine
+"https://github.com/nvim-lualine/lualine.nvim
 Plug 'nvim-lualine/lualine.nvim'
+
+"FTerm
+"https://github.com/numToStr/FTerm.nvim
+Plug 'numToStr/FTerm.nvim'
 
 "Airline & airline-themes
 "Status bar and themes for it, for neovim
@@ -133,21 +140,25 @@ Plug 'APZelos/blamer.nvim'
 "https://github.com/rhysd/git-messenger.vim
 Plug 'rhysd/git-messenger.vim'
 
+"https://github.com/nvim-lua/plenary.nvim
+Plug 'nvim-lua/plenary.nvim'
+
+"DiffView
+"Single tabpage interface for easily cycling through diffs for all modified files for any git rev
+"https://github.com/sindrets/diffview.nvim
+Plug 'sindrets/diffview.nvim'
+
 "Hop
 "Neovim motions on speed!
 "https://github.com/phaazon/hop.nvim
 Plug 'phaazon/hop.nvim'
 
-"rename-vim
-"Rename a buffer
-"https://github.com/danro/rename.vim
-Plug 'danro/rename.vim'
-
 "fzf
 "General-purpose command-line fuzzy finder.
-"https://github.com/junegunn/fzf.vim
+"https://github.com/ibhagwan/fzf-lua
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'ibhagwan/fzf-lua'
+" Plug 'junegunn/fzf.vim'
 
 "fzf-checkout
 "Manage branches and tags with fzf

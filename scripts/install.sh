@@ -53,7 +53,7 @@ node --version
 
 #instalar varios paquetes de pacman
 pacin neofetch jdk-openjdk vlc pacman-contrib gnome-keyring libsecret flameshot uget aria2 tldr speedtest-cli telegram-desktop exa docker docker-compose mesa-utils pulseaudio-equalizer-ladspa
-pacin unrar zip unzip p7zip lzip arj sharutils lzop unace lrzip xz cabextract lha lz4 gzip bzip2 libreoffice lua
+pacin unrar zip unzip p7zip lzip arj sharutils lzop unace lrzip xz cabextract lha lz4 gzip bzip2 libreoffice
 
 #fuentes
 yain nerd-fonts-monoid nerd-fonts-inconsolata-go nerd-fonts-mononoki nerd-fonts-fira-code nerd-fonts-space-mono nerd-fonts-overpass nerd-fonts-go-mono otf-nerd-fonts-fira-mono nerd-fonts-inconsolata
@@ -75,7 +75,7 @@ pacin docker docker-compose
 sudo usermod -aG docker $USER
 
 #neovim
-pacin neovim ranger xsel ripgrep ueberzug the_silver_searcher
+pacin neovim ranger xsel ripgrep ueberzug the_silver_searcher bat git-delta lua fd
 python -m ensurepip --upgrade
 python -m pip install --upgrade pip
 python3 -m pip install --user --upgrade pynvim
@@ -86,11 +86,7 @@ npmg @angular/cli
 npmg npm-check-updates
 
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
-echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
-
-#add to rc.conf
-# set preview_images_method ueberzug
-#set show_hidden true
+ln -sv ~/.dotfiles/rc.conf ~/.config/ranger/
 
 mkdir ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim

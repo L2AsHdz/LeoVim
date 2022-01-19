@@ -52,6 +52,8 @@ nnoremap <silent><leader>mk :BufferLineMoveNext<CR>
 nnoremap <silent><leader>mj :BufferLineMovePrev<CR>
 nnoremap <silent><leader>bl :BufferLinePick<CR>
 
+nnoremap <leader>t :lua require("FTerm").toggle()<CR>
+
 "Atajos NERDTreeFind
 " nnoremap <Leader>nt :NERDTreeFind<CR>
 " nnoremap <Leader>r :NERDTreeRefreshRoot<CR>
@@ -95,6 +97,13 @@ nmap <Leader>gh <Plug>(GitGutterPreviewHunk)
 " Open vimagit pane
 nnoremap <leader>gs :Magit<CR>       " git status
 
+"diffview
+nnoremap <leader>dv :DiffviewOpen<CR>
+nnoremap <leader>dh :DiffviewFileHistory<CR>
+nnoremap <leader>dq :tabclose<CR>
+nnoremap <leader>df :DiffviewToggleFiles<CR>
+nnoremap <leader>dr :DiffviewRefresh<CR>
+
 " Hop
 nnoremap <Leader><Leader>w :HopWord<CR>
 nnoremap <Leader>/ :HopPattern<CR>
@@ -104,10 +113,17 @@ nnoremap <Leader>l :HopLineStart<CR>
 nnoremap <Leader>L :HopLine<CR>
 
 "fzf
-nnoremap <Leader>ff :Files<CR>
-nnoremap <Leader>fb :Buffers<CR>
-nnoremap <Leader>fg :Ag<CR>
-nnoremap <Leader>fl :Lines<CR>
+" nnoremap <Leader>ff :Files<CR>
+" nnoremap <Leader>fb :Buffers<CR>
+" nnoremap <Leader>fg :Ag<CR>
+" nnoremap <Leader>fl :Lines<CR>
+
+"fzf-lua
+nnoremap <leader>ff :FzfLua files<CR>
+nnoremap <leader>fb :FzfLua buffers<CR>
+nnoremap <leader>fl :FzfLua lines<CR>
+nnoremap <leader>fg :FzfLua live_grep<CR>
+
 
 "fzf-checkout
 nnoremap <Leader>fr :GBranches<CR>

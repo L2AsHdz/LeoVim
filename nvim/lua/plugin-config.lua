@@ -1,5 +1,6 @@
 require'hop'.setup()
 require("stabilize").setup()
+
 require('nvim-tree').setup({
     update_focused_file = {
         enable = true,
@@ -12,6 +13,10 @@ require('nvim-tree').setup({
         signcolumn = 'yes'
     }
 })
+
+require('which-key').setup()
+require('whichkey.register')
+
 require'nvim-web-devicons'.setup {
   default = true;
 }
@@ -36,7 +41,7 @@ autosave.setup(
     {
         enabled = true,
         execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
-        events = {"InsertLeave", "TextChanged"},
+        events = {"InsertLeave", "TextChanged", "FocusLost"},
         conditions = {
             exists = true,
             filename_is_not = {},

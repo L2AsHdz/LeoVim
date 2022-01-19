@@ -54,3 +54,8 @@ Plug 'mhinz/vim-startify'
 "IdentLine
 "https://github.com/Yggdroot/indentLine
 Plug 'Yggdroot/indentLine'
+
+"WhichKey
+"Displays a popup with possible key bindings of the command you started typing
+"https://github.com/folke/which-key.nvim
+Plug 'folke/which-key.nvim'

@@ -2,11 +2,11 @@
 let mapleader=" "
 
 " Atajos perozonalizados
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>W :wq<CR>
-nnoremap <Leader>Q :q!<CR>
-nnoremap <Leader>bb :Sayonara<CR>
+nnoremap <leader>s :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>S :wq<CR>
+nnoremap <leader>Q :q!<CR>
+nnoremap <leader>bb :Sayonara<CR>
 nnoremap <leader>bo :%bd\|e#\|bd#<CR>
 nnoremap <silent> <leader>n :nohlsearch<CR>
 :imap ii <Esc>
@@ -28,8 +28,6 @@ inoremap <C-S-up> <Esc>:t-1<CR>==a
 vnoremap <C-S-down> :t '>+0<CR>gv=gv
 vnoremap <C-S-up> :t '<-1<CR>gv=gv
 
-" nnoremap <Leader>BB :bd!<CR>
-
 " Moverse al buffer siguiente con <líder> + l
 " nnoremap <leader>k :bnext<CR>
 
@@ -46,11 +44,11 @@ vnoremap <C-S-up> :t '<-1<CR>gv=gv
 " nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 "Bufferline
-nnoremap <silent><leader>k :BufferLineCycleNext<CR>
-nnoremap <silent><leader>j :BufferLineCyclePrev<CR>
-nnoremap <silent><leader>mk :BufferLineMoveNext<CR>
-nnoremap <silent><leader>mj :BufferLineMovePrev<CR>
-nnoremap <silent><leader>bl :BufferLinePick<CR>
+nnoremap <leader>k :BufferLineCycleNext<CR>
+nnoremap <leader>j :BufferLineCyclePrev<CR>
+nnoremap <leader>mk :BufferLineMoveNext<CR>
+nnoremap <leader>mj :BufferLineMovePrev<CR>
+nnoremap <leader>p :BufferLinePick<CR>
 
 nnoremap <leader>t :lua require("FTerm").toggle()<CR>
 
@@ -64,14 +62,14 @@ nnoremap <leader>nr :NvimTreeRefresh<CR>
 nnoremap <leader>nf :NvimTreeFindFile<CR>
 
 "Ranger
-nnoremap <Leader>rg :RnvimrToggle<CR>
+nnoremap <leader>rg :RnvimrToggle<CR>
 
 "Atajos Coc
 so ~/.config/nvim/coc-maps.vim
 
 "ALE
-nmap <silent> <Leader>ep <Plug>(ale_previous_wrap)
-nmap <silent> <Leader>en <Plug>(ale_next_wrap)
+nmap <silent> <leader>ep <Plug>(ale_previous_wrap)
+nmap <silent> <leader>en <Plug>(ale_next_wrap)
 
 " incsearch
 map /  <Plug>(incsearch-forward)
@@ -82,18 +80,18 @@ map g/ <Plug>(incsearch-stay)
 " map <Leader>g/ <Plug>(incsearch-easymotion-stay)
 
 "vim-commentary
-nnoremap <Leader><Leader>/ :Commentary<CR>
-vnoremap <Leader><Leader>/ :Commentary<CR>
+nnoremap <leader><leader>/ :Commentary<CR>
+vnoremap <leader><leader>/ :Commentary<CR>
 
 "GitGutter and vimagit
 " Jump between hunks
-nmap <Leader>gn <Plug>(GitGutterNextHunk)  " git next
-nmap <Leader>gp <Plug>(GitGutterPrevHunk)  " git previous
+nmap <leader>gn <Plug>(GitGutterNextHunk)  " git next
+nmap <leader>gp <Plug>(GitGutterPrevHunk)  " git previous
 
 " Hunk-add and hunk-revert for chunk staging
-nmap <Leader>ga <Plug>(GitGutterStageHunk)
-nmap <Leader>gu <Plug>(GitGutterUndoHunk)
-nmap <Leader>gh <Plug>(GitGutterPreviewHunk)
+nmap <leader>ga <Plug>(GitGutterStageHunk)
+nmap <leader>gu <Plug>(GitGutterUndoHunk)
+nmap <leader>gh <Plug>(GitGutterPreviewHunk)
 " Open vimagit pane
 nnoremap <leader>gs :Magit<CR>       " git status
 
@@ -105,12 +103,12 @@ nnoremap <leader>df :DiffviewToggleFiles<CR>
 nnoremap <leader>dr :DiffviewRefresh<CR>
 
 " Hop
-nnoremap <Leader><Leader>w :HopWord<CR>
-nnoremap <Leader>/ :HopPattern<CR>
-nnoremap <Leader>s :HopChar2<CR>
-nnoremap <Leader>S :HopChar1<CR>
-nnoremap <Leader>l :HopLineStart<CR>
-nnoremap <Leader>L :HopLine<CR>
+nnoremap <leader>w :HopWord<CR>
+nnoremap <leader>/ :HopPattern<CR>
+nnoremap <leader>c :HopChar2<CR>
+nnoremap <leader>C :HopChar1<CR>
+nnoremap <leader>l :HopLineStart<CR>
+nnoremap <leader>L :HopLine<CR>
 
 "fzf
 " nnoremap <Leader>ff :Files<CR>
@@ -126,19 +124,19 @@ nnoremap <leader>fg :FzfLua live_grep<CR>
 
 
 "fzf-checkout
-nnoremap <Leader>fr :GBranches<CR>
-nnoremap<Leader>ftg :GTags<CR>
+nnoremap <leader>fGb :GBranches<CR>
+nnoremap <leader>fGt :GTags<CR>
 
 " faster scrolling
-nnoremap <Leader><Leader>j 10<C-e>
-nnoremap <Leader><Leader>k 10<C-y>
+nnoremap <leader><leader>j 10<C-e>
+nnoremap <leader><leader>k 10<C-y>
 
 " split resize
-nnoremap <Leader>, 10<C-w>>
-nnoremap <Leader>. 10<C-w><
+nnoremap <leader>, 10<C-w>>
+nnoremap <leader>. 10<C-w><
 
 "Startify
-nnoremap <Leader>Ss :SSave<CR>
-nnoremap <Leader>Sc :SClose<CR>
+nnoremap <leader>Ss :SSave<CR>
+nnoremap <leader>Sc :SClose<CR>
 nnoremap <leader>Sd :SDelete<CR>
 

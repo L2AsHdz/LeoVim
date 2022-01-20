@@ -1,5 +1,3 @@
-let g:coc_node_path = '/home/asael/.nvm/versions/node/v14.18.2/bin/node'
-
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 

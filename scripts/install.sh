@@ -46,8 +46,11 @@ chsh -s $(which zsh)
 zsh
 source ~/.zshrc
 
-nvm install 14
-nvm use 14
+#fnm
+curl -fsSL https://fnm.vercel.app/install | bash
+src
+fnm install 16 --lts
+fnm use 16
 node --version
 
 #instalar varios paquetes de pacman

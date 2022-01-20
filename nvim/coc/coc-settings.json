@@ -1,5 +1,4 @@
 {
-  "npm.binPath": "~/.nvm/versions/node/v14.18.2/bin/npm",
   "coc.preferencesi.formatOnSaveFiletypes": ["css", "markdown", "javascript", "graphql", "html", "yaml",  "json", "python"],
   "diagnostic.displayByAle": true,
   "git.enableGutters": false,

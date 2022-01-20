@@ -83,17 +83,20 @@ map g/ <Plug>(incsearch-stay)
 nnoremap <leader><leader>/ :Commentary<CR>
 vnoremap <leader><leader>/ :Commentary<CR>
 
-"GitGutter and vimagit
+"GitGutter
 " Jump between hunks
-nmap <leader>gn <Plug>(GitGutterNextHunk)  " git next
-nmap <leader>gp <Plug>(GitGutterPrevHunk)  " git previous
+nmap <leader>gn :Gitsigns next_hunk<CR>
+nmap <leader>gp :Gitsigns prev_hunk<CR>
 
 " Hunk-add and hunk-revert for chunk staging
-nmap <leader>ga <Plug>(GitGutterStageHunk)
-nmap <leader>gu <Plug>(GitGutterUndoHunk)
-nmap <leader>gh <Plug>(GitGutterPreviewHunk)
-" Open vimagit pane
-nnoremap <leader>gs :Magit<CR>       " git status
+nnoremap <leader>ga :Gitsigns stage_hunk<CR>
+nnoremap <leader>gr :Gitsigns reset_hunk<CR>
+nnoremap <leader>gu :Gitsigns undo_stage_hunk<CR>
+nnoremap <leader>gh :Gitsigns preview_hunk<CR>
+nnoremap <leader>gf :Gitsigns stage_buffer<CR>
+
+" Open neogit pane
+nnoremap <leader>gs :Neogit kind=vsplit<CR>
 
 "diffview
 nnoremap <leader>dv :DiffviewOpen<CR>

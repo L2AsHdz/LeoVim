@@ -53,7 +53,9 @@ wk.register({
     g = {
       name = "Git",
       a = "Stage Hunk",
-      u = "Undo Hunk",
+      u = "Undo Stage Hunk",
+      r = "Reset Hunk",
+      f = "Stage File",
       n = "Next Hunk",
       p = "Prev Hunk",
       s = "Git Status",

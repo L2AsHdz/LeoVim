@@ -53,9 +53,24 @@ Plug 'mhinz/vim-startify'
 
 "IdentLine
 "https://github.com/Yggdroot/indentLine
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 
 "WhichKey
 "Displays a popup with possible key bindings of the command you started typing
 "https://github.com/folke/which-key.nvim
 Plug 'folke/which-key.nvim'
+
+"virt-column
+"Display a character as the colorcolumn
+"https://github.com/lukas-reineke/virt-column.nvim
+Plug 'lukas-reineke/virt-column.nvim'
+
+"vim-illuminate
+"Vim plugin for automatically highlighting other uses of the current word under the cursor
+"https://github.com/RRethy/vim-illuminate
+Plug 'RRethy/vim-illuminate'
+
+"indent-blankline
+"Adds indentation guides to all lines (including empty lines)
+"https://github.com/lukas-reineke/indent-blankline.nvim
+Plug 'lukas-reineke/indent-blankline.nvim'

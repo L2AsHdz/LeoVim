@@ -61,19 +61,19 @@ let g:ale_sign_priority = 15
 let g:incsearch#auto_nohlsearch = 1
 
 " GitGutter
-let g:gitgutter_set_sign_backgrounds = 1
-let g:gitgutter_sign_added = ''
-let g:gitgutter_sign_modified = ''
-let g:gitgutter_sign_removed = ''
-let g:gitgutter_sign_removed_first_line = ''
-let g:gitgutter_sign_modified_removed = ''
-let g:gitgutter_terminal_reports_focus=0
-let g:gitgutter_sign_priority = 12
-highlight SignColumn guibg=bg
+" let g:gitgutter_set_sign_backgrounds = 1
+" let g:gitgutter_sign_added = ''
+" let g:gitgutter_sign_modified = ''
+" let g:gitgutter_sign_removed = ''
+" let g:gitgutter_sign_removed_first_line = ''
+" let g:gitgutter_sign_modified_removed = ''
+" let g:gitgutter_terminal_reports_focus=0
+" let g:gitgutter_sign_priority = 12
+" highlight SignColumn guibg=bg
 
 "Blamer
-let g:blamer_enabled = 1
-let g:blamer_delay = 500
+ let g:blamer_enabled = 1
+ let g:blamer_delay = 750
 
 "git-messenger
 let g:git_messenger_floating_win_opts = { 'border': 'single' }

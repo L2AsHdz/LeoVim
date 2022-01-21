@@ -72,8 +72,8 @@ let g:incsearch#auto_nohlsearch = 1
 " highlight SignColumn guibg=bg
 
 "Blamer
- let g:blamer_enabled = 1
- let g:blamer_delay = 750
+let g:blamer_enabled = 1
+let g:blamer_delay = 750
 
 "git-messenger
 let g:git_messenger_floating_win_opts = { 'border': 'single' }

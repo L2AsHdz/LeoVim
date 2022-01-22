@@ -4,10 +4,6 @@ require('which-key').setup()
 require('whichkey.register')
 require("virt-column").setup()
 
-require('focus').setup({
-    relativenumber = true
-})
-
 vim.cmd [[hi NeogitDiffAddHighlight guifg=#2ecc71]]
 vim.cmd [[hi NeogitDiffDeleteHighlight guifg=#e74c3c]]
 

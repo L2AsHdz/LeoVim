@@ -92,9 +92,6 @@ ln -sv ~/.dotfiles/rc.conf ~/.config/ranger/
 
 mkdir ~/.config/nvim
 # ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/coc/coc.vim ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/coc/coc-settings.json ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/coc/coc-maps.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/plugins.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/settings.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/maps.vim ~/.config/nvim
@@ -110,12 +107,6 @@ ln -sv ~/.dotfiles/nvim/init.lua ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/lua/plugin-config.lua ~/.config/nvim/lua
 ln -sv ~/.dotfiles/nvim/lua/settings.lua ~/.config/nvim/lua
 ln -sv ~/.dotfiles/nvim/lua/lualine/lualine-config.lua ~/.config/nvim/lua/lualine/
-
-#Install coc extensions
-mkdir -p ~/.config/coc/extensions
-cd ~/.config/coc/extensions
-ln -sv ~/.dotfiles/nvim/coc/package.json ~/.config/coc/extensions
-npm i
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

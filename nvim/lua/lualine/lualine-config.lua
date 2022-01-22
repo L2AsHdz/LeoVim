@@ -65,14 +65,14 @@ require('lualine').setup({
     },
     lualine_b = { 'branch', 'diff' },
     lualine_c = {
-      {
-        'diagnostics',
-        sources = { 'ale' },
-        sections = { 'error' },
-        symbols = { error = ' '},
-        diagnostics_color = { error = { fg = colors.white, bg = colors.error } },
-        separator = { right = '' }
-      }
+      -- {
+      --   'diagnostics',
+      --   sources = { 'ale' },
+      --   sections = { 'error' },
+      --   symbols = { error = ' '},
+      --   diagnostics_color = { error = { fg = colors.white, bg = colors.error } },
+      --   separator = { right = '' }
+      -- }
     },
     lualine_x = {},
     lualine_y = { 'filetype', 'filename' },

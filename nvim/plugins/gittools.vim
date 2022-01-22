@@ -1,16 +1,7 @@
-"gitgutter
-"https://github.com/airblade/vim-gitgutter
-" Plug 'airblade/vim-gitgutter'
-
 "gitsigns
 "Super fast git decorations implemented purely in lua/teal
 "https://github.com/lewis6991/gitsigns.nvim
 Plug 'lewis6991/gitsigns.nvim'
-
-"vimagit
-"Ease your git workflow within vim
-"https://github.com/jreybert/vimagit
-" Plug 'jreybert/vimagit'
 
 "neogit
 Plug 'TimUntersberger/neogit'

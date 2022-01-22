@@ -13,11 +13,6 @@ wk.register({
     C = "Jump Char 1",
     l = "Jump Line",
     L = "Jump Line Text",
-    e = {
-      name = "Ale Errors",
-      n = "Next Error",
-      p = "Prev Error"
-    },
     r = {
       name  = "Ranger",
       g = "Open Ranger"
@@ -43,7 +38,6 @@ wk.register({
       b = "Find Open Buffers",
       l = "Find Line",
       g = "Find Text",
-      t = "Find Text Coc",
       G = {
         name = "Git",
         b = "Find Branches",
@@ -69,24 +63,6 @@ wk.register({
       q = "Quit DiffView",
       f = "Toggle DiffViewFiles",
       r = "Refresh DiffView"
-    },
-    c = {
-      name = "Coc",
-      d = "Coc Definition",
-      t = "Coc Type Definition",
-      i = "Coc Implementation",
-      R = "Coc References",
-      r = "Coc Rename",
-      f = "Coc Format Selected",
-      s = "Coc Codeaction Selected",
-      a = "Coc Codeaction",
-      x = "Coc Fix Current",
-      e = "Coc Extensions",
-      c = "Coc Commands",
-      o = "Coc Symbol",
-      O = "Coc Symbols",
-      n = "Coc Next",
-      p = "Coc Prev"
     },
     S = {
       name = "Sessions",

@@ -49,8 +49,8 @@ source ~/.zshrc
 #fnm
 curl -fsSL https://fnm.vercel.app/install | bash
 src
-fnm install 16 --lts
-fnm use 16
+fnm install 14 --lts
+fnm use 14
 node --version
 
 #instalar varios paquetes de pacman
@@ -77,11 +77,16 @@ pacin docker docker-compose
 sudo usermod -aG docker $USER
 
 #neovim
-pacin neovim ranger xsel ripgrep ueberzug the_silver_searcher bat git-delta lua fd
+pacin neovim ranger xsel ripgrep ueberzug the_silver_searcher bat git-delta lua fd ruby
 python -m ensurepip --upgrade
 python -m pip install --upgrade pip
 python3 -m pip install --user --upgrade pynvim
 npmg neovim
+
+export GEM_PATH="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_PATH/bin"
+gem list
+gem update
 
 # Install angular-cli
 npmg @angular/cli
@@ -103,8 +108,10 @@ ln -sv ~/.dotfiles.nvim/plugins/visual.vim ~/.config/nvim
 
 mkdir ~/.config/nvim/lua
 mkdir ~/.config/nvim/lua/lualine
+mkdir ~/.config/nvim/lua/lsp
 ln -sv ~/.dotfiles/nvim/init.lua ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/lua/plugin-config.lua ~/.config/nvim/lua
+ln -sv ~/.dotfiles/nvim/lsp/config ~/.config/nvim/lua/lsp
 ln -sv ~/.dotfiles/nvim/lua/settings.lua ~/.config/nvim/lua
 ln -sv ~/.dotfiles/nvim/lua/lualine/lualine-config.lua ~/.config/nvim/lua/lualine/
 

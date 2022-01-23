@@ -94,16 +94,6 @@ nnoremap <leader>fg :FzfLua live_grep<CR>
 nnoremap <leader>fGb :GBranches<CR>
 nnoremap <leader>fGt :GTags<CR>
 
-"Focus
-nnoremap <C-j> :FocusSplitDown<CR>
-nnoremap <C-k> :FocusSplitUp<CR>
-nnoremap <C-h> :FocusSplitLeft<CR>
-nnoremap <C-l> :FocusSplitRight<CR>
-nnoremap <C-i> :FocusSplitCycle<CR>
-nnoremap <C-o> :FocusSplitNicely<CR>
-nnoremap <C-m> :FocusMaximise<CR>
-nnoremap <c-e> :FocusEqualise<CR>
-
 " faster scrolling
 nnoremap <leader><leader>j 10<C-e>
 nnoremap <leader><leader>k 10<C-y>

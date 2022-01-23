@@ -1,3 +1,4 @@
+require('lsp.config')
 require'hop'.setup()
 require("stabilize").setup()
 require('which-key').setup()

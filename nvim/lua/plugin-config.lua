@@ -16,7 +16,9 @@ require("neogit").setup({
         section = { "", "﬌" },
         item = { "", "﬌" },
         hunk = { "", "" },
-    }
+    },
+    disable_context_highlighting = true,
+    disable_insert_on_commit = false
 })
 
 vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]

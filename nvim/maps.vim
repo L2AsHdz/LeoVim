@@ -12,6 +12,12 @@ nnoremap <silent> <leader>n :nohlsearch<CR>
 :imap ii <Esc>
 :vmap vv <Esc>
 
+"Resize with arrows
+nnoremap <C-A-up> :resize -5<CR>
+nnoremap <C-A-down> :resize +5<CR>
+nnoremap <C-A-left> :vertical resize -5<CR>
+nnoremap <C-A-right> :vertical resize +5<CR>
+
 "Mover linea actual o lineas seleccionadas
 nnoremap <A-down> :m+1<CR>==
 nnoremap <A-up> :m-2<CR>==
@@ -97,10 +103,6 @@ nnoremap <leader>fGt :GTags<CR>
 " faster scrolling
 nnoremap <leader><leader>j 10<C-e>
 nnoremap <leader><leader>k 10<C-y>
-
-" split resize
-nnoremap <leader>, 10<C-w>>
-nnoremap <leader>. 10<C-w><
 
 "Startify
 nnoremap <leader>Ss :SSave<CR>

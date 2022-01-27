@@ -2,6 +2,7 @@ local set = vim.opt
 vim.cmd('syntax on')                    -- Habilita syntax highlight
 set.number = true                       -- Muestra los numeros de las lineas
 set.rnu = true                          -- Numeros de linea relativos
+set.signcolumn = "yes"                  -- Always show the sign column
 set.numberwidth = 1                     -- Numeros de columna mas ajustados
 set.cursorline = true                   -- Resalta la linea actual
 set.title = true                        -- Muestra el nombre del archivo en la ventana de la terminal
@@ -20,7 +21,10 @@ set.clipboard:append('unnamedplus')     -- Habilita el portapapeles en el sistem
 set.formatoptions:remove('cro')         -- Stop newline continution of comment
 set.updatetime = 200                    -- Change updatetime
 set.cmdheight = 1
+set.pumheight = 10                      -- Popup menu height
+set.undofile = true                     -- Enable persistent undo
 set.swapfile = false
+set.completeopt = {"menuone", "noselect"}
 
 
 --Tabulaciones

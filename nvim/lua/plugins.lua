@@ -61,6 +61,8 @@ return packer.startup(function (use)
     use 'psliwka/vim-smoothie'
     use { 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) }
     use 'ibhagwan/fzf-lua'
+    use { 'nvim-telescope/telescope.nvim', config = getConfig('telescope') }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'mhinz/vim-startify'
     use {
         'folke/which-key.nvim',
@@ -97,7 +99,6 @@ return packer.startup(function (use)
     use 'APZelos/blamer.nvim'
     use 'rhysd/git-messenger.vim'
     use 'sindrets/diffview.nvim'
-    use 'stsewd/fzf-checkout.vim'
 
     -- utils
     use 'jiangmiao/auto-pairs'

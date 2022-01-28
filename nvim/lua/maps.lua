@@ -95,14 +95,16 @@ map('n', '<leader>l', ':HopLineStart<CR>')
 map('n', '<leader>L', ':HopLine<CR>')
 
 -- fzf-lua
-map('n', '<leader>ff', ':FzfLua files<CR>')
-map('n', '<leader>fb', ':FzfLua buffers<CR>')
-map('n', '<leader>fl', ':FzfLua lines<CR>')
-map('n', '<leader>fg', ':FzfLua live_grep_native<CR>')
+map('n', '<leader>fF', ':FzfLua files<CR>')
+map('n', '<leader>fB', ':FzfLua buffers<CR>')
+map('n', '<leader>fL', ':FzfLua lines<CR>')
+map('n', '<leader>fG', ':FzfLua live_grep_native<CR>')
 
--- fzf-checkout
-map('n', '<leader>fGb', ':GBranches<CR>')
-map('n', '<leader>fGt', ':GTags<CR>')
+
+map("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
+map('n', '<leader>fv', ':Telescope find_files<CR>')
+map('n', '<leader>fb', ':Telescope buffers<CR>')
+map('n', '<leader>fg', ':Telescope live_grep<CR>')
 
 --  faster scrolling
 map('n', '<leader><leader>j', '10<C-e>')

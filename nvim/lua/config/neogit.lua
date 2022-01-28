@@ -12,6 +12,7 @@ require("neogit").setup({
     },
     disable_context_highlighting = true,
     disable_insert_on_commit = false,
+    disable_commit_confirmation = true,
     mappings = {
         status = {
             ["p"] = "PushPopup",

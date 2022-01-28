@@ -123,6 +123,7 @@ ln -sv ~/.dotfiles/nvim/lua/config/gitsigns.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/nvim-tree.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/bufferline.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/autosave.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/telescope.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/whichkey-register.lua ~/.config/nvim/lua/config
 
 #tlp

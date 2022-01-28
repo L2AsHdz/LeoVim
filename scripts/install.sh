@@ -104,9 +104,14 @@ mkdir ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/init.lua ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/lua/settings.lua ~/.config/nvim/lua
 ln -sv ~/.dotfiles/nvim/lua/plugins.lua ~/.config/nvim/lua
-ln -sv ~/.dotfiles/nvim/lua/config/plugin-config.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/lsp.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/lualine.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/neogit.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/blankline.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/gitsigns.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/nvim-tree.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/bufferline.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/autosave.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/whichkey-register.lua ~/.config/nvim/lua/config
 
 #tlp

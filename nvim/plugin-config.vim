@@ -3,13 +3,7 @@ let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 colorscheme dracula
 
-lua require('config.plugin-config')
-
-"NvimTree
-let g:nvim_tree_quit_on_open = 1
-let g:nvim_tree_indent_markers = 1
-let g:nvim_tree_add_trailing = 1
-let g:nvim_tree_respect_buf_cwd = 1
+lua require('virt-column').setup()
 
 "Ranger config
 " Make Ranger replace netrw and be the file explorer
@@ -77,4 +71,3 @@ let g:startify_custom_header = [
   " \ '    \/__/         \/__/         \/__/                                   \/__/    ',
   " \'  ',
   " \'  ',  
-

@@ -106,6 +106,8 @@ mkdir ~/.config/nvim/lua/config/lsp/settings
 ln -sv ~/.dotfiles/nvim/init.lua ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/lua/settings.lua ~/.config/nvim/lua
 ln -sv ~/.dotfiles/nvim/lua/plugins.lua ~/.config/nvim/lua
+ln -sv ~/.dotfiles/nvim/lua/utils.lua ~/.config/nvim/lua
+ln -sv ~/.dotfiles/nvim/lua/maps.lua ~/.config/nvim/lua
 
 ln -sv ~/.dotfiles/nvim/lua/config/lsp/lsp.lua ~/.config/nvim/lua/config/lsp
 ln -sv ~/.dotfiles/nvim/lua/config/lsp/handlers.lua ~/.config/nvim/lua/config/lsp

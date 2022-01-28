@@ -11,5 +11,11 @@ require("neogit").setup({
         hunk = { "", "" },
     },
     disable_context_highlighting = true,
-    disable_insert_on_commit = false
+    disable_insert_on_commit = false,
+    mappings = {
+        status = {
+            ["p"] = "PushPopup",
+            ["P"] = "PullPopup"
+        }
+    }
 })

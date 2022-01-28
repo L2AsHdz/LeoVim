@@ -101,10 +101,19 @@ ln -sv ~/.dotfiles/nvim/plugin-config.vim ~/.config/nvim
 
 mkdir ~/.config/nvim/lua
 mkdir ~/.config/nvim/lua/config
+mkdir ~/.config/nvim/lua/config/lsp
+mkdir ~/.config/nvim/lua/config/lsp/settings
 ln -sv ~/.dotfiles/nvim/init.lua ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/lua/settings.lua ~/.config/nvim/lua
 ln -sv ~/.dotfiles/nvim/lua/plugins.lua ~/.config/nvim/lua
-ln -sv ~/.dotfiles/nvim/lua/config/lsp.lua ~/.config/nvim/lua/config
+
+ln -sv ~/.dotfiles/nvim/lua/config/lsp/lsp.lua ~/.config/nvim/lua/config/lsp
+ln -sv ~/.dotfiles/nvim/lua/config/lsp/handlers.lua ~/.config/nvim/lua/config/lsp
+ln -sv ~/.dotfiles/nvim/lua/config/lsp/lsp-installer.lua ~/.config/nvim/lua/config/lsp
+ln -sv ~/.dotfiles/nvim/lua/config/lsp/settings/jsonls.lua ~/.config/nvim/lua/config/lsp/settings
+ln -sv ~/.dotfiles/nvim/lua/config/lsp/settings/sumneko_lua.lua ~/.config/nvim/lua/config/lsp/settings
+
+ln -sv ~/.dotfiles/nvim/lua/config/cmp.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/lualine.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/neogit.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/blankline.lua ~/.config/nvim/lua/config

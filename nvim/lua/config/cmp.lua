@@ -1,8 +1,3 @@
-local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
@@ -53,23 +48,16 @@ local kind_icons = {
   TypeParameter = "<>",
 }
 
--- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
-local lspconfig = require('lspconfig')
-
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'tsserver', 'angularls' }
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        -- on_attach = my_custom_on_attach,
-        capabilities = capabilities,
-    }
+local cmp_ok, cmp = pcall(require, 'cmp')
+if not cmp_ok then
+  return
 end
 
-local cmp = require'cmp'
-local luasnip = require('luasnip')
+local snip_status_ok, luasnip = pcall(require, 'luasnip')
+if not snip_status_ok then
+  return
+end
+
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
@@ -123,6 +111,7 @@ cmp.setup({
     },
     sources = {
         { name = 'nvim_lsp' },
+        { name = 'nvim_lua' },
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },
@@ -132,22 +121,3 @@ cmp.setup({
         border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     }
 })
-
-local lsp_installer = require("nvim-lsp-installer")
-
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.on_server_ready(function(server)
-    local opts = {
-        on_attach
-    }
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
-
-    -- This setup() function is exactly the same as lspconfig's setup function.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
-end)
-

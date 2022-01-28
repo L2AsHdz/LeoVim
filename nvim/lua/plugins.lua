@@ -77,14 +77,15 @@ return packer.startup(function (use)
     -- devtools
     use 'mattn/emmet-vim'
     use 'ap/vim-css-color'
-    use { 'neovim/nvim-lspconfig', config = getConfig('lsp') }
+    use { 'neovim/nvim-lspconfig', config = getConfig('lsp.lsp') }
     use 'williamboman/nvim-lsp-installer'
     use {
         'hrsh7th/nvim-cmp',
         requires = {
             {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-cmdline'}, {'hrsh7th/cmp-path'},
-            {'hrsh7th/cmp-buffer'}
-        }
+            {'hrsh7th/cmp-buffer'}, { 'hrsh7th/cmp-nvim-lua' }
+        },
+        config = getConfig('cmp')
     }
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'

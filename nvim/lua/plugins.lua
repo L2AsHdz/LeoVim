@@ -51,19 +51,32 @@ return packer.startup(function (use)
 
     -- visual
     use 'artanikin/vim-synthwave84'
-    use {'dracula/vim', as = 'dracula' }
+    use {
+            'dracula/vim',
+            as = 'dracula',
+            config = function()
+                -- vim.g.tokyonight_style = 'night'
+                -- vim.g.tokyonight_enable_italic = 1
+                vim.cmd [[colorscheme dracula]]
+            end
+        }
     use 'ghifarit53/tokyonight-vim'
     use { 'akinsho/bufferline.nvim', config = getConfig('bufferline'), event = 'BufReadPre' }
     use { 'nvim-lualine/lualine.nvim', config = getConfig('lualine'), event = 'VimEnter' }
     use 'numToStr/FTerm.nvim'
     use { 'kyazdani42/nvim-tree.lua', config = getConfig('nvim-tree') }
-    use 'kevinhwang91/rnvimr'
+    use {
+            'kevinhwang91/rnvimr',
+            config = function ()
+                vim.g.rnvimr_ex_enable = 1
+            end
+        }
     use 'psliwka/vim-smoothie'
     use { 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) }
     use 'ibhagwan/fzf-lua'
     use { 'nvim-telescope/telescope.nvim', config = getConfig('telescope') }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use 'mhinz/vim-startify'
+    use { 'mhinz/vim-startify', config = getConfig('startify') }
     use {
         'folke/which-key.nvim',
         config = function()
@@ -72,12 +85,25 @@ return packer.startup(function (use)
         end,
         event = 'VimEnter'
     }
-    use 'lukas-reineke/virt-column.nvim'
+    use {
+            'lukas-reineke/virt-column.nvim',
+            config = function ()
+                require('virt-column').setup()
+            end,
+            after = 'dracula'
+        }
     use { 'RRethy/vim-illuminate', event = 'CursorHold' }
     use { 'lukas-reineke/indent-blankline.nvim', config = getConfig('blankline'), event = 'BufReadPre' }
 
     -- devtools
-    use 'mattn/emmet-vim'
+    use {
+            'mattn/emmet-vim',
+            config = function ()
+                vim.g.user_emmet_install_global = 0
+                vim.g.user_emmet_leader_key ='<space>'
+                vim.cmd [[autocmd FileType html,css EmmetInstall]]
+            end
+        }
     use 'ap/vim-css-color'
     use { 'neovim/nvim-lspconfig', config = getConfig('lsp.lsp') }
     use 'williamboman/nvim-lsp-installer'
@@ -96,15 +122,34 @@ return packer.startup(function (use)
     -- gittools
     use { 'lewis6991/gitsigns.nvim', config = getConfig('gitsigns'), event = 'BufReadPre' }
     use { 'TimUntersberger/neogit', config = getConfig('neogit') }
-    use 'APZelos/blamer.nvim'
-    use 'rhysd/git-messenger.vim'
+    use {
+            'APZelos/blamer.nvim',
+            config = function ()
+                vim.g.blamer_enabled = 1
+                vim.g.blamer_delay = 750
+            end
+        }
+    use {
+            'rhysd/git-messenger.vim',
+            config = function ()
+                vim.cmd [[
+                    let g:git_messenger_floating_win_opts = { 'border': 'single' }
+                    let g:git_messenger_popup_content_margins = v:false
+                ]]
+            end
+        }
     use 'sindrets/diffview.nvim'
 
     -- utils
     use 'jiangmiao/auto-pairs'
     use 'alvan/vim-closetag'
     use 'tpope/vim-surround'
-    use 'haya14busa/incsearch.vim'
+    use {
+            'haya14busa/incsearch.vim',
+            config = function ()
+                vim.g['incsearch#auto_nohlsearch'] = 1
+            end
+        }
     use 'tpope/vim-commentary'
     use { 'phaazon/hop.nvim', config = getSetup('hop', {}) }
     use 'mhinz/vim-sayonara'

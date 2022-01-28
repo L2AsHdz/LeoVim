@@ -1,8 +1,9 @@
-require('lsp.config')
+require('config.lsp')
+require('config.lualine')
 require'hop'.setup()
 require("stabilize").setup()
 require('which-key').setup()
-require('whichkey.register')
+require('config.whichkey-register')
 require("virt-column").setup()
 
 vim.cmd [[hi NeogitDiffAddHighlight guifg=#2ecc71]]

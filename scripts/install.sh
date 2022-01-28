@@ -96,27 +96,18 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger
 ln -sv ~/.dotfiles/rc.conf ~/.config/ranger/
 
 mkdir ~/.config/nvim
-# ln -sv ~/.dotfiles/nvim/init.vim ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/plugins.vim ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/settings.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/maps.vim ~/.config/nvim
 ln -sv ~/.dotfiles/nvim/plugin-config.vim ~/.config/nvim
-ln -sv ~/.dotfiles.nvim/plugins/utils.vim ~/.config/nvim
-ln -sv ~/.dotfiles.nvim/plugins/gittools.vim ~/.config/nvim
-ln -sv ~/.dotfiles.nvim/plugins/devtools.vim ~/.config/nvim
-ln -sv ~/.dotfiles.nvim/plugins/visual.vim ~/.config/nvim
 
 mkdir ~/.config/nvim/lua
-mkdir ~/.config/nvim/lua/lualine
-mkdir ~/.config/nvim/lua/lsp
+mkdir ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/init.lua ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/lua/plugin-config.lua ~/.config/nvim/lua
-ln -sv ~/.dotfiles/nvim/lsp/config ~/.config/nvim/lua/lsp
 ln -sv ~/.dotfiles/nvim/lua/settings.lua ~/.config/nvim/lua
-ln -sv ~/.dotfiles/nvim/lua/lualine/lualine-config.lua ~/.config/nvim/lua/lualine/
-
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+ln -sv ~/.dotfiles/nvim/lua/plugins.lua ~/.config/nvim/lua
+ln -sv ~/.dotfiles/nvim/lua/config/plugin-config.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/lsp.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/lualine.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/whichkey-register.lua ~/.config/nvim/lua/config
 
 #tlp
 pacin tlp tlp-rdw

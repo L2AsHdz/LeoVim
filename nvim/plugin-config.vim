@@ -3,8 +3,7 @@ let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 colorscheme dracula
 
-lua require('plugin-config')
-lua require('lualine.lualine-config')
+lua require('config.plugin-config')
 
 "NvimTree
 let g:nvim_tree_quit_on_open = 1

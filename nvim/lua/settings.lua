@@ -24,6 +24,8 @@ set.cmdheight = 1
 set.pumheight = 10                      -- Popup menu height
 set.undofile = true                     -- Enable persistent undo
 set.swapfile = false
+-- set.scrolloff = 10
+-- set.sidescrolloff = 10
 set.completeopt = {"menuone", "noselect"}
 
 

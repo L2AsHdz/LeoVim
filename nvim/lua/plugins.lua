@@ -118,6 +118,13 @@ return packer.startup(function (use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = getConfig('treesitter')
+    }
+    use 'p00f/nvim-ts-rainbow'
+    -- use 'romgrk/nvim-treesitter-context' Error al abrir un archivo
 
     -- gittools
     use { 'lewis6991/gitsigns.nvim', config = getConfig('gitsigns'), event = 'BufReadPre' }

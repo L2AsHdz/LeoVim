@@ -124,7 +124,7 @@ return packer.startup(function (use)
         config = getConfig('treesitter')
     }
     use 'p00f/nvim-ts-rainbow'
-    -- use 'romgrk/nvim-treesitter-context' Error al abrir un archivo
+    -- use 'romgrk/nvim-treesitter-context'
 
     -- gittools
     use { 'lewis6991/gitsigns.nvim', config = getConfig('gitsigns'), event = 'BufReadPre' }
@@ -148,7 +148,7 @@ return packer.startup(function (use)
     use 'sindrets/diffview.nvim'
 
     -- utils
-    use 'jiangmiao/auto-pairs'
+    use { 'windwp/nvim-autopairs', config = getConfig('autopairs') }
     use 'alvan/vim-closetag'
     use 'tpope/vim-surround'
     use {

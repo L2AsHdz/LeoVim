@@ -1,8 +1,3 @@
-local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-end
-
 -- gray
 vim.cmd[[highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080]]
 -- blue
@@ -75,8 +70,11 @@ cmp.setup({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         }),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-          
+        ['<CR>'] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true
+        }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -84,8 +82,6 @@ cmp.setup({
                 luasnip.expand_or_jump()
             -- elseif has_words_before() then
             --     cmp.complete()
-            elseif check_backspace() then
-                fallback()
             else
                 fallback()
             end

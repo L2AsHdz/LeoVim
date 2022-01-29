@@ -11,14 +11,14 @@ configs.setup {
     },
     sync_install = false,
     ignore_install = { "" }, -- List of parsers to ignore installing
+    indent = { enable = false },
+    autopairs = { enable = true },
     highlight = {
         enable = true, -- false will disable the whole extension
         disable = { "" }, -- list of language that will be disabled
         additional_vim_regex_highlighting = true,
 
     },
-
-    indent = { enable = true, disable = { "" } },
     rainbow = {
         enable = true,
         -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for

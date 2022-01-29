@@ -157,7 +157,7 @@ return packer.startup(function (use)
                 vim.g['incsearch#auto_nohlsearch'] = 1
             end
         }
-    use 'tpope/vim-commentary'
+    use { 'numToStr/Comment.nvim', config = getSetup('Comment', {})}
     use { 'phaazon/hop.nvim', config = getSetup('hop', {}) }
     use 'mhinz/vim-sayonara'
     use { 'Pocco81/AutoSave.nvim', config = getConfig('autosave') }

@@ -60,10 +60,6 @@ vim.api.nvim_set_keymap('', '/',  '<Plug>(incsearch-forward)', {})
 vim.api.nvim_set_keymap('', '?',  '<Plug>(incsearch-backward)', {})
 vim.api.nvim_set_keymap('', 'g/', '<Plug>(incsearch-stay)', {})
 
--- vim-commentary
-map('n', '<leader><leader>/', ':Commentary<CR>')
-map('v', '<leader><leader>/', ':Commentary<CR>')
-
 -- GitSigns
 --  Jump between hunks
 map('n', '<leader>gn', ':Gitsigns next_hunk<CR>')

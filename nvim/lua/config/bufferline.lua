@@ -8,7 +8,8 @@ require("bufferline").setup{
             highlight = "Directory",
             text_align = "center"
         }
-    }
+    },
+    show_tab_indicators = true
   }
 }
 

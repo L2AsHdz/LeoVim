@@ -4,7 +4,7 @@ vim.g.mapleader = ' '
 -- Keymaps propios
 map('n', '<leader>s', ':w<CR>')
 map('n', '<leader>q', ':q<CR>')
-map('n', '<leader>S', ':wq<CR>')
+map('n', '<leader>W', ':wq<CR>')
 map('n', '<leader>Q', ':q!<CR>')
 map('n', '<leader>bb', ':Sayonara<CR>')
 map('n', '<leader>bo', ':%bd|e#|bd#<CR>')
@@ -85,7 +85,7 @@ map('n', '<leader>dr', ':DiffviewRefresh<CR>')
 --  Hop
 map('n', '<leader>w', ':HopWord<CR>')
 map('n', '<leader>/', ':HopPattern<CR>')
-map('n', '<leader>c', ':HopChar2<CR>')
+map('n', '<leader>cc', ':HopChar2<CR>')
 map('n', '<leader>C', ':HopChar1<CR>')
 map('n', '<leader>l', ':HopLineStart<CR>')
 map('n', '<leader>L', ':HopLine<CR>')

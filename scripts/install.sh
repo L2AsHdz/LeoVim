@@ -77,11 +77,12 @@ pacin docker docker-compose
 sudo usermod -aG docker $USER
 
 #neovim
-pacin neovim ranger xsel ripgrep ueberzug the_silver_searcher bat git-delta lua fd ruby
+pacin neovim ranger xsel ripgrep ueberzug the_silver_searcher bat git-delta lua fd ruby cppcheck vint
+yain uncrustify stylua shfmt luacheck
 python -m ensurepip --upgrade
 python -m pip install --upgrade pip
 python3 -m pip install --user --upgrade pynvim
-npmg neovim
+npmg neovim @fsouza/prettierd eslint_d
 
 export GEM_PATH="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_PATH/bin"
@@ -118,6 +119,7 @@ ln -sv ~/.dotfiles/nvim/lua/config/lsp/settings/sumneko_lua.lua ~/.config/nvim/l
 
 ln -sv ~/.dotfiles/nvim/lua/config/cmp.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/treesitter.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/null-ls.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/lualine.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/neogit.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/blankline.lua ~/.config/nvim/lua/config

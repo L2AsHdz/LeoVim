@@ -10,8 +10,8 @@ vim.g.nvim_tree_icons = {
         staged = "✓",
         unmerged = "",
         renamed = "➜",
-        deleted = "",
-        untracked = "ﱵ",
+        deleted = "",
+        untracked = "✗",
         ignored = "◌",
     },
     folder = {

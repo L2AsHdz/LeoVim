@@ -68,20 +68,27 @@ use('ryanoasis/vim-devicons')
 use({ 'kyazdani42/nvim-web-devicons', config = getSetup('nvim-web-devicons', { default = true }) })
 
 -- visual
--- use 'artanikin/vim-synthwave84'
 use({
-    'dracula/vim',
-    as = 'dracula',
+    -- 'sainnhe/everforest',
+    -- 'ghifarit53/tokyonight-vim'
+    -- 'frenzyexists/aquarium-vim'
+    -- "catppuccin/nvim",
+    -- as = "catppuccin"
+    -- 'dracula/vim',
+    -- as = "dracula",
+    'rose-pine/neovim',
+    as = 'rose-pine',
     config = function()
-        -- vim.g.tokyonight_style = 'night'
-        -- vim.g.tokyonight_enable_italic = 1
-        vim.cmd([[colorscheme dracula]])
-    end,
+        -- vim.g.everforest_background = 'hard'
+        -- vim.g.everforest_sign_column_background = 'none'
+        vim.g.rose_pine_variant = 'moon'
+        vim.g.rose_pine_disable_italics = true
+        vim.cmd([[colorscheme rose-pine]])
+    end
 })
--- use 'ghifarit53/tokyonight-vim'
 use({ 'akinsho/bufferline.nvim', config = getConfig('bufferline') })
 use({ 'nvim-lualine/lualine.nvim', config = getConfig('lualine') })
-use('numToStr/FTerm.nvim')
+use({ 'akinsho/toggleterm.nvim', config = getConfig('term') })
 use({ 'kyazdani42/nvim-tree.lua', config = getConfig('nvim-tree') })
 use({
     'kevinhwang91/rnvimr',
@@ -107,7 +114,7 @@ use({
     config = function()
         require('virt-column').setup()
     end,
-    after = 'dracula',
+    after = 'rose-pine'
 })
 use('RRethy/vim-illuminate')
 use({ 'lukas-reineke/indent-blankline.nvim', config = getConfig('blankline') })

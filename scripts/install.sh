@@ -130,6 +130,7 @@ ln -sv ~/.dotfiles/nvim/lua/config/autosave.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/telescope.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/startify.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/autopairs.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/term.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/whichkey-register.lua ~/.config/nvim/lua/config
 
 #tlp

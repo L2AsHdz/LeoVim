@@ -8,7 +8,7 @@ map('n', '<leader>W', ':wq<CR>')
 map('n', '<leader>Q', ':q!<CR>')
 map('n', '<leader>bb', ':Sayonara<CR>')
 map('n', '<leader>bo', ':%bd|e#|bd#<CR>')
-map('n', '<leader>n', ':noh<CR>', {silent = true})
+map('n', '<leader>n', ':noh<CR>')
 map('i', 'ii', '<ESC>')
 map('v', 'ii', '<ESC>')
 

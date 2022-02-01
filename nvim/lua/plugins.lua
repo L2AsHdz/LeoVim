@@ -86,6 +86,7 @@ use({
         vim.cmd([[colorscheme rose-pine]])
     end
 })
+use({ 'rcarriga/nvim-notify', config = getConfig('notify') })
 use({ 'akinsho/bufferline.nvim', config = getConfig('bufferline') })
 use({ 'nvim-lualine/lualine.nvim', config = getConfig('lualine') })
 use({ 'akinsho/toggleterm.nvim', config = getConfig('term') })
@@ -98,10 +99,14 @@ use({
 })
 use('psliwka/vim-smoothie')
 use({ 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) })
-use('ibhagwan/fzf-lua')
+-- use('ibhagwan/fzf-lua')
+-- use({'ahmedkhalf/project.nvim', config = getConfig('project')})
 use({ 'nvim-telescope/telescope.nvim', config = getConfig('telescope') })
 use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
-use({ 'mhinz/vim-startify', config = getConfig('startify') })
+use({'goolord/alpha-nvim', config = getConfig('alpha')})
+use({'antoinemadec/FixCursorHold.nvim'})
+use({ 'Shatur/neovim-session-manager', config = getConfig('session')})
+use({'stevearc/dressing.nvim', config = getConfig('dressing')})
 use({
     'folke/which-key.nvim',
     config = function()
@@ -192,7 +197,7 @@ use({ 'Pocco81/AutoSave.nvim', config = getConfig('autosave') })
 use('farmergreg/vim-lastplace')
 use('dstein64/vim-startuptime')
 use({ 'mg979/vim-visual-multi', branch = 'master' })
-use('christoomey/vim-tmux-navigator')
+use({'numToStr/Navigator.nvim', config = getSetup('Navigator', {})})
 
 if packer_bootstrap then
     require('packer').sync()

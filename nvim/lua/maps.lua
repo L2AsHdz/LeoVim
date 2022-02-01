@@ -38,14 +38,19 @@ map('i', '<C-S-up>', '<Esc>:t-1<CR>==a')
 map('v', '<C-S-down>', ":t '>+0<CR>gv=gv")
 map('v', '<C-S-up>', ":t '<-1<CR>gv=gv")
 
+-- Navigator
+map('n', '<C-h>', '<CMD>lua require("Navigator").left()<CR>')
+map('n', '<C-k>', '<CMD>lua require("Navigator").up()<CR>')
+map('n', '<C-j>', '<CMD>lua require("Navigator").down()<CR>')
+map('n', '<C-l>', '<CMD>lua require("Navigator").right()<CR>')
+map('n', '<C-p>', '<CMD>lua require("Navigator").previous()<CR>')
+
 -- Bufferline
 map('n', '<leader>k', ':BufferLineCycleNext<CR>')
 map('n', '<leader>j', ':BufferLineCyclePrev<CR>')
 map('n', '<leader>mk', ':BufferLineMoveNext<CR>')
 map('n', '<leader>mj', ':BufferLineMovePrev<CR>')
 map('n', '<leader>p', ':BufferLinePick<CR>')
-
-map('n', '<leader>t', ':lua require("FTerm").toggle()<CR>')
 
 -- nvim-tree
 map('n', '<leader>nt', ':NvimTreeToggle<CR>')
@@ -91,22 +96,23 @@ map('n', '<leader>l', ':HopLineStart<CR>')
 map('n', '<leader>L', ':HopLine<CR>')
 
 -- fzf-lua
-map('n', '<leader>fF', ':FzfLua files<CR>')
-map('n', '<leader>fB', ':FzfLua buffers<CR>')
-map('n', '<leader>fL', ':FzfLua lines<CR>')
-map('n', '<leader>fG', ':FzfLua live_grep_native<CR>')
+-- map('n', '<leader>fF', ':FzfLua files<CR>')
+-- map('n', '<leader>fB', ':FzfLua buffers<CR>')
+-- map('n', '<leader>fL', ':FzfLua lines<CR>')
+-- map('n', '<leader>fG', ':FzfLua live_grep_native<CR>')
 
 
 map("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
 map('n', '<leader>fv', ':Telescope find_files<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fg', ':Telescope live_grep<CR>')
+map('n', '<leader>fi', ':Telescope builtin<CR>')
 
 --  faster scrolling
 map('n', '<leader><leader>j', '10<C-e>')
 map('n', '<leader><leader>k', '10<C-y>')
 
--- Startify
-map('n', '<leader>Ss', ':SSave<CR>')
-map('n', '<leader>Sc', ':SClose<CR>')
-map('n', '<leader>Sd', ':SDelete<CR>')
+-- Alpha
+map('n', '<leader>Ss', ':SessionManager save_current_session<CR>')
+map('n', '<leader>Sl', ':SessionManager load_session<CR>')
+map('n', '<leader>Sd', ':SessionManager delete_session<CR>')

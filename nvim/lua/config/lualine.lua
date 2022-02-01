@@ -56,6 +56,7 @@ require('lualine').setup({
         theme = bubbles_theme,
         component_separators = '',
         section_separators = { left = '', right = '' },
+        disabled_filetypes = { "alpha", "dashboard", "Outline" },
     },
     sections = {
         lualine_a = {

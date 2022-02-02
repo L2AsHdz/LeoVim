@@ -136,7 +136,7 @@ ln -sv ~/.dotfiles/nvim/lua/config/alpha.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/session.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/notify.lua ~/.config/nvim/lua/config
 ln -sv ~/.dotfiles/nvim/lua/config/dressing.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/whichkey-register.lua ~/.config/nvim/lua/config
+ln -sv ~/.dotfiles/nvim/lua/config/whichkey.lua ~/.config/nvim/lua/config
 
 #tlp
 pacin tlp tlp-rdw

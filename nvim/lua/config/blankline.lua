@@ -43,15 +43,16 @@ vim.g.indent_blankline_context_patterns = {
     'import_statement',
     'operation_type',
 }
-vim.wo.colorcolumn = '99999'
 
-vim.cmd([[highlight IndentBlanklineIndent1 guifg=#c23616 gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent2 guifg=#44bd32 gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent3 guifg=#e1b12c gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent4 guifg=#9c88ff gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent5 guifg=#00a8ff gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent6 guifg=#ff6b81 gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent7 guifg=#ffa502 gui=nocombine]])
+vim.cmd([[
+    highlight IndentBlanklineIndent1 guifg=#c23616 gui=nocombine
+    highlight IndentBlanklineIndent2 guifg=#44bd32 gui=nocombine
+    highlight IndentBlanklineIndent3 guifg=#e1b12c gui=nocombine
+    highlight IndentBlanklineIndent4 guifg=#9c88ff gui=nocombine
+    highlight IndentBlanklineIndent5 guifg=#00a8ff gui=nocombine
+    highlight IndentBlanklineIndent6 guifg=#ff6b81 gui=nocombine
+    highlight IndentBlanklineIndent7 guifg=#ffa502 gui=nocombine
+]])
 
 vim.g.indent_blankline_context_highlight_list = {
     'IndentBlanklineIndent1',

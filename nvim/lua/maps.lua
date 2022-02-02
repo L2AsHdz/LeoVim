@@ -2,11 +2,12 @@ local map = require('utils').map
 vim.g.mapleader = ' '
 
 -- Keymaps propios
-map('n', '<leader>s', ':w<CR>')
+map('n', '<leader>w', ':w<CR>')
 map('n', '<leader>q', ':q<CR>')
 map('n', '<leader>W', ':wq<CR>')
 map('n', '<leader>Q', ':q!<CR>')
-map('n', '<leader>bb', ':Sayonara<CR>')
+-- map('n', '<leader>bb', ':Sayonara<CR>')
+map('n', '<leader>bb', ':bp<bar>sp<bar>bn<bar>bd<CR>')
 map('n', '<leader>bo', ':%bd|e#|bd#<CR>')
 map('n', '<leader>n', ':noh<CR>')
 map('i', 'ii', '<ESC>')
@@ -76,6 +77,7 @@ map('n', '<leader>gr', ':Gitsigns reset_hunk<CR>')
 map('n', '<leader>gu', ':Gitsigns undo_stage_hunk<CR>')
 map('n', '<leader>gh', ':Gitsigns preview_hunk<CR>')
 map('n', '<leader>gf', ':Gitsigns stage_buffer<CR>')
+map('n', '<leader>gR', ':Gitsigns refresh<CR>')
 
 --  Open neogit pane
 map('n', '<leader>gs', ':Neogit kind=vsplit<CR>')
@@ -88,20 +90,14 @@ map('n', '<leader>df', ':DiffviewToggleFiles<CR>')
 map('n', '<leader>dr', ':DiffviewRefresh<CR>')
 
 --  Hop
-map('n', '<leader>w', ':HopWord<CR>')
+map('n', '<leader>hw', ':HopWord<CR>')
 map('n', '<leader>/', ':HopPattern<CR>')
-map('n', '<leader>cc', ':HopChar2<CR>')
-map('n', '<leader>C', ':HopChar1<CR>')
-map('n', '<leader>l', ':HopLineStart<CR>')
-map('n', '<leader>L', ':HopLine<CR>')
+map('n', '<leader>hc', ':HopChar2<CR>')
+map('n', '<leader>hC', ':HopChar1<CR>')
+map('n', '<leader>hl', ':HopLineStart<CR>')
+map('n', '<leader>hL', ':HopLine<CR>')
 
--- fzf-lua
--- map('n', '<leader>fF', ':FzfLua files<CR>')
--- map('n', '<leader>fB', ':FzfLua buffers<CR>')
--- map('n', '<leader>fL', ':FzfLua lines<CR>')
--- map('n', '<leader>fG', ':FzfLua live_grep_native<CR>')
-
-
+-- Telescope
 map("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
 map('n', '<leader>fv', ':Telescope find_files<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
@@ -112,7 +108,7 @@ map('n', '<leader>fi', ':Telescope builtin<CR>')
 map('n', '<leader><leader>j', '10<C-e>')
 map('n', '<leader><leader>k', '10<C-y>')
 
--- Alpha
-map('n', '<leader>Ss', ':SessionManager save_current_session<CR>')
-map('n', '<leader>Sl', ':SessionManager load_session<CR>')
-map('n', '<leader>Sd', ':SessionManager delete_session<CR>')
+-- SessionManager
+map('n', '<leader>ss', ':SessionManager save_current_session<CR>')
+map('n', '<leader>sl', ':SessionManager load_session<CR>')
+map('n', '<leader>sd', ':SessionManager delete_session<CR>')

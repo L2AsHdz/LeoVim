@@ -53,18 +53,12 @@ packer.init({
 local use = packer.use
 packer.reset()
 
-use({
-    'lewis6991/impatient.nvim',
-    config = function()
-        require('impatient').enable_profile()
-    end,
-})
+use({ 'lewis6991/impatient.nvim' })
 require('packer_compiled')
 use('wbthomason/packer.nvim')
 
 use('nvim-lua/plenary.nvim')
 use('nvim-lua/popup.nvim')
-use('ryanoasis/vim-devicons')
 use({ 'kyazdani42/nvim-web-devicons', config = getSetup('nvim-web-devicons', { default = true }) })
 
 -- visual
@@ -97,43 +91,28 @@ use({
         vim.g.rnvimr_ex_enable = 1
     end,
 })
-use('psliwka/vim-smoothie')
-use({ 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) })
--- use('ibhagwan/fzf-lua')
--- use({'ahmedkhalf/project.nvim', config = getConfig('project')})
+use({ 'karb94/neoscroll.nvim', config = getSetup('neoscroll', {}) })
+-- use({ 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) })
 use({ 'nvim-telescope/telescope.nvim', config = getConfig('telescope') })
 use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 use({'goolord/alpha-nvim', config = getConfig('alpha')})
 use({'antoinemadec/FixCursorHold.nvim'})
 use({ 'Shatur/neovim-session-manager', config = getConfig('session')})
 use({'stevearc/dressing.nvim', config = getConfig('dressing')})
-use({
-    'folke/which-key.nvim',
-    config = function()
-        getSetup('which-key', {})
-        getConfig('whichkey-register')
-    end,
-})
+use({ 'folke/which-key.nvim', config = getConfig('whichkey') })
 use({
     'lukas-reineke/virt-column.nvim',
-    config = function()
-        require('virt-column').setup()
+    config = function ()
+        getSetup('virt-column', {})
+        vim.cmd([[highlight VirtColumn guifg=#353b48]])
     end,
     after = 'rose-pine'
 })
 use('RRethy/vim-illuminate')
 use({ 'lukas-reineke/indent-blankline.nvim', config = getConfig('blankline') })
+use({'norcalli/nvim-colorizer.lua', config = getSetup('colorizer', {})})
 
 -- devtools
-use({
-    'mattn/emmet-vim',
-    config = function()
-        vim.g.user_emmet_install_global = 0
-        vim.g.user_emmet_leader_key = '<space>'
-        vim.cmd([[autocmd FileType html,css EmmetInstall]])
-    end,
-})
-use('ap/vim-css-color')
 use({ 'neovim/nvim-lspconfig', config = getConfig('lsp.lsp') })
 use('williamboman/nvim-lsp-installer')
 use({
@@ -183,7 +162,9 @@ use('sindrets/diffview.nvim')
 -- utils
 use({ 'windwp/nvim-autopairs', config = getConfig('autopairs') })
 use('alvan/vim-closetag')
-use('tpope/vim-surround')
+-- use('tpope/vim-surround')
+use({'blackCauldron7/surround.nvim', config = getSetup('surround', { mappings_style = 'surround' })})
+use('andymass/vim-matchup')
 use({
     'haya14busa/incsearch.vim',
     config = function()
@@ -192,9 +173,9 @@ use({
 })
 use({ 'numToStr/Comment.nvim', config = getSetup('Comment', {}) })
 use({ 'phaazon/hop.nvim', config = getSetup('hop', {}) })
-use('mhinz/vim-sayonara')
+-- use('mhinz/vim-sayonara')
 use({ 'Pocco81/AutoSave.nvim', config = getConfig('autosave') })
-use('farmergreg/vim-lastplace')
+use({ 'ethanholz/nvim-lastplace', config = getSetup('nvim-lastplace', {}) })
 use('dstein64/vim-startuptime')
 use({ 'mg979/vim-visual-multi', branch = 'master' })
 use({'numToStr/Navigator.nvim', config = getSetup('Navigator', {})})

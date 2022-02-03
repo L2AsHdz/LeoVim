@@ -6,12 +6,13 @@ map('n', '<leader>w', ':w<CR>')
 map('n', '<leader>q', ':q<CR>')
 map('n', '<leader>W', ':wq<CR>')
 map('n', '<leader>Q', ':q!<CR>')
--- map('n', '<leader>bb', ':Sayonara<CR>')
-map('n', '<leader>bb', ':bp<bar>sp<bar>bn<bar>bd<CR>')
+map('n', '<leader>bb', ':Sayonara<CR>')
 map('n', '<leader>bo', ':%bd|e#|bd#<CR>')
 map('n', '<leader>n', ':noh<CR>')
 map('i', 'ii', '<ESC>')
 map('v', 'ii', '<ESC>')
+
+map('n', ':', '<cmd>FineCmdline<CR>')
 
 -- Resize with arrows
 map('n', '<C-A-up>',  ':resize -5<CR>')
@@ -57,6 +58,10 @@ map('n', '<leader>p', ':BufferLinePick<CR>')
 map('n', '<leader>nt', ':NvimTreeToggle<CR>')
 map('n', '<leader>nr', ':NvimTreeRefresh<CR>')
 map('n', '<leader>nf', ':NvimTreeFindFile<CR>')
+
+map('n', '<leader>ll', ':SidebarNvimToggle<CR>')
+map('n', '<leader>lu', ':SidebarNvimUpdate<CR>')
+map('n', '<leader>lf', ':SidebarNvimFocus<CR>')
 
 -- Ranger
 map('n', '<leader>rg', ':RnvimrToggle<CR>')

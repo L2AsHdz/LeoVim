@@ -83,6 +83,8 @@ use({
 use({ 'rcarriga/nvim-notify', config = getConfig('notify') })
 use({ 'akinsho/bufferline.nvim', config = getConfig('bufferline') })
 use({ 'nvim-lualine/lualine.nvim', config = getConfig('lualine') })
+use({ 'sidebar-nvim/sidebar.nvim', config = getConfig('sidebar') })
+use({ 'SmiteshP/nvim-gps', getSetup('nvim-gps', {})})
 use({ 'akinsho/toggleterm.nvim', config = getConfig('term') })
 use({ 'kyazdani42/nvim-tree.lua', config = getConfig('nvim-tree') })
 use({
@@ -111,10 +113,18 @@ use({
 use('RRethy/vim-illuminate')
 use({ 'lukas-reineke/indent-blankline.nvim', config = getConfig('blankline') })
 use({'norcalli/nvim-colorizer.lua', config = getSetup('colorizer', {})})
+use {
+    'VonHeikemen/fine-cmdline.nvim',
+    config = getSetup('fine-cmdline', {cmdline = { prompt = '濫' }, popup = { position = { row = '90%' } } }),
+    requires = {
+        {'MunifTanjim/nui.nvim'}
+    }
+}
 
 -- devtools
 use({ 'neovim/nvim-lspconfig', config = getConfig('lsp.lsp') })
 use('williamboman/nvim-lsp-installer')
+use({ 'folke/trouble.nvim', config = getSetup('trouble', {}) })
 use({
     'hrsh7th/nvim-cmp',
     requires = {
@@ -173,7 +183,7 @@ use({
 })
 use({ 'numToStr/Comment.nvim', config = getSetup('Comment', {}) })
 use({ 'phaazon/hop.nvim', config = getSetup('hop', {}) })
--- use('mhinz/vim-sayonara')
+use('mhinz/vim-sayonara')
 use({ 'Pocco81/AutoSave.nvim', config = getConfig('autosave') })
 use({ 'ethanholz/nvim-lastplace', config = getSetup('nvim-lastplace', {}) })
 use('dstein64/vim-startuptime')

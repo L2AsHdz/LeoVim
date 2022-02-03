@@ -33,6 +33,7 @@ which.register({
         r = {
             name = 'more',
             g = 'Open Ranger',
+            n = 'Lsp Rename'
         },
         g = {
             name = 'Git',
@@ -80,7 +81,15 @@ which.register({
             name = 'LSP',
             a = 'CodeAction',
             f = 'Format Code',
-            d = 'Code Diagnostics'
+            d = 'Code Diagnostics',
+            D = 'Document Diagnostics',
+            w = 'Workspace Diagnostics'
+        },
+        l = {
+            name = 'SideBar',
+            l = 'Open SideBar',
+            u = 'Update SideBar',
+            f = 'Focus SideBar'
         }
     },
 })

@@ -1,8 +1,13 @@
--- Bubbles config for lualine
--- Author: lokesh-krishna
--- MIT license, see LICENSE for more details.
+local ok_l, lualine = pcall(require, 'lualine')
+if not ok_l then
+    return
+end
 
--- stylua: ignore
+local ok_g, gps = pcall(require, 'nvim-gps')
+if not ok_g then
+    return
+end
+
 local colors = {
   black         = '#090D1B',
   white         = '#FBFBFE',
@@ -51,7 +56,7 @@ local filename = {
     }
 }
 
-require('lualine').setup({
+lualine.setup({
     options = {
         theme = bubbles_theme,
         component_separators = '',
@@ -83,8 +88,9 @@ require('lualine').setup({
                 end,
             },
         },
-        lualine_b = { filetype, filename, 'diff' },
+        lualine_b = { filetype, filename },
         lualine_c = {
+            { gps.get_location, cond = gps.is_available }
             -- {
             --   'diagnostics',
             --   sources = { 'ale' },
@@ -95,7 +101,7 @@ require('lualine').setup({
             -- }
         },
         lualine_x = {},
-        lualine_y = { 'branch' },
+        lualine_y = { 'diff', 'branch' },
         lualine_z = {
             { 'location', separator = { right = '' }, left_padding = 2 },
         },

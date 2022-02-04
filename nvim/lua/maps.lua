@@ -12,7 +12,7 @@ map('n', '<leader>n', ':noh<CR>')
 map('i', 'ii', '<ESC>')
 map('v', 'ii', '<ESC>')
 
-map('n', ':', '<cmd>FineCmdline<CR>')
+map('n', ';', '<cmd>FineCmdline<CR>')
 
 -- Resize with arrows
 map('n', '<C-A-up>',  ':resize -5<CR>')

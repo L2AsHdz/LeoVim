@@ -64,6 +64,8 @@ use({ 'kyazdani42/nvim-web-devicons', config = getSetup('nvim-web-devicons', { d
 -- visual
 use({
     -- 'sainnhe/everforest',
+    --  'marko-cerovac/material.nvim'
+    --  'navarasu/onedark.nvim'
     -- 'ghifarit53/tokyonight-vim'
     -- 'frenzyexists/aquarium-vim'
     -- "catppuccin/nvim",
@@ -77,7 +79,10 @@ use({
         -- vim.g.everforest_sign_column_background = 'none'
         vim.g.rose_pine_variant = 'moon'
         vim.g.rose_pine_disable_italics = true
-        vim.cmd([[colorscheme rose-pine]])
+        vim.cmd([[
+            colorscheme rose-pine
+            hi CursorLine guibg=#44415a
+        ]])
     end
 })
 use({ 'rcarriga/nvim-notify', config = getConfig('notify') })
@@ -188,7 +193,10 @@ use({ 'Pocco81/AutoSave.nvim', config = getConfig('autosave') })
 use({ 'ethanholz/nvim-lastplace', config = getSetup('nvim-lastplace', {}) })
 use('dstein64/vim-startuptime')
 use({ 'mg979/vim-visual-multi', branch = 'master' })
-use({'numToStr/Navigator.nvim', config = getSetup('Navigator', {})})
+use({ 'numToStr/Navigator.nvim', config = getSetup('Navigator', {})})
+use({ 'AckslD/nvim-neoclip.lua', config = getSetup('neoclip', {}) })
+-- use('mbbill/undotree')
+use('nathom/filetype.nvim')
 
 if packer_bootstrap then
     require('packer').sync()

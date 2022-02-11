@@ -18,7 +18,7 @@ null_ls.setup({
 
         diagnostics.cppcheck,
         -- diagnostics.luacheck,
-        diagnostics.eslint_d,
+        -- diagnostics.eslint_d,
         diagnostics.vint,
 
         code_actions.eslint_d,

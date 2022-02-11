@@ -27,6 +27,7 @@ vim.g.nvim_tree_icons = {
 }
 
 require('nvim-tree').setup({
+    auto_reload_on_write = false,
     update_focused_file = {
         enable = true,
         update_cwd = false,

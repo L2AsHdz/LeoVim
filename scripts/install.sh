@@ -1,5 +1,3 @@
-#kite
-
 #Solucionar problema con la hora
 sudo timedatectl set-local-rtc 1
 
@@ -19,7 +17,6 @@ ln -sv ~/.dotfiles/.gitconfig ~
 mkdir ~/.ssh
 sudo chmod 755 ~/.ssh
 ln -sv ~/.dotfiles/.ssh/id_ed25519.pub ~/.ssh
-sudo chmod 600 ~/.ssh/id_ed25519
 sudo chmod 600 ~/.ssh/id_ed25519.pub
 ssh -T git@github.com
 
@@ -43,6 +40,7 @@ ln -sv ~/.dotfiles/.zshrc ~
 ln -sv ~/.dotfiles/.zsh_history ~
 chsh -s $(which zsh)
 
+~/.dotfiles/scripts/installPluginsZsh.sh
 zsh
 source ~/.zshrc
 
@@ -53,12 +51,19 @@ fnm install 14 --lts
 fnm use 14
 node --version
 
+#qtile configuration
+ln -sv ~/.dotfiles/qtile/config.py ~/.config/qtile
+ln -sv ~/.dotfiles/qtile/autostart.sh ~/.config/qtile
+
+#alacritty
+ln -sv ~/.dotfiles/alacritty.yml ~/.config/alacritty
+
 #instalar varios paquetes de pacman
-pacin neofetch jdk-openjdk vlc pacman-contrib gnome-keyring libsecret flameshot uget aria2 tldr speedtest-cli telegram-desktop exa docker docker-compose mesa-utils pulseaudio-equalizer-ladspa
+pacin neofetch jdk-openjdk vlc pacman-contrib gnome-keyring libsecret flameshot uget aria2 tldr speedtest-cli telegram-desktop exa docker docker-compose mesa-utils pulseaudio-equalizer-ladspa mysql-workbench
 pacin unrar zip unzip p7zip lzip arj sharutils lzop unace lrzip xz cabextract lha lz4 gzip bzip2 libreoffice
 
 #fuentes
-yain nerd-fonts-monoid nerd-fonts-inconsolata-go nerd-fonts-mononoki nerd-fonts-fira-code nerd-fonts-space-mono nerd-fonts-overpass nerd-fonts-go-mono otf-nerd-fonts-fira-mono nerd-fonts-inconsolata
+yain nerd-fonts-monoid nerd-fonts-inconsolata-go nerd-fonts-mononoki nerd-fonts-fira-code nerd-fonts-space-mono nerd-fonts-overpass nerd-fonts-go-mono otf-nerd-fonts-fira-mono nerd-fonts-inconsolata nerd-fonts-jetbrains-mono
 
 #instalar varios paquetes de yay
 yain visual-studio-code-bin brave-bin google-chrome jetbrains-toolbox jdownloader2 spotify knemo downgrade
@@ -75,6 +80,12 @@ sudo mysql_secure_installation
 #docker and docker-compose
 pacin docker docker-compose
 sudo usermod -aG docker $USER
+
+#virtualbox
+pacin virtualbox virtualbox-guest-iso
+sudo gpasswd -a $USER vboxusers
+sudo modprobe vboxdrv
+yain virtualbox-ext-oracle
 
 #neovim
 pacin neovim ranger xsel ripgrep ueberzug the_silver_searcher bat git-delta lua fd ruby cppcheck vint
@@ -97,47 +108,49 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger
 ln -sv ~/.dotfiles/rc.conf ~/.config/ranger/
 
 mkdir ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/maps.vim ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/plugin-config.vim ~/.config/nvim
+nvimcfg=~/.config/nvim
+nvimdot=~/.dotfiles/nvim
+ln -sv $nvimdot/maps.vim $nvimcfg
+ln -sv $nvimdot/plugin-config.vim $nvimcfg
 
-mkdir ~/.config/nvim/lua
-mkdir ~/.config/nvim/lua/config
-mkdir ~/.config/nvim/lua/config/lsp
-mkdir ~/.config/nvim/lua/config/lsp/settings
-ln -sv ~/.dotfiles/nvim/init.lua ~/.config/nvim
-ln -sv ~/.dotfiles/nvim/lua/settings.lua ~/.config/nvim/lua
-ln -sv ~/.dotfiles/nvim/lua/plugins.lua ~/.config/nvim/lua
-ln -sv ~/.dotfiles/nvim/lua/utils.lua ~/.config/nvim/lua
-ln -sv ~/.dotfiles/nvim/lua/maps.lua ~/.config/nvim/lua
-ln -sv ~/.dotfiles/nvim/lua/autocommands.lua ~/.config/nvim/lua
+mkdir $nvimcfg/lua
+mkdir $nvimcfg/lua/config
+mkdir $nvimcfg/lua/config/lsp
+mkdir $nvimcfg/lua/config/lsp/settings
+ln -sv $nvimdot/init.lua $nvimcfg
+ln -sv $nvimdot/lua/settings.lua $nvimcfg/lua
+ln -sv $nvimdot/lua/plugins.lua $nvimcfg/lua
+ln -sv $nvimdot/lua/utils.lua $nvimcfg/lua
+ln -sv $nvimdot/lua/maps.lua $nvimcfg/lua
+ln -sv $nvimdot/lua/autocommands.lua $nvimcfg/lua
 
-ln -sv ~/.dotfiles/nvim/lua/config/lsp/lsp.lua ~/.config/nvim/lua/config/lsp
-ln -sv ~/.dotfiles/nvim/lua/config/lsp/handlers.lua ~/.config/nvim/lua/config/lsp
-ln -sv ~/.dotfiles/nvim/lua/config/lsp/lsp-installer.lua ~/.config/nvim/lua/config/lsp
-ln -sv ~/.dotfiles/nvim/lua/config/lsp/settings/jsonls.lua ~/.config/nvim/lua/config/lsp/settings
-ln -sv ~/.dotfiles/nvim/lua/config/lsp/settings/sumneko_lua.lua ~/.config/nvim/lua/config/lsp/settings
+ln -sv $nvimdot/lua/config/lsp/lsp.lua $nvimcfg/lua/config/lsp
+ln -sv $nvimdot/lua/config/lsp/handlers.lua $nvimcfg/lua/config/lsp
+ln -sv $nvimdot/lua/config/lsp/lsp-installer.lua $nvimcfg/lua/config/lsp
+ln -sv $nvimdot/lua/config/lsp/settings/jsonls.lua $nvimcfg/lua/config/lsp/settings
+ln -sv $nvimdot/lua/config/lsp/settings/sumneko_lua.lua $nvimcfg/lua/config/lsp/settings
 
-ln -sv ~/.dotfiles/nvim/lua/config/cmp.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/treesitter.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/null-ls.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/lualine.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/neogit.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/blankline.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/gitsigns.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/nvim-tree.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/sidebar.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/bufferline.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/autosave.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/telescope.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/startify.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/autopairs.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/term.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/project.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/alpha.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/session.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/notify.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/dressing.lua ~/.config/nvim/lua/config
-ln -sv ~/.dotfiles/nvim/lua/config/whichkey.lua ~/.config/nvim/lua/config
+ln -sv $nvimdot/lua/config/cmp.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/treesitter.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/null-ls.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/lualine.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/neogit.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/blankline.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/gitsigns.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/nvim-tree.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/sidebar.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/bufferline.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/autosave.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/telescope.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/startify.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/autopairs.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/term.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/project.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/alpha.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/session.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/notify.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/dressing.lua $nvimcfg/lua/config
+ln -sv $nvimdot/lua/config/whichkey.lua $nvimcfg/lua/config
 
 #tlp
 pacin tlp tlp-rdw

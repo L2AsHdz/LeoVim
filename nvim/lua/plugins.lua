@@ -82,6 +82,7 @@ use({
         vim.cmd([[
             colorscheme rose-pine
             hi CursorLine guibg=#44415a
+            hi Search guibg=#596275
         ]])
     end
 })
@@ -99,6 +100,7 @@ use({
     end,
 })
 use({ 'karb94/neoscroll.nvim', config = getSetup('neoscroll', {}) })
+use('dstein64/nvim-scrollview')
 -- use({ 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) })
 use({ 'nvim-telescope/telescope.nvim', config = getConfig('telescope') })
 use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
@@ -188,7 +190,7 @@ use({
 })
 use({ 'numToStr/Comment.nvim', config = getSetup('Comment', {}) })
 use({ 'phaazon/hop.nvim', config = getSetup('hop', {}) })
-use('mhinz/vim-sayonara')
+-- use('mhinz/vim-sayonara')
 use({ 'Pocco81/AutoSave.nvim', config = getConfig('autosave') })
 use({ 'ethanholz/nvim-lastplace', config = getSetup('nvim-lastplace', {}) })
 use('dstein64/vim-startuptime')

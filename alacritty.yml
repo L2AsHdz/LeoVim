@@ -1,0 +1,46 @@
+window:
+  # Spread additional padding evenly around the terminal content.
+  padding:
+    x: 2
+    y: 2
+  # Remove buttons
+  decorations: none
+  # Open in full screen 
+  startup_mode: Windowed
+  # Dimensions if not SimpleFullscreen
+  dimensions:
+    columns: 90
+    lines: 22
+
+# Make background slightly transparent
+  opacity: 0.85
+
+cursor:
+  # Block Underline or Beam
+  style: Block
+
+font:
+  normal:
+    # Needs to be powerline font if using zsh theme with powerline
+    family: FiraMono Nerd Font
+
+  # Font size
+  size: 6.5
+
+  # Better font rendering for mac
+  use_thin_strokes: true
+
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When true, selected text will be copied to the primary clipboard
+  save_to_clipboard: true
+
+# Login shell with arguments
+shell:
+  program: /bin/zsh
+
+# Startup directory, unset or None for home directory
+working_directory: None

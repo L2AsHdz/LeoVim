@@ -6,7 +6,8 @@ map('n', '<leader>w', ':w<CR>')
 map('n', '<leader>q', ':q<CR>')
 map('n', '<leader>W', ':wq<CR>')
 map('n', '<leader>Q', ':q!<CR>')
-map('n', '<leader>bb', ':Sayonara<CR>')
+-- map('n', '<leader>bb', ':Sayonara<CR>')
+map('n', '<leader>bb', ':bp<bar>sp<bar>bn<bar>bd<CR>')
 map('n', '<leader>bo', ':%bd|e#|bd#<CR>')
 map('n', '<leader>n', ':noh<CR>')
 map('i', 'ii', '<ESC>')
@@ -108,10 +109,15 @@ map('n', '<leader>fv', ':Telescope find_files<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fg', ':Telescope live_grep<CR>')
 map('n', '<leader>fi', ':Telescope builtin<CR>')
+map('n', '<leader>fn', ':Telescope neoclip<CR>')
+map('n', '<leader>fo', ':Telescope oldfiles<CR>')
 
 --  faster scrolling
 map('n', '<leader><leader>j', '10<C-e>')
 map('n', '<leader><leader>k', '10<C-y>')
+
+map('n', '<leader>,', '10<C-w>>')
+map('n', '<leader>.', '10<C-w><')
 
 -- SessionManager
 map('n', '<leader>ss', ':SessionManager save_current_session<CR>')

@@ -52,8 +52,19 @@ fnm use 14
 node --version
 
 #qtile configuration
-ln -sv ~/.dotfiles/qtile/config.py ~/.config/qtile
-ln -sv ~/.dotfiles/qtile/autostart.sh ~/.config/qtile
+mkdir -p ~/.config/qtile/settings/
+qtile_cfg=~/.config/qtile
+qtile_dot=~/.dotfiles/qtile
+qtile_sttgs=$qtile_dot/settings
+qtile_sttgs_2=$qtile_cfg/settings
+ln -sv $qtile_dot/config.py $qtiledot
+ln -sv $qtile_dot/autostart.sh $qtile_cfg
+
+ln -sv $qtile_sttgs/keys.py $qtile_sttgs_2
+ln -sv $qtile_sttgs/groups.py $qtile_sttgs_2
+ln -sv $qtile_sttgs/layouts.py $qtile_sttgs_2
+ln -sv $qtile_sttgs/screens.py $qtile_sttgs_2
+ln -sv $qtile_sttgs/mouse.py $qtile_sttgs_2
 
 #alacritty
 ln -sv ~/.dotfiles/alacritty.yml ~/.config/alacritty

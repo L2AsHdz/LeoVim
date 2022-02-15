@@ -83,6 +83,7 @@ map('n', '<leader>gr', ':Gitsigns reset_hunk<CR>')
 map('n', '<leader>gu', ':Gitsigns undo_stage_hunk<CR>')
 map('n', '<leader>gh', ':Gitsigns preview_hunk<CR>')
 map('n', '<leader>gf', ':Gitsigns stage_buffer<CR>')
+map('n', '<leader>gj', ':Gitsigns reset_buffer<CR>')
 map('n', '<leader>gR', ':Gitsigns refresh<CR>')
 
 --  Open neogit pane

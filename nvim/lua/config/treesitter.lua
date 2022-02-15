@@ -7,7 +7,7 @@ configs.setup {
     ensure_installed = {
         'bash', 'c', 'comment', 'cpp', 'css', 'dockerfile', 'dot',
         'graphql', 'html', 'java', 'http', 'javascript', 'json', 'json5',
-        'lua', 'php', 'tsx', 'typescript', 'vim', 'yaml'
+        'lua', 'php', 'python', 'tsx', 'typescript', 'vim', 'yaml'
     },
     sync_install = false,
     ignore_install = { "" }, -- List of parsers to ignore installing

@@ -77,8 +77,12 @@ use({
     config = function()
         -- vim.g.everforest_background = 'hard'
         -- vim.g.everforest_sign_column_background = 'none'
-        vim.g.rose_pine_variant = 'moon'
-        vim.g.rose_pine_disable_italics = true
+        require('rose-pine').setup({
+            dark_variant = 'moon',
+            dim_nc_background = true,
+            disable_background = true,
+            disable_italics = true
+        })
         vim.cmd([[
             colorscheme rose-pine
             hi CursorLine guibg=#44415a

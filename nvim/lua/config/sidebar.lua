@@ -15,4 +15,5 @@ sidebar.setup({
     buffers = { icon = '', ignored_buffers = { 'NvimTree', 'SidebarNvim_*' } },
     symbols = { icon = 'ƒ' },
     disable_closing_prompt = true,
+    containers = {}
 })

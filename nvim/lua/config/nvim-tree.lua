@@ -1,4 +1,3 @@
-vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_add_trailing = 1
 vim.g.nvim_tree_respect_buf_cwd = 1
@@ -28,14 +27,18 @@ vim.g.nvim_tree_icons = {
 
 require('nvim-tree').setup({
     auto_reload_on_write = false,
+    hijack_cursor = true,
     update_focused_file = {
         enable = true,
-        update_cwd = false,
-        ignore_list = {}
     },
     view = {
         number = true,
         relativenumber = true,
         signcolumn = 'yes'
+    },
+    actions = {
+        open_file = {
+            quit_on_open = true
+        }
     }
 })

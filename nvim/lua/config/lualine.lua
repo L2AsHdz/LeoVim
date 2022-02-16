@@ -18,7 +18,7 @@ local colors = {
   orange        = '#fe8019',
   green         = '#44bd32',
   error         = '#c23616',
-  background    = '#282a36'
+  background    = '#232136'
 }
 
 local bubbles_theme = {
@@ -56,6 +56,16 @@ local filename = {
     }
 }
 
+local diagnostics = {
+    'diagnostics',
+    sources = { 'nvim_lsp' },
+    sections = { 'error', 'warn', 'info' },
+    symbols = { error = ' ', warn = ' ', info = ' ' },
+    -- diagnostics_color = { error = { fg = colors.white, bg = colors.error } },
+    update_in_insert = true
+}
+
+
 lualine.setup({
     options = {
         theme = bubbles_theme,
@@ -73,7 +83,7 @@ lualine.setup({
                     if str == 'NORMAL' then
                         return ' ' .. str
                     elseif str == 'INSERT' then
-                        return ' ' .. str
+                        return 'ﲵ ' .. str
                     elseif str == 'VISUAL' or str == 'V-LINE' then
                         return '﯎ ' .. str
                     elseif str == 'REPLACE' then
@@ -91,17 +101,9 @@ lualine.setup({
         lualine_b = { filetype, filename },
         lualine_c = {
             { gps.get_location, cond = gps.is_available }
-            -- {
-            --   'diagnostics',
-            --   sources = { 'ale' },
-            --   sections = { 'error' },
-            --   symbols = { error = ' '},
-            --   diagnostics_color = { error = { fg = colors.white, bg = colors.error } },
-            --   separator = { right = '' }
-            -- }
         },
         lualine_x = {},
-        lualine_y = { 'diff', 'branch' },
+        lualine_y = { diagnostics, 'diff', 'branch' },
         lualine_z = {
             { 'location', separator = { right = '' }, left_padding = 2 },
         },

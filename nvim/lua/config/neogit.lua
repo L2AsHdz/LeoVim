@@ -1,5 +1,5 @@
-vim.cmd [[hi NeogitDiffAddHighlight guifg=#2ecc71]]
-vim.cmd [[hi NeogitDiffDeleteHighlight guifg=#e74c3c]]
+-- vim.cmd [[hi NeogitDiffAddHighlight guifg=#2ecc71]]
+-- vim.cmd [[hi NeogitDiffDeleteHighlight guifg=#e74c3c]]
 
 require("neogit").setup({
     integrations = {

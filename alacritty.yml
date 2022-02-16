@@ -9,8 +9,8 @@ window:
   startup_mode: Windowed
   # Dimensions if not SimpleFullscreen
   dimensions:
-    columns: 90
-    lines: 22
+    columns: 130
+    lines: 30
 
 # Make background slightly transparent
   opacity: 0.85

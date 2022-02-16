@@ -74,21 +74,7 @@ use({
     -- as = "dracula",
     'rose-pine/neovim',
     as = 'rose-pine',
-    config = function()
-        -- vim.g.everforest_background = 'hard'
-        -- vim.g.everforest_sign_column_background = 'none'
-        require('rose-pine').setup({
-            dark_variant = 'moon',
-            dim_nc_background = true,
-            disable_background = true,
-            disable_italics = true
-        })
-        vim.cmd([[
-            colorscheme rose-pine
-            hi CursorLine guibg=#44415a
-            hi Search guibg=#596275
-        ]])
-    end
+    config = getConfig('colorscheme')
 })
 use({ 'rcarriga/nvim-notify', config = getConfig('notify') })
 use({ 'akinsho/bufferline.nvim', config = getConfig('bufferline') })
@@ -108,6 +94,7 @@ use('dstein64/nvim-scrollview')
 -- use({ 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) })
 use({ 'nvim-telescope/telescope.nvim', config = getConfig('telescope') })
 use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+use('nvim-telescope/telescope-packer.nvim')
 use({'goolord/alpha-nvim', config = getConfig('alpha')})
 use({'antoinemadec/FixCursorHold.nvim'})
 use({ 'Shatur/neovim-session-manager', config = getConfig('session')})
@@ -123,7 +110,7 @@ use({
 })
 use('RRethy/vim-illuminate')
 use({ 'lukas-reineke/indent-blankline.nvim', config = getConfig('blankline') })
-use({'norcalli/nvim-colorizer.lua', config = getSetup('colorizer', {})})
+-- use({'norcalli/nvim-colorizer.lua', config = getSetup('colorizer', {})})
 use {
     'VonHeikemen/fine-cmdline.nvim',
     config = getSetup('fine-cmdline', {cmdline = { prompt = '濫' }, popup = { position = { row = '90%' } } }),
@@ -173,8 +160,8 @@ use({
     'rhysd/git-messenger.vim',
     config = function()
         vim.cmd([[
-        let g:git_messenger_floating_win_opts = { 'border': 'single' }
-        let g:git_messenger_popup_content_margins = v:false
+            let g:git_messenger_floating_win_opts = { 'border': 'single' }
+            let g:git_messenger_popup_content_margins = v:false
         ]])
     end,
 })

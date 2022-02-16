@@ -118,16 +118,16 @@ npmg npm-check-updates
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 ln -sv ~/.dotfiles/rc.conf ~/.config/ranger/
 
-mkdir ~/.config/nvim
+mkdir -p ~/.config/nvim
 nvimcfg=~/.config/nvim
 nvimdot=~/.dotfiles/nvim
+nvim_lua_cfg2=$nvimdot/lua/config
+nvim_lua_cfg=$nvimcfg/lua/config
 ln -sv $nvimdot/maps.vim $nvimcfg
 ln -sv $nvimdot/plugin-config.vim $nvimcfg
 
 mkdir $nvimcfg/lua
-mkdir $nvimcfg/lua/config
-mkdir $nvimcfg/lua/config/lsp
-mkdir $nvimcfg/lua/config/lsp/settings
+mkdir -p $nvim_lua_cfg/lsp/settings
 ln -sv $nvimdot/init.lua $nvimcfg
 ln -sv $nvimdot/lua/settings.lua $nvimcfg/lua
 ln -sv $nvimdot/lua/plugins.lua $nvimcfg/lua
@@ -135,33 +135,34 @@ ln -sv $nvimdot/lua/utils.lua $nvimcfg/lua
 ln -sv $nvimdot/lua/maps.lua $nvimcfg/lua
 ln -sv $nvimdot/lua/autocommands.lua $nvimcfg/lua
 
-ln -sv $nvimdot/lua/config/lsp/lsp.lua $nvimcfg/lua/config/lsp
-ln -sv $nvimdot/lua/config/lsp/handlers.lua $nvimcfg/lua/config/lsp
-ln -sv $nvimdot/lua/config/lsp/lsp-installer.lua $nvimcfg/lua/config/lsp
-ln -sv $nvimdot/lua/config/lsp/settings/jsonls.lua $nvimcfg/lua/config/lsp/settings
-ln -sv $nvimdot/lua/config/lsp/settings/sumneko_lua.lua $nvimcfg/lua/config/lsp/settings
+ln -sv $nvim_lua_cfg2/lsp/lsp.lua $nvim_lua_cfg/lsp
+ln -sv $nvim_lua_cfg2/lsp/handlers.lua $nvim_lua_cfg/lsp
+ln -sv $nvim_lua_cfg2/lsp/lsp-installer.lua $nvim_lua_cfg/lsp
+ln -sv $nvim_lua_cfg2/lsp/settings/jsonls.lua $nvim_lua_cfg/lsp/settings
+ln -sv $nvim_lua_cfg2/lsp/settings/sumneko_lua.lua $nvim_lua_cfg/lsp/settings
 
-ln -sv $nvimdot/lua/config/cmp.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/treesitter.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/null-ls.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/lualine.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/neogit.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/blankline.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/gitsigns.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/nvim-tree.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/sidebar.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/bufferline.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/autosave.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/telescope.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/startify.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/autopairs.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/term.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/project.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/alpha.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/session.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/notify.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/dressing.lua $nvimcfg/lua/config
-ln -sv $nvimdot/lua/config/whichkey.lua $nvimcfg/lua/config
+ln -sv $nvim_lua_cfg2/cmp.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/treesitter.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/null-ls.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/lualine.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/neogit.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/blankline.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/gitsigns.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/nvim-tree.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/sidebar.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/bufferline.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/colorscheme.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/autosave.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/telescope.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/startify.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/autopairs.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/term.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/project.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/alpha.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/session.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/notify.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/dressing.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/whichkey.lua $nvim_lua_cfg
 
 #tlp
 pacin tlp tlp-rdw

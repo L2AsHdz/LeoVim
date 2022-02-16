@@ -40,12 +40,14 @@ which.register({
             a = 'Stage Hunk',
             u = 'Undo Stage Hunk',
             r = 'Reset Hunk',
-            f = 'Stage File',
+            b = 'Stage File',
             n = 'Next Hunk',
             p = 'Prev Hunk',
             s = 'Git Status',
             h = 'Preview Hunk',
             m = 'Show Commit',
+            R = 'Refresh GitSigns',
+            B = 'Reset Buffer'
         },
         d = {
             name = 'DiffView',
@@ -68,8 +70,11 @@ which.register({
             f = 'Find Files',
             v = 'Find Files Preview',
             b = 'Find Open Buffers',
-            i = 'Telescope builtin',
-            g = 'Find Text'
+            i = 'Builtin options',
+            g = 'Find Text',
+            o = 'Find Old Files',
+            p = 'Find Plugins',
+            n = 'Find Clipboard'
         },
         s = {
             name = 'Sessions',

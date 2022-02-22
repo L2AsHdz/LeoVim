@@ -29,5 +29,6 @@ configs.setup {
     },
     matchup = {
         enable = true
-    }
+    },
+    yati = { enable = true }
 }

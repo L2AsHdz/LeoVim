@@ -87,6 +87,7 @@ use({
     'kevinhwang91/rnvimr',
     config = function()
         vim.g.rnvimr_ex_enable = 1
+        vim.g.rnvimr_enable_picker = 1
     end,
 })
 use({ 'karb94/neoscroll.nvim', config = getSetup('neoscroll', {}) })
@@ -144,6 +145,7 @@ use({
     config = getConfig('treesitter'),
 })
 use('p00f/nvim-ts-rainbow')
+use('yioneko/nvim-yati')
 -- use 'romgrk/nvim-treesitter-context'
 
 -- gittools

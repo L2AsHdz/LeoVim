@@ -12,6 +12,8 @@ map('n', '<leader>bo', ':%bd|e#|bd#<CR>')
 map('n', '<leader>n', ':noh<CR>')
 map('i', 'ii', '<ESC>')
 map('v', 'ii', '<ESC>')
+map('n', '<leader>y', ':%y+<CR>')
+map('i', '<C-a>', '<ESC>:%y+<CR>gi')
 
 map('n', ';', '<cmd>FineCmdline<CR>')
 
@@ -24,6 +26,10 @@ map('n', '<C-A-right>',  ':vertical resize +5<CR>')
 -- Indent
 map('v', '<', '<gv')
 map('v', '>', '>gv')
+
+-- split
+map('n', '<leader>sh', ':sp<CR>')
+map('n', '<leader>sv', ':vs<CR>')
 
 -- Mover linea actual o lineas seleccionadas
 map('n', '<A-down>', ':m+1<CR>==')
@@ -117,9 +123,6 @@ map('n', '<leader>fp', ':Telescope packer<CR>')
 --  faster scrolling
 map('n', '<leader><leader>j', '10<C-e>')
 map('n', '<leader><leader>k', '10<C-y>')
-
-map('n', '<leader>,', '10<C-w>>')
-map('n', '<leader>.', '10<C-w><')
 
 -- SessionManager
 map('n', '<leader>ss', ':SessionManager save_current_session<CR>')

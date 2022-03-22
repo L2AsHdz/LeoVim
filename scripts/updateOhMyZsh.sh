@@ -58,12 +58,6 @@ echo Aplicando cambios
 git stash pop
 
 echo --------------------------------------------------
-echo Cambiando a directorio de zsh-nvm
-cd $OZSH/custom/plugins/zsh-nvm/
-echo Verificando actualizaciones
-git pull
-
-echo --------------------------------------------------
 echo Cambiando a directorio de k
 cd $OZSH/custom/plugins/k/
 echo Verificando actualizaciones

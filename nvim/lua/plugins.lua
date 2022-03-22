@@ -100,6 +100,7 @@ use({'goolord/alpha-nvim', config = getConfig('alpha')})
 use({'antoinemadec/FixCursorHold.nvim'})
 use({ 'Shatur/neovim-session-manager', config = getConfig('session')})
 use({'stevearc/dressing.nvim', config = getConfig('dressing')})
+use {'kevinhwang91/nvim-bqf', ft = 'qf'}
 use({ 'folke/which-key.nvim', config = getConfig('whichkey') })
 use({
     'lukas-reineke/virt-column.nvim',
@@ -171,7 +172,7 @@ use('sindrets/diffview.nvim')
 
 -- utils
 use({ 'windwp/nvim-autopairs', config = getConfig('autopairs') })
-use('alvan/vim-closetag')
+use({ 'windwp/nvim-ts-autotag', config = getSetup('nvim-ts-autotag', {}) })
 -- use('tpope/vim-surround')
 use({'blackCauldron7/surround.nvim', config = getSetup('surround', { mappings_style = 'surround' })})
 use('andymass/vim-matchup')

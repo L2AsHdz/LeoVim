@@ -1,3 +1,4 @@
+local trouble = require("trouble.providers.telescope")
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
   return
@@ -7,7 +8,11 @@ telescope.setup({
     defaults = {
         prompt_prefix = " ",
         selection_caret = " ",
-        path_display = { "smart" }
+        path_display = { "smart" },
+        mappings = {
+            i = { ["<c-t>"] = trouble.open_with_trouble },
+            n = { ["<c-t>"] = trouble.open_with_trouble }
+        }
     },
     extensions = {
         fzf = {

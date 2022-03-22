@@ -13,6 +13,16 @@ lsp_installer.settings({
     }
 })
 
+-- local enhance_server_opts = {
+--   -- Provide settings that should only apply to the "eslintls" server
+--     ["html"] = function (opts)
+--         opts.filetypes = { "html", "php" }
+--     end,
+--     ["emmet_ls"] = function (opts)
+--         opts.filetypes = { "html", "css", "php" }
+--     end
+-- }
+
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
@@ -30,6 +40,10 @@ lsp_installer.on_server_ready(function(server)
 	 	local sumneko_opts = require("config.lsp.settings.sumneko_lua")
 	 	opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
+
+    -- if enhance_server_opts[server.name] then
+    --     enhance_server_opts[server.name](opts)
+    -- end
 
     -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     server:setup(opts)

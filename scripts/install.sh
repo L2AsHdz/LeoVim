@@ -70,7 +70,7 @@ ln -sv $qtile_sttgs/mouse.py $qtile_sttgs_2
 ln -sv ~/.dotfiles/alacritty.yml ~/.config/alacritty
 
 #instalar varios paquetes de pacman
-pacin neofetch jdk-openjdk vlc pacman-contrib gnome-keyring libsecret flameshot uget aria2 tldr speedtest-cli telegram-desktop exa docker docker-compose mesa-utils pulseaudio-equalizer-ladspa mysql-workbench libreoffice
+pacin neofetch jdk-openjdk vlc pacman-contrib gnome-keyring libsecret flameshot uget aria2 tldr speedtest-cli telegram-desktop exa docker docker-compose mesa-utils pulseaudio-equalizer-ladspa mysql-workbench libreoffice net-tools lshw
 pacin unrar zip unzip p7zip lzip arj sharutils lzop unace lrzip xz cabextract lha lz4 gzip bzip2 maven
 
 #fuentes

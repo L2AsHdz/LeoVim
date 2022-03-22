@@ -13,6 +13,7 @@ configs.setup {
     ignore_install = { "" }, -- List of parsers to ignore installing
     indent = { enable = false },
     autopairs = { enable = true },
+    autotag = { enable = true },
     highlight = {
         enable = true, -- false will disable the whole extension
         disable = { "" }, -- list of language that will be disabled
@@ -29,6 +30,5 @@ configs.setup {
     },
     matchup = {
         enable = true
-    },
-    yati = { enable = true }
+    }
 }

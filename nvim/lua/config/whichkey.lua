@@ -46,7 +46,7 @@ which.register({
             s = 'Git Status',
             h = 'Preview Hunk',
             m = 'Show Commit',
-            R = 'Refresh GitSigns',
+            g = 'Refresh GitSigns',
             B = 'Reset Buffer'
         },
         d = {

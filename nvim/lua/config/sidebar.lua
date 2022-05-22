@@ -7,7 +7,7 @@ sidebar.setup({
     side = 'right',
     initial_width = 30,
     sections = {
-        'git',
+        -- 'git',
         'diagnostics',
         'buffers',
         'symbols',

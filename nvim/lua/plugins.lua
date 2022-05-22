@@ -77,11 +77,11 @@ use({
     config = getConfig('colorscheme')
 })
 use({ 'rcarriga/nvim-notify', config = getConfig('notify') })
-use({ 'akinsho/bufferline.nvim', config = getConfig('bufferline') })
+use({ 'akinsho/bufferline.nvim', tag = "*", config = getConfig('bufferline') })
 use({ 'nvim-lualine/lualine.nvim', config = getConfig('lualine') })
 use({ 'sidebar-nvim/sidebar.nvim', config = getConfig('sidebar') })
 use({ 'SmiteshP/nvim-gps', getSetup('nvim-gps', {})})
-use({ 'akinsho/toggleterm.nvim', config = getConfig('term') })
+use({ 'akinsho/toggleterm.nvim', tag = "*", config = getConfig('term') })
 use({ 'kyazdani42/nvim-tree.lua', config = getConfig('nvim-tree') })
 use({
     'kevinhwang91/rnvimr',
@@ -147,6 +147,8 @@ use({
 })
 use('p00f/nvim-ts-rainbow')
 use('yioneko/nvim-yati')
+use({ 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim', config = getConfig('flutter') })
+use('editorconfig/editorconfig-vim')
 -- use 'romgrk/nvim-treesitter-context'
 
 -- gittools

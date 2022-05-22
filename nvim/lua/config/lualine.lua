@@ -65,6 +65,17 @@ local diagnostics = {
     update_in_insert = true
 }
 
+local sidebar_extension = {
+    options = {
+        theme = bubbles_theme,
+        component_separators = '',
+        section_separators = { left = '', right = '' },
+    },
+    sections = {
+        lualine_a = { {'filetype', colored = true} }
+    },
+    filetypes = {'SidebarNvim'}
+}
 
 lualine.setup({
     options = {
@@ -81,11 +92,11 @@ lualine.setup({
                 right_padding = 2,
                 fmt = function(str)
                     if str == 'NORMAL' then
-                        return ' ' .. str
+                        return ' ' .. str
                     elseif str == 'INSERT' then
                         return 'ﲵ ' .. str
                     elseif str == 'VISUAL' or str == 'V-LINE' then
-                        return '﯎ ' .. str
+                        return ' ' .. str
                     elseif str == 'REPLACE' then
                         return '﯒ ' .. str
                     elseif str == 'COMMAND' then
@@ -105,7 +116,8 @@ lualine.setup({
         lualine_x = {},
         lualine_y = { diagnostics, 'diff', 'branch' },
         lualine_z = {
-            { 'location', separator = { right = '' }, left_padding = 2 },
+            { 'location', separator = { } },
+            { '%p%%/%L', separator = { right = '', left_padding = 2 } },
         },
     },
     inactive_sections = {
@@ -117,5 +129,5 @@ lualine.setup({
         lualine_z = { 'location' },
     },
     tabline = {},
-    extensions = { 'nvim-tree' },
+    extensions = { 'nvim-tree', sidebar_extension },
 })

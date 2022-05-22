@@ -47,7 +47,7 @@ source ~/.zshrc
 #fnm
 curl -fsSL https://fnm.vercel.app/install | bash
 src
-fnm install 14 --lts
+fnm install 14
 fnm use 14
 node --version
 
@@ -112,7 +112,7 @@ gem list
 gem update
 
 # Install angular-cli
-npmg @angular/cli
+npmg @angular/cli typescript
 npmg npm-check-updates
 
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
@@ -163,6 +163,7 @@ ln -sv $nvim_lua_cfg2/session.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/notify.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/dressing.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/whichkey.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/flutter.lua $nvim_lua_cfg
 
 #tlp
 pacin tlp tlp-rdw

@@ -59,13 +59,15 @@ map('n', '<leader>k', ':BufferLineCycleNext<CR>')
 map('n', '<leader>j', ':BufferLineCyclePrev<CR>')
 map('n', '<leader>mk', ':BufferLineMoveNext<CR>')
 map('n', '<leader>mj', ':BufferLineMovePrev<CR>')
-map('n', '<leader>p', ':BufferLinePick<CR>')
+map('n', '<leader>pp', ':BufferLinePick<CR>')
+map('n', '<leader>pc', ':BufferLinePickClose<CR>')
 
 -- nvim-tree
 map('n', '<leader>nt', ':NvimTreeToggle<CR>')
 map('n', '<leader>nr', ':NvimTreeRefresh<CR>')
 map('n', '<leader>nf', ':NvimTreeFindFile<CR>')
 
+-- sidebar-nvim
 map('n', '<leader>ll', ':SidebarNvimToggle<CR>')
 map('n', '<leader>lu', ':SidebarNvimUpdate<CR>')
 map('n', '<leader>lf', ':SidebarNvimFocus<CR>')
@@ -90,7 +92,7 @@ map('n', '<leader>gu', ':Gitsigns undo_stage_hunk<CR>')
 map('n', '<leader>gh', ':Gitsigns preview_hunk<CR>')
 map('n', '<leader>gb', ':Gitsigns stage_buffer<CR>')
 map('n', '<leader>gB', ':Gitsigns reset_buffer<CR>')
-map('n', '<leader>gR', ':Gitsigns refresh<CR>')
+map('n', '<leader>gg', ':Gitsigns refresh<CR>')
 
 --  Open neogit pane
 map('n', '<leader>gs', ':Neogit kind=vsplit<CR>')
@@ -111,7 +113,8 @@ map('n', '<leader>hl', ':HopLineStart<CR>')
 map('n', '<leader>hL', ':HopLine<CR>')
 
 -- Telescope
-map("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = true }))<cr>")
+map("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
+map("n", "<leader>fF", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = true }))<cr>")
 map('n', '<leader>fv', ':Telescope find_files<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fg', ':Telescope live_grep<CR>')
@@ -119,6 +122,16 @@ map('n', '<leader>fi', ':Telescope builtin<CR>')
 map('n', '<leader>fn', ':Telescope neoclip<CR>')
 map('n', '<leader>fo', ':Telescope oldfiles<CR>')
 map('n', '<leader>fp', ':Telescope packer<CR>')
+map('n', '<leader>fc', ':Telescope flutter commands<CR>')
+
+-- Flutter-Tools
+map('n', '<leader>fr', ':FlutterRun<CR>')
+map('n', '<leader>fd', ':FlutterDevices<CR>')
+map('n', '<leader>fe', ':FlutterEmulators<CR>')
+map('n', '<leader>fR', ':FlutterReload<CR>')
+map('n', '<leader>ft', ':FlutterRestart<CR>')
+map('n', '<leader>fq', ':FlutterQuit<CR>')
+map('n', '<leader>fl', ':FlutterOutlineToggle<CR>')
 
 --  faster scrolling
 map('n', '<leader><leader>j', '10<C-e>')

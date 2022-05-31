@@ -113,10 +113,17 @@ gem update
 
 # Install angular-cli
 npmg @angular/cli typescript
-npmg npm-check-updates
+npmg npm-check-updates yarn
 
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 ln -sv ~/.dotfiles/rc.conf ~/.config/ranger/
+
+#Markdown Preview
+cd ~/.local/share/nvim/site/pack/packer/start/
+gcl https://github.com/iamcco/markdown-preview.nvim
+cd markdown-preview.nvim/
+yarn install
+yarn build
 
 mkdir -p ~/.config/nvim
 nvimcfg=~/.config/nvim
@@ -164,6 +171,7 @@ ln -sv $nvim_lua_cfg2/notify.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/dressing.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/whichkey.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/flutter.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/cursorline.lua $nvim_lua_cfg
 
 #tlp
 pacin tlp tlp-rdw

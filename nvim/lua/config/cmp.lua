@@ -113,7 +113,9 @@ cmp.setup({
         { name = 'path' },
         { name = 'cmdline' }
     },
-    documentation = {
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    window = {
+        documentation = {
+            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        }
     }
 })

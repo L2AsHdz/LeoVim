@@ -77,11 +77,12 @@ use({
     config = getConfig('colorscheme')
 })
 use({ 'rcarriga/nvim-notify', config = getConfig('notify') })
-use({ 'akinsho/bufferline.nvim', tag = "*", config = getConfig('bufferline') })
+use({ 'akinsho/bufferline.nvim', tag = "v2.*", config = getConfig('bufferline') })
 use({ 'nvim-lualine/lualine.nvim', config = getConfig('lualine') })
+use({ 'arkav/lualine-lsp-progress' })
 use({ 'sidebar-nvim/sidebar.nvim', config = getConfig('sidebar') })
 use({ 'SmiteshP/nvim-gps', getSetup('nvim-gps', {})})
-use({ 'akinsho/toggleterm.nvim', tag = "*", config = getConfig('term') })
+use({ 'akinsho/toggleterm.nvim', tag = "v2.*", config = getConfig('term') })
 use({ 'kyazdani42/nvim-tree.lua', config = getConfig('nvim-tree') })
 use({
     'kevinhwang91/rnvimr',
@@ -92,7 +93,7 @@ use({
 })
 use({ 'karb94/neoscroll.nvim', config = getSetup('neoscroll', {}) })
 use('dstein64/nvim-scrollview')
--- use({ 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) })
+use({ 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) })
 use({ 'nvim-telescope/telescope.nvim', config = getConfig('telescope') })
 use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 use('nvim-telescope/telescope-packer.nvim')
@@ -110,16 +111,28 @@ use({
     end,
     after = 'rose-pine'
 })
-use('RRethy/vim-illuminate')
+use( { 'yamatsum/nvim-cursorline', config = getConfig('cursorline') } )
 use({ 'lukas-reineke/indent-blankline.nvim', config = getConfig('blankline') })
--- use({'norcalli/nvim-colorizer.lua', config = getSetup('colorizer', {})})
-use {
+use ({
     'VonHeikemen/fine-cmdline.nvim',
     config = getSetup('fine-cmdline', {cmdline = { prompt = '濫' }, popup = { position = { row = '90%' } } }),
     requires = {
         {'MunifTanjim/nui.nvim'}
     }
-}
+})
+use ({
+    'VonHeikemen/searchbox.nvim',
+    requires = {
+        {'MunifTanjim/nui.nvim'}
+    }
+})
+use({'norcalli/nvim-colorizer.lua', config = getSetup('colorizer', {'*';})})
+use({
+    'iamcco/markdown-preview.nvim',
+    config = function()
+        vim.g.mkdp_port = '9000'
+    end
+})
 
 -- devtools
 use({ 'neovim/nvim-lspconfig', config = getConfig('lsp.lsp') })
@@ -187,6 +200,8 @@ use({
 use({ 'numToStr/Comment.nvim', config = getSetup('Comment', {}) })
 use({ 'phaazon/hop.nvim', config = getSetup('hop', {}) })
 -- use('mhinz/vim-sayonara')
+-- use 'moll/vim-bbye'
+use( 'famiu/bufdelete.nvim' )
 use({ 'Pocco81/AutoSave.nvim', config = getConfig('autosave') })
 use({ 'ethanholz/nvim-lastplace', config = getSetup('nvim-lastplace', {}) })
 use('dstein64/vim-startuptime')

@@ -60,6 +60,7 @@ set.laststatus = 2
 set.showmode = true
 set.showcmd = true
 
+set.sessionoptions:append('globals')
 
 set.termguicolors = true --Activa true colors en la terminal
 

@@ -3,7 +3,11 @@ if not ok then
     return
 end
 
-which.setup({})
+which.setup({
+    window = {
+        border = 'single',
+    },
+})
 
 which.register({
     ['<leader>'] = {
@@ -14,6 +18,7 @@ which.register({
         k = 'Next Tab',
         j = 'Prev Tab',
         p = 'Jump to Tab',
+        y = 'Copy All',
         b = {
             name = 'Buffer',
             b = 'Sayonara',
@@ -23,17 +28,18 @@ which.register({
             name = 'Move Tab',
             j = 'Move Tab Left',
             k = 'Move Tab Right',
+            m = 'Markdown Preview',
         },
         n = {
             name = 'NvimTree',
             t = 'Open NvimTree',
             r = 'Refresh NvimTree',
-            f = 'Find File NvimTree'
+            f = 'Find File NvimTree',
         },
         r = {
             name = 'more',
             g = 'Open Ranger',
-            n = 'Lsp Rename'
+            n = 'Lsp Rename',
         },
         g = {
             name = 'Git',
@@ -47,7 +53,7 @@ which.register({
             h = 'Preview Hunk',
             m = 'Show Commit',
             g = 'Refresh GitSigns',
-            B = 'Reset Buffer'
+            B = 'Reset Buffer',
         },
         d = {
             name = 'DiffView',
@@ -63,24 +69,36 @@ which.register({
             c = 'Jump Char 2',
             C = 'Jump Char 1',
             l = 'Jump Line Start',
-            L = 'Jump Line'
+            L = 'Jump Line',
         },
         f = {
             name = 'Find',
+            c = 'Flutter Commands',
+            d = 'Flutter Devices',
+            e = 'Flutter Emulators',
             f = 'Find Files',
+            F = 'Find Files (with dotfiles)',
             v = 'Find Files Preview',
+            l = 'Flutter Outline Toggle',
+            N = 'Notification History',
             b = 'Find Open Buffers',
             i = 'Builtin options',
             g = 'Find Text',
             o = 'Find Old Files',
             p = 'Find Plugins',
-            n = 'Find Clipboard'
+            n = 'Find Clipboard',
+            q = 'Flutter Quit',
+            R = 'Flutter Reload',
+            r = 'Flutter run',
+            t = 'Flutter Restart',
         },
         s = {
             name = 'Sessions',
             s = 'Save Session',
-            l = 'Load Close',
+            l = 'Load Session',
             d = 'Delete Session',
+            v = 'Split Vertical',
+            h = 'Split Horizontal',
         },
         c = {
             name = 'LSP',
@@ -88,13 +106,13 @@ which.register({
             f = 'Format Code',
             d = 'Code Diagnostics',
             D = 'Document Diagnostics',
-            w = 'Workspace Diagnostics'
+            w = 'Workspace Diagnostics',
         },
         l = {
             name = 'SideBar',
             l = 'Open SideBar',
             u = 'Update SideBar',
-            f = 'Focus SideBar'
-        }
+            f = 'Focus SideBar',
+        },
     },
 })

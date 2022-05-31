@@ -43,7 +43,7 @@ local bubbles_theme = {
 
 local filetype = {
     'filetype',
-    icon_only = true
+    icon_only = true,
 }
 
 local filename = {
@@ -53,7 +53,7 @@ local filename = {
         modified = '',
         readonly = '',
         unnamed = '',
-    }
+    },
 }
 
 local diagnostics = {
@@ -62,7 +62,14 @@ local diagnostics = {
     sections = { 'error', 'warn', 'info' },
     symbols = { error = ' ', warn = ' ', info = ' ' },
     -- diagnostics_color = { error = { fg = colors.white, bg = colors.error } },
-    update_in_insert = true
+    update_in_insert = true,
+}
+
+local lsp_progress = {
+    'lsp_progress',
+    display_components = { 'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' } },
+	timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
+	spinner_symbols = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }
 }
 
 local sidebar_extension = {
@@ -72,9 +79,9 @@ local sidebar_extension = {
         section_separators = { left = '', right = '' },
     },
     sections = {
-        lualine_a = { {'filetype', colored = true} }
+        lualine_a = { { 'filetype', colored = true } },
     },
-    filetypes = {'SidebarNvim'}
+    filetypes = { 'SidebarNvim' },
 }
 
 lualine.setup({
@@ -82,7 +89,7 @@ lualine.setup({
         theme = bubbles_theme,
         component_separators = '',
         section_separators = { left = '', right = '' },
-        disabled_filetypes = { "alpha", "dashboard", "Outline" },
+        disabled_filetypes = { 'alpha', 'dashboard', 'Outline' },
     },
     sections = {
         lualine_a = {
@@ -111,13 +118,13 @@ lualine.setup({
         },
         lualine_b = { filetype, filename },
         lualine_c = {
-            { gps.get_location, cond = gps.is_available }
+            { gps.get_location, cond = gps.is_available },
         },
-        lualine_x = {},
+        lualine_x = { lsp_progress },
         lualine_y = { diagnostics, 'diff', 'branch' },
         lualine_z = {
-            { 'location', separator = { } },
-            { '%p%%/%L', separator = { right = '', left_padding = 2 } },
+            { 'location', separator = {} },
+            { '%p%%/%L', separator = { right = '' } },
         },
     },
     inactive_sections = {

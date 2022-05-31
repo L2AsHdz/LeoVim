@@ -7,8 +7,8 @@ map('n', '<leader>q', ':q<CR>')
 map('n', '<leader>W', ':wq<CR>')
 map('n', '<leader>Q', ':q!<CR>')
 -- map('n', '<leader>bb', ':Sayonara<CR>')
-map('n', '<leader>bb', ':bp<bar>sp<bar>bn<bar>bd<CR>')
-map('n', '<leader>bo', ':%bd|e#|bd#<CR>')
+map('n', '<leader>bb', ':Bdelete<CR>')
+map('n', '<leader>bo', ':BufferLineCloseRight<CR>|:BufferLineCloseLeft<CR>')
 map('n', '<leader>n', ':noh<CR>')
 map('i', 'ii', '<ESC>')
 map('v', 'ii', '<ESC>')
@@ -59,8 +59,11 @@ map('n', '<leader>k', ':BufferLineCycleNext<CR>')
 map('n', '<leader>j', ':BufferLineCyclePrev<CR>')
 map('n', '<leader>mk', ':BufferLineMoveNext<CR>')
 map('n', '<leader>mj', ':BufferLineMovePrev<CR>')
-map('n', '<leader>pp', ':BufferLinePick<CR>')
-map('n', '<leader>pc', ':BufferLinePickClose<CR>')
+map('n', '<leader>bp', ':BufferLinePick<CR>')
+map('n', '<leader>bc', ':BufferLinePickClose<CR>')
+
+-- MarkdownPreview
+map('n', '<leader>mm', ':MarkdownPreviewToggle<CR>')
 
 -- nvim-tree
 map('n', '<leader>nt', ':NvimTreeToggle<CR>')
@@ -80,6 +83,12 @@ vim.api.nvim_set_keymap('', '/',  '<Plug>(incsearch-forward)', {})
 vim.api.nvim_set_keymap('', '?',  '<Plug>(incsearch-backward)', {})
 vim.api.nvim_set_keymap('', 'g/', '<Plug>(incsearch-stay)', {})
 
+-- SearchBox
+map('n', '<leader>s/', ':SearchBoxMatchAll<CR>')
+map('n', '<leader>s.', ':SearchBoxMatchAll -- <C-r>=expand("<cword>")<CR><CR>')
+map('n', '<leader>s?', ':SearchBoxMatchAll reverse=true<CR>')
+map('n', '<leader>sR', ':SearchBoxReplace confirm="menu"<CR>')
+map('n', '<leader>sr', ':SearchBoxReplace confirm="menu" -- <C-r>=expand("<cword>")<CR><CR>')
 -- GitSigns
 --  Jump between hunks
 map('n', '<leader>gn', ':Gitsigns next_hunk<CR>')
@@ -123,6 +132,7 @@ map('n', '<leader>fn', ':Telescope neoclip<CR>')
 map('n', '<leader>fo', ':Telescope oldfiles<CR>')
 map('n', '<leader>fp', ':Telescope packer<CR>')
 map('n', '<leader>fc', ':Telescope flutter commands<CR>')
+map('n', '<leader>fN', ':Telescope notify <CR>')
 
 -- Flutter-Tools
 map('n', '<leader>fr', ':FlutterRun<CR>')

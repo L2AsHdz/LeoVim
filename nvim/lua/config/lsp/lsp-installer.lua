@@ -16,7 +16,6 @@ lsp_installer.settings({
 -- Cambiar esto a un archivo aparte
 
 local enhance_server_opts = {
---   -- Provide settings that should only apply to the "eslintls" server
     ["html"] = function (opts)
         opts.init_options = { provideFormatter = false }
     end,

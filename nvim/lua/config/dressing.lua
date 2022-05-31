@@ -15,10 +15,6 @@ dressing.setup({
             if opts.kind == 'codeaction' then
                 return {
                     backend = 'builtin',
-                    nui = {
-                        relative = 'cursor',
-                        max_width = 40,
-                    }
                 }
             end
         end

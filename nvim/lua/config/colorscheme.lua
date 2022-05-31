@@ -9,6 +9,7 @@ colorscheme.setup({
     dark_variant = 'moon',
     -- dim_nc_background = true,
     -- disable_background = true,
+    -- disable_float_background = false,
     disable_italics = true,
     groups = {
         git_add = '#9ccfd8',

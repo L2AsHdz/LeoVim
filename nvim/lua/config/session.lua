@@ -1,5 +1,12 @@
+local ok, session = pcall(require, 'session_manager')
+
+if not ok then
+    return
+end
+
 local Path = require('plenary.path')
-require('session_manager').setup({
+
+session.setup({
     sessions_dir = Path:new(vim.fn.stdpath('data'), 'sessions'),
     path_replacer = '__',
     colon_replacer = '++',

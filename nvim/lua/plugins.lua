@@ -191,16 +191,10 @@ use({ 'windwp/nvim-ts-autotag', config = getSetup('nvim-ts-autotag', {}) })
 -- use('tpope/vim-surround')
 use({'blackCauldron7/surround.nvim', config = getSetup('surround', { mappings_style = 'surround' })})
 use('andymass/vim-matchup')
-use({
-    'haya14busa/incsearch.vim',
-    config = function()
-        vim.g['incsearch#auto_nohlsearch'] = 1
-    end,
-})
+use({ 'haya14busa/incsearch.vim' })
+use({ 'kevinhwang91/nvim-hlslens', getSetup('hlslens', {calm_down = true, nearest_only = true }) })
 use({ 'numToStr/Comment.nvim', config = getSetup('Comment', {}) })
 use({ 'phaazon/hop.nvim', config = getSetup('hop', {}) })
--- use('mhinz/vim-sayonara')
--- use 'moll/vim-bbye'
 use( 'famiu/bufdelete.nvim' )
 use({ 'Pocco81/AutoSave.nvim', config = getConfig('autosave') })
 use({ 'ethanholz/nvim-lastplace', config = getSetup('nvim-lastplace', {}) })

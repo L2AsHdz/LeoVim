@@ -9,3 +9,8 @@ require('gitsigns').setup({
     keymaps = {}
 })
  -- 
+vim.cmd([[
+    hi GitSignsAddLn guibg=#9ccfd8  guifg=#2a273f
+    hi GitSignsDeleteLn guibg=#eb6f92 guifg=#2a273f
+    hi GitSignsChangeLn guibg=#ea9a97 guifg=#2a273f
+]])

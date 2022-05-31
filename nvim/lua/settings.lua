@@ -54,7 +54,7 @@ set.foldnestmax = 10  -- Máximo de 10
 set.foldmethod = 'indent' -- Basado en identado
 
 -- set encoding=utf-8 -- Habilita utf-8
-set.laststatus = 2
+set.laststatus = 3
 
 -- Display options
 set.showmode = true

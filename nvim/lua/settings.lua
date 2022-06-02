@@ -29,7 +29,6 @@ set.pastetoggle = '<F2>'
 -- set.sidescrolloff = 10
 set.completeopt = {"menuone", "noselect"}
 
-
 --Tabulaciones
 set.tabstop = 4
 set.shiftwidth = 4

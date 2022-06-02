@@ -1,19 +1,16 @@
--- gray
-vim.cmd[[highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080]]
--- blue
-vim.cmd[[highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6]]
-vim.cmd[[highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6]]
--- light blue
-vim.cmd[[highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE]]
-vim.cmd[[highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE]]
-vim.cmd[[highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE]]
--- pink
-vim.cmd[[highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0]]
-vim.cmd[[highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0]]
--- front
-vim.cmd[[highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4]]
-vim.cmd[[highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4]]
-vim.cmd[[highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4]]
+vim.cmd[[
+    highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+    highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+    highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+    highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+    highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
+    highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
+    highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
+    highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
+    highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+    highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
+    highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
+]]
 
 local kind_icons = {
   Text = "",
@@ -33,7 +30,7 @@ local kind_icons = {
   Snippet = "",
   Color = "",
   File = "",
-  Reference = "",
+  Reference = "",
   Folder = "ﱮ",
   EnumMember = "",
   Constant = "",
@@ -58,35 +55,28 @@ require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            luasnip.lsp_expand(args.body)
         end,
     },
-    mapping = {
-        ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-        ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-        ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        ['<ESC>'] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
-        ['<CR>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true
-        }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-j>'] = cmp.mapping.select_next_item(),
+        ['<C-k>'] = cmp.mapping.select_prev_item(),
+        ['<C-space>'] = cmp.mapping.complete(),
+        ['<ESC>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+
 
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
-            -- elseif has_words_before() then
-            --     cmp.complete()
             else
                 fallback()
             end
-        end, { "i", "c" }),
-        
+        end),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -95,7 +85,10 @@ cmp.setup({
             else
                 fallback()
             end
-        end, { "i", "c" }),
+        end),
+    }),
+    view = {
+        entries = {name = 'custom', selection_order = 'near_cursor' }
     },
     formatting = {
         fields = { "abbr", "kind" },
@@ -109,13 +102,31 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
         { name = 'luasnip' },
+        { name = 'nvim_lsp_signature_help' },
         { name = 'buffer' },
         { name = 'path' },
-        { name = 'cmdline' }
     },
     window = {
         documentation = {
             border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        }
+        },
+        -- completion = {
+        --     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        -- }
+    }
+})
+
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' }
+    }
+})
+
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'path' },
+        { name = 'cmdline' }
     }
 })

@@ -44,51 +44,57 @@ M.setup = function()
 end
 
 local function lsp_highlight_document(client)
-    -- Set autocommands conditional on server_capabilities
-    if client.resolved_capabilities.document_highlight then
-        vim.api.nvim_exec(
-            [[
-                augroup lsp_document_highlight
-                    autocmd! * <buffer>
-                    autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-                    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-                augroup END
-            ]],
-            false
-        )
+    local ok, illuminate = pcall(require, 'illuminate')
+    if not ok then
+        return
     end
+    illuminate.on_attach(client)
 end
 
+local bufMap = require('utils').bufmap
+
 local function lsp_keymaps(bufnr)
-    local opts = { noremap = true, silent = true }
-    local bufMap = vim.api.nvim_buf_set_keymap
-    bufMap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    bufMap(bufnr, 'n', 'gd', '<cmd>Trouble lsp_definitions<CR>', opts)
-    bufMap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    bufMap(bufnr, 'n', 'gi', '<cmd>Trouble lsp_implementations<CR>', opts)
-    bufMap(bufnr, 'n', '<A-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    bufMap(bufnr, 'n', 'gr', '<cmd>Trouble lsp_references<CR>', opts)
-    bufMap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-    bufMap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-    bufMap(bufnr, 'n', '<leader>cf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-    bufMap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-    bufMap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-    bufMap(bufnr, "n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    bufMap(bufnr, "n", "<leader>cw", "<cmd>Trouble workspace_diagnostics<CR>", opts)
-    bufMap(bufnr, "n", "<leader>cD", "<cmd>Trouble document_diagnostics<CR>", opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+    bufMap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+    bufMap(bufnr, 'n', 'gd', '<cmd>Trouble lsp_definitions<CR>')
+    bufMap(bufnr, 'n', 'L', '<cmd>lua vim.lsp.buf.hover()<CR>')
+    bufMap(bufnr, 'n', 'gi', '<cmd>Trouble lsp_implementations<CR>')
+    bufMap(bufnr, 'n', '<A-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+    bufMap(bufnr, 'n', 'gr', '<cmd>Trouble lsp_references<CR>')
+    bufMap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>')
+    bufMap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>')
+    bufMap(bufnr, 'n', '<leader>cf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+    bufMap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+    bufMap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+    bufMap(bufnr, 'n', '<leader>cd', '<cmd>lua vim.diagnostic.open_float()<CR>')
+    bufMap(bufnr, 'n', '<leader>cw', '<cmd>Trouble workspace_diagnostics<CR>')
+    bufMap(bufnr, 'n', '<leader>cD', '<cmd>Trouble document_diagnostics<CR>')
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
+end
+
+local function flutter_keymaps(bufnr)
+    bufMap(bufnr, 'n', '<leader>fc', ':Telescope flutter commands<CR>')
+    bufMap(bufnr, 'n', '<leader>fr', ':FlutterRun<CR>')
+    bufMap(bufnr, 'n', '<leader>fd', ':FlutterDevices<CR>')
+    bufMap(bufnr, 'n', '<leader>fe', ':FlutterEmulators<CR>')
+    bufMap(bufnr, 'n', '<leader>fR', ':FlutterReload<CR>')
+    bufMap(bufnr, 'n', '<leader>ft', ':FlutterRestart<CR>')
+    bufMap(bufnr, 'n', '<leader>fq', ':FlutterQuit<CR>')
+    bufMap(bufnr, 'n', '<leader>fl', ':FlutterOutlineToggle<CR>')
 end
 
 M.on_attach = function(client, bufnr)
     if client.name == 'tsserver' or client.name == 'sumneko_lua' then
         client.resolved_capabilities.document_formatting = false
     end
+    if client.name == 'dartls' then
+        flutter_keymaps(bufnr)
+    end
     lsp_keymaps(bufnr)
     lsp_highlight_document(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.offsetEncoding = { "utf-16" }
+capabilities.offsetEncoding = { 'utf-16' }
 
 local status_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if not status_ok then

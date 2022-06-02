@@ -142,7 +142,7 @@ ln -sv $nvimdot/lua/utils.lua $nvimcfg/lua
 ln -sv $nvimdot/lua/maps.lua $nvimcfg/lua
 ln -sv $nvimdot/lua/autocommands.lua $nvimcfg/lua
 
-ln -sv $nvim_lua_cfg2/lsp/lsp.lua $nvim_lua_cfg/lsp
+ln -sv $nvim_lua_cfg2/lsp/init.lua $nvim_lua_cfg/lsp
 ln -sv $nvim_lua_cfg2/lsp/handlers.lua $nvim_lua_cfg/lsp
 ln -sv $nvim_lua_cfg2/lsp/lsp-installer.lua $nvim_lua_cfg/lsp
 ln -sv $nvim_lua_cfg2/lsp/settings/jsonls.lua $nvim_lua_cfg/lsp/settings
@@ -172,6 +172,7 @@ ln -sv $nvim_lua_cfg2/dressing.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/whichkey.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/flutter.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/cursorline.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/comment.lua $nvim_lua_cfg
 
 #tlp
 pacin tlp tlp-rdw

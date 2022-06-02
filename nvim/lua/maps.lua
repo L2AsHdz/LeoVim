@@ -6,7 +6,6 @@ map('n', '<leader>w', ':w<CR>')
 map('n', '<leader>q', ':q<CR>')
 map('n', '<leader>W', ':wq<CR>')
 map('n', '<leader>Q', ':q!<CR>')
--- map('n', '<leader>bb', ':Sayonara<CR>')
 map('n', '<leader>bb', ':Bdelete<CR>')
 map('n', '<leader>bo', ':BufferLineCloseRight<CR>|:BufferLineCloseLeft<CR>')
 map('n', '<leader>n', ':noh<CR>')
@@ -18,10 +17,10 @@ map('i', '<C-a>', '<ESC>:%y+<CR>gi')
 map('n', ';', '<cmd>FineCmdline<CR>')
 
 -- Resize with arrows
-map('n', '<C-A-up>',  ':resize -5<CR>')
-map('n', '<C-A-down>',  ':resize +5<CR>')
-map('n', '<C-A-left>',  ':vertical resize -5<CR>')
-map('n', '<C-A-right>',  ':vertical resize +5<CR>')
+map('n', '<C-A-up>',  ':resize -2<CR>')
+map('n', '<C-A-down>',  ':resize +2<CR>')
+map('n', '<C-A-left>',  ':vertical resize -2<CR>')
+map('n', '<C-A-right>',  ':vertical resize +2<CR>')
 
 -- Indent
 map('v', '<', '<gv')
@@ -55,10 +54,10 @@ map('n', '<C-l>', '<CMD>lua require("Navigator").right()<CR>')
 map('n', '<C-p>', '<CMD>lua require("Navigator").previous()<CR>')
 
 -- Bufferline
-map('n', '<leader>k', ':BufferLineCycleNext<CR>')
-map('n', '<leader>j', ':BufferLineCyclePrev<CR>')
-map('n', '<leader>mk', ':BufferLineMoveNext<CR>')
-map('n', '<leader>mj', ':BufferLineMovePrev<CR>')
+map('n', '<S-k>', ':BufferLineCycleNext<CR>')
+map('n', '<S-j>', ':BufferLineCyclePrev<CR>')
+map('n', '<leader>k', ':BufferLineMoveNext<CR>')
+map('n', '<leader>j', ':BufferLineMovePrev<CR>')
 map('n', '<leader>bp', ':BufferLinePick<CR>')
 map('n', '<leader>bc', ':BufferLinePickClose<CR>')
 
@@ -78,10 +77,13 @@ map('n', '<leader>lf', ':SidebarNvimFocus<CR>')
 -- Ranger
 map('n', '<leader>rg', ':RnvimrToggle<CR>')
 
---  incsearch
-vim.api.nvim_set_keymap('', '/',  '<Plug>(incsearch-forward)', {})
-vim.api.nvim_set_keymap('', '?',  '<Plug>(incsearch-backward)', {})
-vim.api.nvim_set_keymap('', 'g/', '<Plug>(incsearch-stay)', {})
+-- Hlslens
+map('n', 'm', [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]])
+map('n', 'M', [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]])
+map('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]])
+map('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]])
+map('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]])
+map('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]])
 
 -- SearchBox
 map('n', '<leader>s/', ':SearchBoxMatchAll<CR>')
@@ -89,6 +91,11 @@ map('n', '<leader>s.', ':SearchBoxMatchAll -- <C-r>=expand("<cword>")<CR><CR>')
 map('n', '<leader>s?', ':SearchBoxMatchAll reverse=true<CR>')
 map('n', '<leader>sR', ':SearchBoxReplace confirm="menu"<CR>')
 map('n', '<leader>sr', ':SearchBoxReplace confirm="menu" -- <C-r>=expand("<cword>")<CR><CR>')
+
+-- Illuminate navigation
+map('n', '<C-u>', '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<cr>')
+map('n', '<C-o>', '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>')
+
 -- GitSigns
 --  Jump between hunks
 map('n', '<leader>gn', ':Gitsigns next_hunk<CR>')
@@ -126,26 +133,12 @@ map("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('
 map("n", "<leader>fF", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = true }))<cr>")
 map('n', '<leader>fv', ':Telescope find_files<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
-map('n', '<leader>fg', ':Telescope live_grep<CR>')
+map('n', '<leader>fg', ':Telescope live_grep theme=ivy <CR>')
 map('n', '<leader>fi', ':Telescope builtin<CR>')
 map('n', '<leader>fn', ':Telescope neoclip<CR>')
 map('n', '<leader>fo', ':Telescope oldfiles<CR>')
 map('n', '<leader>fp', ':Telescope packer<CR>')
-map('n', '<leader>fc', ':Telescope flutter commands<CR>')
 map('n', '<leader>fN', ':Telescope notify <CR>')
-
--- Flutter-Tools
-map('n', '<leader>fr', ':FlutterRun<CR>')
-map('n', '<leader>fd', ':FlutterDevices<CR>')
-map('n', '<leader>fe', ':FlutterEmulators<CR>')
-map('n', '<leader>fR', ':FlutterReload<CR>')
-map('n', '<leader>ft', ':FlutterRestart<CR>')
-map('n', '<leader>fq', ':FlutterQuit<CR>')
-map('n', '<leader>fl', ':FlutterOutlineToggle<CR>')
-
---  faster scrolling
-map('n', '<leader><leader>j', '10<C-e>')
-map('n', '<leader><leader>k', '10<C-y>')
 
 -- SessionManager
 map('n', '<leader>ss', ':SessionManager save_current_session<CR>')

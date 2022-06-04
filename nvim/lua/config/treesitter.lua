@@ -3,21 +3,44 @@ if not ok then
     return
 end
 
+local servers = {
+        'bash',
+        'c',
+        'comment',
+        'cpp',
+        'css',
+        'dart',
+        'dockerfile',
+        'dot',
+        'graphql',
+        'html',
+        'http',
+        'java',
+        'javascript',
+        'json',
+        'json5',
+        'lua',
+        'markdown',
+        'php',
+        'python',
+        'tsx',
+        'typescript',
+        'vim',
+        'yaml',
+}
+
 configs.setup {
-    ensure_installed = {
-        'bash', 'c', 'comment', 'cpp', 'css', 'dockerfile', 'dot',
-        'graphql', 'html', 'java', 'http', 'javascript', 'json', 'json5',
-        'lua', 'php', 'python', 'tsx', 'typescript', 'vim', 'yaml', 'dart'
-    },
+    ensure_installed = servers,
     sync_install = false,
-    ignore_install = { "" }, -- List of parsers to ignore installing
+    ignore_install = { "" },
     indent = { enable = false },
     autopairs = { enable = true },
     autotag = { enable = true },
+    yati = { enable = true },
     highlight = {
         enable = true, -- false will disable the whole extension
         disable = { "" }, -- list of language that will be disabled
-        additional_vim_regex_highlighting = true,
+        additional_vim_regex_highlighting = false,
 
     },
     rainbow = {
@@ -27,6 +50,59 @@ configs.setup {
         max_file_lines = 1000, -- Do not enable for files with more than n lines, int
         -- colors = {}, -- table of hex strings
         -- termcolors = {} -- table of colour name strings
+    },
+    textobjects = {
+        select = {
+            enable = true,
+
+            -- Automatically jump forward to textobj, similar to targets.vim
+            lookahead = true,
+
+            keymaps = {
+                -- You can use the capture groups defined in textobjects.scm
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner",
+            },
+        },
+        swap = {
+            enable = true,
+            swap_next = {
+                ["<leader>a"] = "@parameter.inner",
+            },
+            swap_previous = {
+                ["<leader>A"] = "@parameter.inner",
+            },
+        },
+        move = {
+            enable = true,
+            set_jumps = true, -- whether to set jumps in the jumplist
+            goto_next_start = {
+                ["]f"] = "@function.outer",
+                ["]]"] = "@class.outer",
+            },
+            goto_next_end = {
+                ["]F"] = "@function.outer",
+                ["]["] = "@class.outer",
+            },
+            goto_previous_start = {
+                ["[f"] = "@function.outer",
+                ["[["] = "@class.outer",
+            },
+            goto_previous_end = {
+                ["[F"] = "@function.outer",
+                ["[]"] = "@class.outer",
+            },
+        },
+        lsp_interop = {
+            enable = true,
+            border = 'none',
+            peek_definition_code = {
+                ["<leader>cc"] = "@function.outer",
+                ["<leader>ci"] = "@class.outer",
+            },
+        },
     },
     context_commentstring = {
         enable = true,

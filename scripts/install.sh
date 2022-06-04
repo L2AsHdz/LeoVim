@@ -173,6 +173,7 @@ ln -sv $nvim_lua_cfg2/whichkey.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/flutter.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/cursorline.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/comment.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/ts-context.lua $nvim_lua_cfg
 
 #tlp
 pacin tlp tlp-rdw

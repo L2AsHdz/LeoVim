@@ -1,9 +1,9 @@
 local M = {}
 
-function M.map(mode, keybind, command, opts)
+function M.map(modes, lhs, rhs, opts)
     local options = { noremap = true, silent = true }
     options = vim.tbl_deep_extend('force', options, opts or {})
-    vim.api.nvim_set_keymap(mode, keybind, command, options)
+    vim.keymap.set(modes, lhs, rhs, options)
 end
 
 function M.bufmap(buf, mode, keybind, command, opts)

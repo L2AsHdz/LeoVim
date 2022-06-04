@@ -17,7 +17,8 @@ null_ls.setup({
         formatting.prettierd,
 
         diagnostics.cppcheck,
-        -- diagnostics.luacheck,
+        diagnostics.luacheck.with({ extra_args = { '--no-global', '--no-unused' } }),
+        diagnostics.php,
         -- diagnostics.eslint_d,
         diagnostics.vint,
 

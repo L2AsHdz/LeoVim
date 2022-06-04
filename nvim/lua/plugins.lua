@@ -147,12 +147,12 @@ use({
         { 'hrsh7th/cmp-path' },
         { 'hrsh7th/cmp-buffer' },
         { 'hrsh7th/cmp-nvim-lua' },
-        { 'hrsh7th/cmp-nvim-lsp-signature-help' }
+        { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+        { 'saadparwaiz1/cmp_luasnip' }
     },
     config = getConfig('cmp'),
 })
 use('L3MON4D3/LuaSnip')
-use('saadparwaiz1/cmp_luasnip')
 use('rafamadriz/friendly-snippets')
 use({ 'jose-elias-alvarez/null-ls.nvim', config = getConfig('null-ls') })
 use({
@@ -160,12 +160,13 @@ use({
     run = ':TSUpdate',
     config = getConfig('treesitter'),
 })
+use({ 'nvim-treesitter/nvim-treesitter-context', config = getConfig('ts-context')})
+use('nvim-treesitter/nvim-treesitter-textobjects')
 use('p00f/nvim-ts-rainbow')
 use('RRethy/nvim-treesitter-endwise')
 use('yioneko/nvim-yati')
 use({ 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim', config = getConfig('flutter') })
 -- use('gpanders/editorconfig.nvim')
--- use 'romgrk/nvim-treesitter-context'
 
 -- gittools
 use({ 'lewis6991/gitsigns.nvim', config = getConfig('gitsigns') })

@@ -9,18 +9,17 @@ map('n', '<leader>Q', ':q!<CR>')
 map('n', '<leader>bb', ':Bdelete<CR>')
 map('n', '<leader>bo', ':BufferLineCloseRight<CR>|:BufferLineCloseLeft<CR>')
 map('n', '<leader>n', ':noh<CR>')
-map('i', 'ii', '<ESC>')
-map('v', 'ii', '<ESC>')
+map({ 'i', 'v' }, 'ii', '<ESC>')
 map('n', '<leader>y', ':%y+<CR>')
 map('i', '<C-a>', '<ESC>:%y+<CR>gi')
 
-map('n', ';', '<cmd>FineCmdline<CR>')
+map('n', ';', ':FineCmdline<CR>')
 
 -- Resize with arrows
-map('n', '<C-A-up>',  ':resize -2<CR>')
-map('n', '<C-A-down>',  ':resize +2<CR>')
-map('n', '<C-A-left>',  ':vertical resize -2<CR>')
-map('n', '<C-A-right>',  ':vertical resize +2<CR>')
+map('n', '<C-A-up>', ':resize -2<CR>')
+map('n', '<C-A-down>', ':resize +2<CR>')
+map('n', '<C-A-left>', ':vertical resize -2<CR>')
+map('n', '<C-A-right>', ':vertical resize +2<CR>')
 
 -- Indent
 map('v', '<', '<gv')
@@ -93,8 +92,12 @@ map('n', '<leader>sR', ':SearchBoxReplace confirm="menu"<CR>')
 map('n', '<leader>sr', ':SearchBoxReplace confirm="menu" -- <C-r>=expand("<cword>")<CR><CR>')
 
 -- Illuminate navigation
-map('n', '<C-u>', '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<cr>')
-map('n', '<C-o>', '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>')
+map('n', '<C-u>', function()
+    return require('illuminate').next_reference({ reverse = true, wrap = true })
+end)
+map('n', '<C-o>', function()
+    return require('illuminate').next_reference({ wrap = true })
+end)
 
 -- GitSigns
 --  Jump between hunks
@@ -129,8 +132,16 @@ map('n', '<leader>hl', ':HopLineStart<CR>')
 map('n', '<leader>hL', ':HopLine<CR>')
 
 -- Telescope
-map("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
-map("n", "<leader>fF", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false, hidden = true }))<cr>")
+map('n', '<leader>ff', function()
+    local builtin = require('telescope.builtin')
+    local themes = require('telescope.themes')
+    return builtin.find_files(themes.get_dropdown({ previewer = false }))
+end)
+map('n', '<leader>fF', function()
+    local builtin = require('telescope.builtin')
+    local themes = require('telescope.themes')
+    return builtin.find_files(themes.get_dropdown({ previewer = false, hidden = true }))
+end)
 map('n', '<leader>fv', ':Telescope find_files<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fg', ':Telescope live_grep theme=ivy <CR>')

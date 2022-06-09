@@ -79,7 +79,7 @@ use({
 use({ 'rcarriga/nvim-notify', config = getConfig('notify') })
 use({ 'akinsho/bufferline.nvim', tag = 'v2.*', config = getConfig('bufferline') })
 use({ 'nvim-lualine/lualine.nvim', config = getConfig('lualine') })
-use({ 'arkav/lualine-lsp-progress' })
+use({ 'j-hui/fidget.nvim', config = getSetup('fidget', { text = { spinner = 'moon' } }) })
 use({ 'sidebar-nvim/sidebar.nvim', config = getConfig('sidebar') })
 use({ 'SmiteshP/nvim-gps', getSetup('nvim-gps', {}) })
 use({ 'akinsho/toggleterm.nvim', tag = 'v2.*', config = getConfig('term') })
@@ -92,14 +92,19 @@ use({
     end,
 })
 use({ 'karb94/neoscroll.nvim', config = getSetup('neoscroll', {}) })
+use({
+    'declancm/cinnamon.nvim',
+    config = getSetup('cinnamon', {
+        default_keymaps = false,
+        centered = false,
+    })
+})
 use('dstein64/nvim-scrollview')
 use({ 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) })
 use({ 'nvim-telescope/telescope.nvim', config = getConfig('telescope') })
 use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 use('nvim-telescope/telescope-packer.nvim')
 use({ 'goolord/alpha-nvim', config = getConfig('alpha') })
-use({ 'antoinemadec/FixCursorHold.nvim' })
-use({ 'Shatur/neovim-session-manager', config = getConfig('session') })
 use({ 'stevearc/dressing.nvim', config = getConfig('dressing') })
 use({ 'kevinhwang91/nvim-bqf', ft = 'qf' })
 use({ 'folke/which-key.nvim', config = getConfig('whichkey') })
@@ -138,7 +143,6 @@ use({
 -- devtools
 use({ 'neovim/nvim-lspconfig', config = getConfig('lsp') })
 use('williamboman/nvim-lsp-installer')
-use({ 'folke/trouble.nvim', config = getSetup('trouble', {}) })
 use({
     'hrsh7th/nvim-cmp',
     requires = {
@@ -155,6 +159,7 @@ use({
 use('L3MON4D3/LuaSnip')
 use('rafamadriz/friendly-snippets')
 use({ 'jose-elias-alvarez/null-ls.nvim', config = getConfig('null-ls') })
+use({ 'ThePrimeagen/refactoring.nvim', config = getSetup('refactoring', {}) })
 use({
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -165,8 +170,14 @@ use('nvim-treesitter/nvim-treesitter-textobjects')
 use('p00f/nvim-ts-rainbow')
 use('RRethy/nvim-treesitter-endwise')
 use('yioneko/nvim-yati')
+use({ 'm-demare/hlargs.nvim', config = getSetup('hlargs', {}) })
+use({ 'folke/trouble.nvim', config = getSetup('trouble', {}) })
+use({ 'NTBBloodbath/rest.nvim' })
+use({ 'nvim-pack/nvim-spectre', config = getSetup('spectre', {}) })
 use({ 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim', config = getConfig('flutter') })
--- use('gpanders/editorconfig.nvim')
+use({ 'michaelb/sniprun', run = 'bash ./install.sh', config = getSetup('sniprun', { display = {'Classic'} }) })
+use({ 'CRAG666/code_runner.nvim', config = getConfig('code-runner') })
+use('gpanders/editorconfig.nvim')
 
 -- gittools
 use({ 'lewis6991/gitsigns.nvim', config = getConfig('gitsigns') })
@@ -188,6 +199,8 @@ use({
 use('sindrets/diffview.nvim')
 
 -- utils
+use({ 'antoinemadec/FixCursorHold.nvim' })
+use({ 'Shatur/neovim-session-manager', config = getConfig('session') })
 use({ 'windwp/nvim-autopairs', config = getConfig('autopairs') })
 use({ 'windwp/nvim-ts-autotag' })
 use({ 'blackCauldron7/surround.nvim', config = getSetup('surround', { mappings_style = 'surround' }) })
@@ -199,11 +212,15 @@ use({ 'phaazon/hop.nvim', config = getSetup('hop', {}) })
 use('famiu/bufdelete.nvim')
 use({ 'Pocco81/AutoSave.nvim', config = getConfig('autosave') })
 use({ 'ethanholz/nvim-lastplace', config = getSetup('nvim-lastplace', {}) })
+use({ 'gbprod/cutlass.nvim', config = getSetup('cutlass', { cut_key = 't', exclude = { 'ns', 'nS' } }) })
+use({ 'gbprod/substitute.nvim', config = getSetup('substitute', { yank_substituted_text = true }) })
+-- use({ 'gbprod/yanky.nvim', config = getSetup('yanky', {}) })
 use('dstein64/vim-startuptime')
 use({ 'mg979/vim-visual-multi', branch = 'master' })
-use({ 'numToStr/Navigator.nvim', config = getSetup('Navigator', {}) })
+-- use({ 'numToStr/Navigator.nvim', config = getSetup('Navigator', {}) })
+use({ 'ghillb/cybu.nvim', config = getSetup('cybu', { display_time = 1000 }) })
+use({ 'max397574/better-escape.nvim', config = getSetup('better_escape', { mapping = { 'ii' } }) })
 use({ 'AckslD/nvim-neoclip.lua', config = getSetup('neoclip', {}) })
--- use('mbbill/undotree')
 use('nathom/filetype.nvim')
 
 if packer_bootstrap then

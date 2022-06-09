@@ -24,5 +24,6 @@ null_ls.setup({
 
         code_actions.eslint_d,
         code_actions.gitsigns,
+        code_actions.refactoring,
     },
 })

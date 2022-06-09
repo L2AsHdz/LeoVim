@@ -2,7 +2,7 @@ local set = vim.opt
 vim.cmd('syntax on')                    -- Habilita syntax highlight
 set.number = true                       -- Muestra los numeros de las lineas
 set.rnu = true                          -- Numeros de linea relativos
-set.signcolumn = "yes"                  -- Always show the sign column
+set.signcolumn = 'yes'                  -- Always show the sign column
 set.numberwidth = 1                     -- Numeros de columna mas ajustados
 set.cursorline = true                   -- Resalta la linea actual
 set.title = true                        -- Muestra el nombre del archivo en la ventana de la terminal
@@ -27,7 +27,7 @@ set.swapfile = false
 set.pastetoggle = '<F2>'
 -- set.scrolloff = 10
 -- set.sidescrolloff = 10
-set.completeopt = {"menuone", "noselect"}
+set.completeopt = {'menuone', 'noselect'}
 
 --Tabulaciones
 set.tabstop = 4

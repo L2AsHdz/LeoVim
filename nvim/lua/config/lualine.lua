@@ -65,13 +65,6 @@ local diagnostics = {
     update_in_insert = true,
 }
 
-local lsp_progress = {
-    'lsp_progress',
-    display_components = { 'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' } },
-	timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
-	spinner_symbols = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }
-}
-
 local sidebar_extension = {
     options = {
         theme = bubbles_theme,
@@ -120,7 +113,7 @@ lualine.setup({
         lualine_c = {
             { gps.get_location, cond = gps.is_available },
         },
-        lualine_x = { lsp_progress },
+        lualine_x = {},
         lualine_y = { diagnostics, 'diff', 'branch' },
         lualine_z = {
             { 'location', separator = {} },

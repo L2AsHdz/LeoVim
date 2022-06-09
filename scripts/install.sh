@@ -99,7 +99,7 @@ sudo modprobe vboxdrv
 yain virtualbox-ext-oracle
 
 #neovim
-pacin neovim ranger xsel ripgrep ueberzug the_silver_searcher bat git-delta lua fd ruby cppcheck vint
+pacin neovim ranger xsel ripgrep ueberzug the_silver_searcher bat git-delta lua fd ruby cppcheck vint jq
 yain uncrustify stylua shfmt luacheck
 python -m ensurepip --upgrade
 python -m pip install --upgrade pip
@@ -174,6 +174,8 @@ ln -sv $nvim_lua_cfg2/flutter.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/cursorline.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/comment.lua $nvim_lua_cfg
 ln -sv $nvim_lua_cfg2/ts-context.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/rest.lua $nvim_lua_cfg
+ln -sv $nvim_lua_cfg2/code-runner.lua $nvim_lua_cfg
 
 #tlp
 pacin tlp tlp-rdw

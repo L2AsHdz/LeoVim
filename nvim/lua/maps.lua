@@ -1,15 +1,17 @@
 local map = require('utils').map
+local split = require('split').split_command
 vim.g.mapleader = ' '
 
 -- Keymaps propios
 map('n', '<leader>w', ':w<CR>')
-map('n', '<leader>q', ':q<CR>')
+map('n', '<leader>qw', ':q<CR>')
+map('n', '<leader>qq', ':qa<CR>')
 map('n', '<leader>W', ':wq<CR>')
-map('n', '<leader>Q', ':q!<CR>')
+map('n', '<leader>qf', ':q!<CR>')
 map('n', '<leader>bb', ':Bdelete<CR>')
 map('n', '<leader>bo', ':BufferLineCloseRight<CR>|:BufferLineCloseLeft<CR>')
 map('n', '<leader>n', ':noh<CR>')
-map({ 'i', 'v' }, 'ii', '<ESC>')
+-- map({ 'i', 'v' }, 'ii', '<ESC>')
 map('n', '<leader>y', ':%y+<CR>')
 map('i', '<C-a>', '<ESC>:%y+<CR>gi')
 
@@ -46,11 +48,23 @@ map('v', '<C-S-down>', ":t '>+0<CR>gv=gv")
 map('v', '<C-S-up>', ":t '<-1<CR>gv=gv")
 
 -- Navigator
-map('n', '<C-h>', '<CMD>lua require("Navigator").left()<CR>')
-map('n', '<C-k>', '<CMD>lua require("Navigator").up()<CR>')
-map('n', '<C-j>', '<CMD>lua require("Navigator").down()<CR>')
-map('n', '<C-l>', '<CMD>lua require("Navigator").right()<CR>')
-map('n', '<C-p>', '<CMD>lua require("Navigator").previous()<CR>')
+-- map('n', '<C-h>', '<CMD>lua require("Navigator").left()<CR>')
+-- map('n', '<C-k>', '<CMD>lua require("Navigator").up()<CR>')
+-- map('n', '<C-j>', '<CMD>lua require("Navigator").down()<CR>')
+-- map('n', '<C-l>', '<CMD>lua require("Navigator").right()<CR>')
+-- map('n', '<C-p>', '<CMD>lua require("Navigator").previous()<CR>')
+
+map('n', '<C-h>', function() split('h') end)
+map('n', '<C-k>', function() split('k') end)
+map('n', '<C-j>', function() split('j') end)
+map('n', '<C-l>', function() split('l') end)
+
+map('n', '<C-x>', function()
+    return require('utils').focus_max_or_equal()
+end)
+
+map('n', '<TAB>', ':CybuNext<CR>')
+map('n', '<S-TAB>', ':CybuPrev<CR>')
 
 -- Bufferline
 map('n', '<S-k>', ':BufferLineCycleNext<CR>')
@@ -91,11 +105,19 @@ map('n', '<leader>s?', ':SearchBoxMatchAll reverse=true<CR>')
 map('n', '<leader>sR', ':SearchBoxReplace confirm="menu"<CR>')
 map('n', '<leader>sr', ':SearchBoxReplace confirm="menu" -- <C-r>=expand("<cword>")<CR><CR>')
 
+--Spectre
+map('n', '<leader>rs', function()
+    return require('spectre').open({ is_insert_mode = true })
+end)
+map('n', '<leader>rw', function()
+    return require('spectre').open_visual({ select_word = true, is_insert_mode = true })
+end)
+
 -- Illuminate navigation
-map('n', '<C-u>', function()
+map('n', '<A-u>', function()
     return require('illuminate').next_reference({ reverse = true, wrap = true })
 end)
-map('n', '<C-o>', function()
+map('n', '<A-o>', function()
     return require('illuminate').next_reference({ wrap = true })
 end)
 
@@ -112,6 +134,7 @@ map('n', '<leader>gh', ':Gitsigns preview_hunk<CR>')
 map('n', '<leader>gb', ':Gitsigns stage_buffer<CR>')
 map('n', '<leader>gB', ':Gitsigns reset_buffer<CR>')
 map('n', '<leader>gg', ':Gitsigns refresh<CR>')
+map('n', '<leader>gG', ':Gitsigns attach<CR>')
 
 --  Open neogit pane
 map('n', '<leader>gs', ':Neogit kind=vsplit<CR>')
@@ -131,6 +154,51 @@ map('n', '<leader>hC', ':HopChar1<CR>')
 map('n', '<leader>hl', ':HopLineStart<CR>')
 map('n', '<leader>hL', ':HopLine<CR>')
 
+-- Cinnamon
+-- Start/end of file and line number movements:
+map({ 'n', 'x' }, 'gg', "<Cmd>lua Scroll('gg')<CR>")
+map({ 'n', 'x' }, 'G', "<Cmd>lua Scroll('G', 0, 1)<CR>")
+
+-- Start/end of line:
+map({ 'n', 'x' }, '0', "<Cmd>lua Scroll('0')<CR>")
+map({ 'n', 'x' }, '^', "<Cmd>lua Scroll('^')<CR>")
+map({ 'n', 'x' }, '$', "<Cmd>lua Scroll('$', 0, 1)<CR>")
+
+-- Previous/next search result:
+map('n', 'n', "<Cmd>lua Scroll('n', 1)<CR>")
+map('n', 'N', "<Cmd>lua Scroll('N', 1)<CR>")
+map('n', '*', "<Cmd>lua Scroll('*', 1)<CR>")
+map('n', '#', "<Cmd>lua Scroll('#', 1)<CR>")
+map('n', 'g*', "<Cmd>lua Scroll('g*', 1)<CR>")
+map('n', 'g#', "<Cmd>lua Scroll('g#', 1)<CR>")
+
+--Substitute
+map('n', 's', function() return require('substitute').operator() end)
+map('n', 'ss', function() return require('substitute').line() end)
+map('n', 'S', function() return require('substitute').eol() end)
+map('x', 's', function() return require('substitute').visual() end)
+
+map('n', 'sx', function() return require('substitute.exchange').operator() end)
+map('n', 'sxx', function() return require('substitute.exchange').line() end)
+map('x', 'X', function() return require('substitute.exchange').visual() end)
+map('n', 'sxc', function() return require('substitute.exchange').cancel() end)
+
+-- Rest
+map('n', '<leader>rr', '<Plug>RestNvim')
+map('n', '<leader>rl', '<Plug>RestNvimLast')
+map('n', '<leader>rp', '<Plug>RestNvimPreview')
+
+-- Sniprun
+map({'n', 'v'}, '<leader>cr', '<Plug>SnipRun')
+map({'n', 'v'}, '<leader>cR', '<Plug>SnipReset')
+map({'n', 'v'}, '<leader>cC', '<Plug>SnipClose')
+
+-- Code_Runner
+map('n', '<leader>rc', ':RunCode<CR>')
+map('n', '<leader>rf', ':RunFile<CR>')
+map('n', '<leader>rj', ':RunProject<CR>')
+map('n', '<leader>rC', ':RunClose<CR>')
+
 -- Telescope
 map('n', '<leader>ff', function()
     local builtin = require('telescope.builtin')
@@ -146,6 +214,7 @@ map('n', '<leader>fv', ':Telescope find_files<CR>')
 map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fg', ':Telescope live_grep theme=ivy <CR>')
 map('n', '<leader>fi', ':Telescope builtin<CR>')
+map('n', '<leader>fh', ':Telescope help_tags<CR>')
 map('n', '<leader>fn', ':Telescope neoclip<CR>')
 map('n', '<leader>fo', ':Telescope oldfiles<CR>')
 map('n', '<leader>fp', ':Telescope packer<CR>')

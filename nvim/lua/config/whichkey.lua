@@ -17,7 +17,6 @@ which.register({
         Q = 'Force Exit',
         k = 'Next Tab',
         j = 'Prev Tab',
-        p = 'Jump to Tab',
         y = 'Copy All',
         b = {
             name = 'Buffer',

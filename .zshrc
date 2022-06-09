@@ -136,10 +136,10 @@ export PATH=/home/asael/.fnm:$PATH
 eval "`fnm env`"
 
 # JAVA_HOME ANDROID_SDK_ROOT
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
-export ANDROID_SDK_ROOT='/opt/android-sdk'
-export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
-export PATH=$PATH:$ANDROID_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
+# export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+# export ANDROID_SDK_ROOT='/opt/android-sdk'
+# export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
+# export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
+# export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
+# export PATH=$PATH:$ANDROID_ROOT/emulator
+# export PATH=$PATH:$ANDROID_SDK_ROOT/tools/

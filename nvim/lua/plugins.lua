@@ -1,4 +1,6 @@
 local fn = vim.fn
+local ag = vim.api.nvim_create_augroup
+local ac = vim.api.nvim_create_autocmd
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
     packer_bootstrap = fn.system({
@@ -25,23 +27,21 @@ function getSetup(name, opts)
     end
 end
 
-vim.cmd([[packadd packer.nvim]])
+vim.api.nvim_command('packadd packer.nvim')
 
-vim.cmd([[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-    augroup end
-]])
+local group = ag('packer_user_config', { clear = true })
+ac('BufWritePost', {
+    group = group,
+    pattern = 'plugins.lua',
+    command = 'source <afile> | PackerCompile',
+})
 
--- Use a protected call so we dont weeoe out on first use
 local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
     return
 end
 
 packer.init({
-    enable = true,
     compile_path = '~/.config/nvim/lua/packer_compiled.lua',
     display = {
         open_fn = function()
@@ -57,7 +57,7 @@ use({ 'lewis6991/impatient.nvim' })
 require('packer_compiled')
 use('wbthomason/packer.nvim')
 
-use('nvim-lua/plenary.nvim')
+use({ 'nvim-lua/plenary.nvim', module = 'plenary' })
 use('nvim-lua/popup.nvim')
 use({ 'kyazdani42/nvim-web-devicons', config = getSetup('nvim-web-devicons', { default = true }) })
 
@@ -77,11 +77,17 @@ use({
     config = getConfig('colorscheme'),
 })
 use({ 'rcarriga/nvim-notify', config = getConfig('notify') })
-use({ 'akinsho/bufferline.nvim', tag = 'v2.*', config = getConfig('bufferline') })
-use({ 'nvim-lualine/lualine.nvim', config = getConfig('lualine') })
+use({
+    'akinsho/bufferline.nvim',
+    tag = 'v2.*',
+    event = 'BufReadPre',
+    config = getConfig('bufferline'),
+})
+use({ 'nvim-lualine/lualine.nvim', event = 'VimEnter', config = getConfig('lualine') })
 use({ 'j-hui/fidget.nvim', config = getSetup('fidget', { text = { spinner = 'moon' } }) })
-use({ 'sidebar-nvim/sidebar.nvim', config = getConfig('sidebar') })
-use({ 'SmiteshP/nvim-gps', getSetup('nvim-gps', {}) })
+-- use({ 'sidebar-nvim/sidebar.nvim', config = getConfig('sidebar') })
+use({ 'simrat39/symbols-outline.nvim', cmd = 'SymbolsOutline' })
+use('SmiteshP/nvim-navic')
 use({ 'akinsho/toggleterm.nvim', tag = 'v2.*', config = getConfig('term') })
 use({ 'kyazdani42/nvim-tree.lua', config = getConfig('nvim-tree') })
 use({
@@ -94,10 +100,11 @@ use({
 use({ 'karb94/neoscroll.nvim', config = getSetup('neoscroll', {}) })
 use({
     'declancm/cinnamon.nvim',
+    module = 'cinnamon',
     config = getSetup('cinnamon', {
         default_keymaps = false,
         centered = false,
-    })
+    }),
 })
 use('dstein64/nvim-scrollview')
 use({ 'luukvbaal/stabilize.nvim', config = getSetup('stabilize', {}) })
@@ -107,18 +114,18 @@ use('nvim-telescope/telescope-packer.nvim')
 use({ 'goolord/alpha-nvim', config = getConfig('alpha') })
 use({ 'stevearc/dressing.nvim', config = getConfig('dressing') })
 use({ 'kevinhwang91/nvim-bqf', ft = 'qf' })
-use({ 'folke/which-key.nvim', config = getConfig('whichkey') })
+use({ 'folke/which-key.nvim', event = 'VimEnter', config = getConfig('whichkey') })
 use({
     'lukas-reineke/virt-column.nvim',
+    event = 'BufReadPre',
     config = function()
         getSetup('virt-column', {})
         vim.cmd([[highlight VirtColumn guifg=#353b48]])
     end,
     after = 'rose-pine',
 })
--- use({ 'yamatsum/nvim-cursorline', config = getConfig('cursorline') })
 use({ 'RRethy/vim-illuminate', config = getConfig('cursorline') })
-use({ 'lukas-reineke/indent-blankline.nvim', config = getConfig('blankline') })
+use({ 'lukas-reineke/indent-blankline.nvim', event = 'BufReadPre', config = getConfig('blankline') })
 use({
     'VonHeikemen/fine-cmdline.nvim',
     config = getSetup('fine-cmdline', { cmdline = { prompt = '濫' }, popup = { position = { row = '90%' } } }),
@@ -132,9 +139,11 @@ use({
         { 'MunifTanjim/nui.nvim' },
     },
 })
-use({ 'norcalli/nvim-colorizer.lua', config = getSetup('colorizer', { '*'; }) })
+use({ 'norcalli/nvim-colorizer.lua', event = 'BufReadPre', config = getSetup('colorizer', { '*' }) })
 use({
     'iamcco/markdown-preview.nvim',
+    ft = 'markdown',
+    cmd = 'MarkDownPreview',
     config = function()
         vim.g.mkdp_port = '9000'
     end,
@@ -152,7 +161,7 @@ use({
         { 'hrsh7th/cmp-buffer' },
         { 'hrsh7th/cmp-nvim-lua' },
         { 'hrsh7th/cmp-nvim-lsp-signature-help' },
-        { 'saadparwaiz1/cmp_luasnip' }
+        { 'saadparwaiz1/cmp_luasnip' },
     },
     config = getConfig('cmp'),
 })
@@ -165,23 +174,31 @@ use({
     run = ':TSUpdate',
     config = getConfig('treesitter'),
 })
-use({ 'nvim-treesitter/nvim-treesitter-context', config = getConfig('ts-context')})
+use({ 'nvim-treesitter/nvim-treesitter-context', config = getConfig('ts-context') })
 use('nvim-treesitter/nvim-treesitter-textobjects')
 use('p00f/nvim-ts-rainbow')
 use('RRethy/nvim-treesitter-endwise')
 use('yioneko/nvim-yati')
 use({ 'm-demare/hlargs.nvim', config = getSetup('hlargs', {}) })
 use({ 'folke/trouble.nvim', config = getSetup('trouble', {}) })
-use({ 'NTBBloodbath/rest.nvim' })
-use({ 'nvim-pack/nvim-spectre', config = getSetup('spectre', {}) })
-use({ 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim', config = getConfig('flutter') })
-use({ 'michaelb/sniprun', run = 'bash ./install.sh', config = getSetup('sniprun', { display = {'Classic'} }) })
+use({ 'NTBBloodbath/rest.nvim', ft = 'http' })
+use({ 'nvim-pack/nvim-spectre', event = 'BufReadPre', config = getSetup('spectre', {}) })
+use({
+    'akinsho/flutter-tools.nvim',
+    ft = { 'flutter', 'dart' },
+    config = getConfig('flutter'),
+})
+use({
+    'michaelb/sniprun',
+    run = 'bash ./install.sh',
+    config = getSetup('sniprun', { display = { 'Classic' } }),
+})
 use({ 'CRAG666/code_runner.nvim', config = getConfig('code-runner') })
 use('gpanders/editorconfig.nvim')
 
 -- gittools
-use({ 'lewis6991/gitsigns.nvim', config = getConfig('gitsigns') })
-use({ 'TimUntersberger/neogit', config = getConfig('neogit') })
+use({ 'lewis6991/gitsigns.nvim', event = 'BufReadPre', config = getConfig('gitsigns') })
+use({ 'TimUntersberger/neogit', cmd = 'Neogit', config = getConfig('neogit') })
 use({
     'APZelos/blamer.nvim',
     config = function()
@@ -204,7 +221,7 @@ use({ 'Shatur/neovim-session-manager', config = getConfig('session') })
 use({ 'windwp/nvim-autopairs', config = getConfig('autopairs') })
 use({ 'windwp/nvim-ts-autotag' })
 use({ 'blackCauldron7/surround.nvim', config = getSetup('surround', { mappings_style = 'surround' }) })
-use('andymass/vim-matchup')
+use({ 'andymass/vim-matchup', event = 'VimEnter' })
 use({ 'kevinhwang91/nvim-hlslens', getSetup('hlslens', { calm_down = true, nearest_only = true }) })
 use({ 'numToStr/Comment.nvim', config = getConfig('comment') })
 use('JoosepAlviste/nvim-ts-context-commentstring')
@@ -215,7 +232,7 @@ use({ 'ethanholz/nvim-lastplace', config = getSetup('nvim-lastplace', {}) })
 use({ 'gbprod/cutlass.nvim', config = getSetup('cutlass', { cut_key = 't', exclude = { 'ns', 'nS' } }) })
 use({ 'gbprod/substitute.nvim', config = getSetup('substitute', { yank_substituted_text = true }) })
 -- use({ 'gbprod/yanky.nvim', config = getSetup('yanky', {}) })
-use('dstein64/vim-startuptime')
+use({ 'dstein64/vim-startuptime', cmd = 'StartupTime' })
 use({ 'mg979/vim-visual-multi', branch = 'master' })
 -- use({ 'numToStr/Navigator.nvim', config = getSetup('Navigator', {}) })
 use({ 'ghillb/cybu.nvim', config = getSetup('cybu', { display_time = 1000 }) })

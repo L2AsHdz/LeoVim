@@ -15,6 +15,7 @@ null_ls.setup({
         formatting.shfmt,
         formatting.uncrustify,
         formatting.prettierd,
+        formatting.sqlfluff.with({ extra_args = { '--dialect', 'postgres' } }),
 
         diagnostics.cppcheck,
         diagnostics.luacheck.with({ extra_args = { '--no-global', '--no-unused' } }),

@@ -51,6 +51,14 @@ local function lsp_highlight_document(client)
     illuminate.on_attach(client)
 end
 
+local function lsp_nvim_navic(client, bufnr)
+    local ok, navic = pcall(require, 'nvim-navic')
+    if not ok then
+        return
+    end
+    navic.attach(client, bufnr)
+end
+
 local bufMap = require('utils').bufmap
 
 local function lsp_keymaps(bufnr)
@@ -92,6 +100,7 @@ M.on_attach = function(client, bufnr)
     end
     lsp_keymaps(bufnr)
     lsp_highlight_document(client)
+    lsp_nvim_navic(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

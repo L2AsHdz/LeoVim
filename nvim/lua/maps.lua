@@ -83,9 +83,9 @@ map('n', '<leader>nr', ':NvimTreeRefresh<CR>')
 map('n', '<leader>nf', ':NvimTreeFindFile<CR>')
 
 -- sidebar-nvim
-map('n', '<leader>ll', ':SidebarNvimToggle<CR>')
-map('n', '<leader>lu', ':SidebarNvimUpdate<CR>')
-map('n', '<leader>lf', ':SidebarNvimFocus<CR>')
+map('n', '<leader>ll', ':SymbolsOutline<CR>')
+-- map('n', '<leader>lu', ':SidebarNvimUpdate<CR>')
+-- map('n', '<leader>lf', ':SidebarNvimFocus<CR>')
 
 -- Ranger
 map('n', '<leader>rg', ':RnvimrToggle<CR>')
@@ -93,10 +93,6 @@ map('n', '<leader>rg', ':RnvimrToggle<CR>')
 -- Hlslens
 map('n', 'm', [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]])
 map('n', 'M', [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]])
-map('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]])
-map('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]])
-map('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]])
-map('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]])
 
 -- SearchBox
 map('n', '<leader>s/', ':SearchBoxMatchAll<CR>')
@@ -156,21 +152,49 @@ map('n', '<leader>hL', ':HopLine<CR>')
 
 -- Cinnamon
 -- Start/end of file and line number movements:
-map({ 'n', 'x' }, 'gg', "<Cmd>lua Scroll('gg')<CR>")
-map({ 'n', 'x' }, 'G', "<Cmd>lua Scroll('G', 0, 1)<CR>")
+local scroll = require('cinnamon.scroll').scroll
+local hlslens = require('hlslens').start
+map({ 'n', 'x' }, 'gg', function()
+    scroll('gg')
+end)
+map({ 'n', 'x' }, 'G', function()
+    scroll('G', 0, 1)
+end)
 
 -- Start/end of line:
-map({ 'n', 'x' }, '0', "<Cmd>lua Scroll('0')<CR>")
-map({ 'n', 'x' }, '^', "<Cmd>lua Scroll('^')<CR>")
-map({ 'n', 'x' }, '$', "<Cmd>lua Scroll('$', 0, 1)<CR>")
+map({ 'n', 'x' }, '0', function()
+    scroll('0')
+end)
+map({ 'n', 'x' }, '^', function()
+    scroll('^')
+end)
+map({ 'n', 'x' }, '$', function()
+    scroll('$', 0, 1)
+end)
 
 -- Previous/next search result:
-map('n', 'n', "<Cmd>lua Scroll('n', 1)<CR>")
-map('n', 'N', "<Cmd>lua Scroll('N', 1)<CR>")
-map('n', '*', "<Cmd>lua Scroll('*', 1)<CR>")
-map('n', '#', "<Cmd>lua Scroll('#', 1)<CR>")
-map('n', 'g*', "<Cmd>lua Scroll('g*', 1)<CR>")
-map('n', 'g#', "<Cmd>lua Scroll('g#', 1)<CR>")
+map('n', 'n', function()
+    scroll('n', 1)
+end)
+map('n', 'N', function()
+    scroll('N', 1)
+end)
+map('n', '*', function()
+    scroll('*', 1)
+    hlslens()
+end)
+map('n', '#', function()
+    scroll('#', 1)
+    hlslens()
+end)
+map('n', 'g*', function()
+    scroll('g*', 1)
+    hlslens()
+end)
+map('n', 'g#', function()
+    scroll('g#', 1)
+    hlslens()
+end)
 
 --Substitute
 map('n', 's', function() return require('substitute').operator() end)
@@ -189,9 +213,9 @@ map('n', '<leader>rl', '<Plug>RestNvimLast')
 map('n', '<leader>rp', '<Plug>RestNvimPreview')
 
 -- Sniprun
-map({'n', 'v'}, '<leader>cr', '<Plug>SnipRun')
-map({'n', 'v'}, '<leader>cR', '<Plug>SnipReset')
-map({'n', 'v'}, '<leader>cC', '<Plug>SnipClose')
+map({ 'n', 'v' }, '<leader>cr', '<Plug>SnipRun')
+map({ 'n', 'v' }, '<leader>cR', '<Plug>SnipReset')
+map({ 'n', 'v' }, '<leader>cC', '<Plug>SnipClose')
 
 -- Code_Runner
 map('n', '<leader>rc', ':RunCode<CR>')
@@ -224,3 +248,10 @@ map('n', '<leader>fN', ':Telescope notify <CR>')
 map('n', '<leader>ss', ':SessionManager save_current_session<CR>')
 map('n', '<leader>sl', ':SessionManager load_session<CR>')
 map('n', '<leader>sd', ':SessionManager delete_session<CR>')
+
+-- packer
+map('n', '<leader>pu', ':PackerUpdate<CR>')
+map('n', '<leader>pc', ':PackerCompile<CR>')
+map('n', '<leader>ps', ':PackerSync<CR>')
+map('n', '<leader>pi', ':PackerInstall<CR>')
+map('n', '<leader>pd', ':PackerClean<CR>')

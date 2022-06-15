@@ -48,11 +48,11 @@ vim.cmd([[
     highlight IndentBlanklineIndent0 guifg=#ffeaa7  gui=nocombine
     highlight IndentBlanklineIndent1 guifg=#c23616 gui=nocombine
     highlight IndentBlanklineIndent2 guifg=#44bd32 gui=nocombine
-    highlight IndentBlanklineIndent3 guifg=#e1b12c gui=nocombine
-    highlight IndentBlanklineIndent4 guifg=#9c88ff gui=nocombine
-    highlight IndentBlanklineIndent5 guifg=#3742fa gui=nocombine
-    highlight IndentBlanklineIndent6 guifg=#ff6b81 gui=nocombine
-    highlight IndentBlanklineIndent7 guifg=#18dcff gui=nocombine
+    highlight IndentBlanklineIndent3 guifg=#9c88ff gui=nocombine
+    highlight IndentBlanklineIndent4 guifg=#3742fa gui=nocombine
+    highlight IndentBlanklineIndent5 guifg=#ff6b81 gui=nocombine
+    highlight IndentBlanklineIndent6 guifg=#18dcff gui=nocombine
+    highlight IndentBlanklineIndent7 guifg=#e1b12c gui=nocombine
 ]])
 
 vim.g.indent_blankline_context_highlight_list = {

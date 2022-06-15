@@ -3,10 +3,10 @@ local split = require('split').split_command
 vim.g.mapleader = ' '
 
 -- Keymaps propios
-map('n', '<leader>w', ':w<CR>')
+map('n', '<leader>bw', ':w<CR>')
 map('n', '<leader>qw', ':q<CR>')
 map('n', '<leader>qq', ':qa<CR>')
-map('n', '<leader>W', ':wq<CR>')
+map('n', '<leader>bW', ':wq<CR>')
 map('n', '<leader>qf', ':q!<CR>')
 map('n', '<leader>bb', ':Bdelete<CR>')
 map('n', '<leader>bo', ':BufferLineCloseRight<CR>|:BufferLineCloseLeft<CR>')
@@ -16,12 +16,6 @@ map('n', '<leader>y', ':%y+<CR>')
 map('i', '<C-a>', '<ESC>:%y+<CR>gi')
 
 map('n', ';', ':FineCmdline<CR>')
-
--- Resize with arrows
-map('n', '<C-A-up>', ':resize -2<CR>')
-map('n', '<C-A-down>', ':resize +2<CR>')
-map('n', '<C-A-left>', ':vertical resize -2<CR>')
-map('n', '<C-A-right>', ':vertical resize +2<CR>')
 
 -- Indent
 map('v', '<', '<gv')
@@ -54,13 +48,39 @@ map('v', '<C-S-up>', ":t '<-1<CR>gv=gv")
 -- map('n', '<C-l>', '<CMD>lua require("Navigator").right()<CR>')
 -- map('n', '<C-p>', '<CMD>lua require("Navigator").previous()<CR>')
 
+-- Move between splits
 map('n', '<C-h>', function() split('h') end)
 map('n', '<C-k>', function() split('k') end)
 map('n', '<C-j>', function() split('j') end)
 map('n', '<C-l>', function() split('l') end)
 
+-- Resize with arrows
+map('n', '<C-A-up>', function()
+    return require('smart-splits').resize_up(2)
+end)
+map('n', '<C-A-down>', function()
+    return require('smart-splits').resize_down(2)
+end)
+map('n', '<C-A-left>', function()
+    return require('smart-splits').resize_left(2)
+end)
+map('n', '<C-A-right>', function()
+    return require('smart-splits').resize_right(2)
+end)
+
+-- Resize mode
+map('n', '<leader>wr', function() require('smart-splits').start_resize_mode() end)
+
+-- WinShift
+map('n', '<leader>wm', ':WinShift<CR>')
+map('n', '<leader>ws', ':WinShift swap<CR>')
+
 map('n', '<C-x>', function()
     return require('utils').focus_max_or_equal()
+end)
+
+map('n', '<leader>wp', function()
+    return require('nvim-window').pick()
 end)
 
 map('n', '<TAB>', ':CybuNext<CR>')
@@ -91,8 +111,8 @@ map('n', '<leader>ll', ':SymbolsOutline<CR>')
 map('n', '<leader>rg', ':RnvimrToggle<CR>')
 
 -- Hlslens
-map('n', 'm', [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]])
-map('n', 'M', [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]])
+map('n', '<leader>nn', [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]])
+map('n', '<leader>nN', [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]])
 
 -- SearchBox
 map('n', '<leader>s/', ':SearchBoxMatchAll<CR>')

@@ -27,3 +27,11 @@ ac('CursorMoved', {
         StayCentered(false)
     end,
 })
+
+local group_resize = ag('Resize', { clear = true })
+ac('VimResized', {
+    group = group_resize,
+    callback = function()
+        return require('bufresize').resize()
+    end
+})

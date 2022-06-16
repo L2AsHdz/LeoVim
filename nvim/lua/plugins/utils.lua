@@ -10,7 +10,18 @@ return {
     { 'JoosepAlviste/nvim-ts-context-commentstring' },
     { 'phaazon/hop.nvim', config = G_getSetup('hop', {}) },
     { 'https://gitlab.com/yorickpeterse/nvim-window.git' },
-    { 'mrjones2014/smart-splits.nvim' },
+    { 'kwkarlwang/bufresize.nvim' },
+    {
+        'L2AsHdz/smart-splits.nvim',
+        branch = 'addHooks',
+        config = G_getSetup('smart-splits', {
+            resize_mode = {
+                hooks = {
+                    on_leave = require('bufresize').register,
+                },
+            },
+        }),
+    },
     { 'sindrets/winshift.nvim' },
     { 'famiu/bufdelete.nvim' },
     { 'Pocco81/AutoSave.nvim', config = G_getConfig('autosave') },
@@ -21,7 +32,7 @@ return {
     { 'dstein64/vim-startuptime', cmd = 'StartupTime' },
     { 'mg979/vim-visual-multi', branch = 'master' },
     -- { 'numToStr/Navigator.nvim', config = getSetup('Navigator', {}) },
-    { 'ghillb/cybu.nvim', config = G_getSetup('cybu', { display_time = 1000 }) },
+    { 'ghillb/cybu.nvim', config = G_getConfig('cybu') },
     { 'max397574/better-escape.nvim', config = G_getSetup('better_escape', { mapping = { 'ii' } }) },
     { 'AckslD/nvim-neoclip.lua', config = G_getSetup('neoclip', {}) },
     { 'nathom/filetype.nvim' },

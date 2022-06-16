@@ -56,24 +56,35 @@ map('n', '<C-l>', function() split('l') end)
 
 -- Resize with arrows
 map('n', '<C-A-up>', function()
-    return require('smart-splits').resize_up(2)
+    require('smart-splits').resize_up()
+    return require('bufresize').register()
 end)
 map('n', '<C-A-down>', function()
-    return require('smart-splits').resize_down(2)
+    require('smart-splits').resize_down()
+    return require('bufresize').register()
 end)
 map('n', '<C-A-left>', function()
-    return require('smart-splits').resize_left(2)
+    require('smart-splits').resize_left()
+    return require('bufresize').register()
 end)
 map('n', '<C-A-right>', function()
-    return require('smart-splits').resize_right(2)
+    require('smart-splits').resize_right()
+    return require('bufresize').register()
 end)
 
 -- Resize mode
-map('n', '<leader>wr', function() require('smart-splits').start_resize_mode() end)
+map('n', '<leader>wr', function()
+    return require('smart-splits').start_resize_mode()
+end)
 
 -- WinShift
-map('n', '<leader>wm', ':WinShift<CR>')
-map('n', '<leader>ws', ':WinShift swap<CR>')
+map('n', '<leader>wm', function()
+    require('winshift').cmd_winshift()
+    require('bufresize').register()
+end)
+map('n', '<leader>ws', function()
+    require('winshift').cmd_winshift('swap')
+end)
 
 map('n', '<C-x>', function()
     return require('utils').focus_max_or_equal()
@@ -83,8 +94,8 @@ map('n', '<leader>wp', function()
     return require('nvim-window').pick()
 end)
 
-map('n', '<TAB>', ':CybuNext<CR>')
-map('n', '<S-TAB>', ':CybuPrev<CR>')
+map('n', '<TAB>', '<Plug>(CybuLastusedPrev)')
+map('n', '<S-TAB>', '<Plug>(CybuLastusedNext)')
 
 -- Bufferline
 map('n', '<S-k>', ':BufferLineCycleNext<CR>')
@@ -136,6 +147,9 @@ end)
 map('n', '<A-o>', function()
     return require('illuminate').next_reference({ wrap = true })
 end)
+
+-- specs
+map('n', '<leader><leader>', function() return require("specs").show_specs() end)
 
 -- GitSigns
 --  Jump between hunks
@@ -273,5 +287,6 @@ map('n', '<leader>sd', ':SessionManager delete_session<CR>')
 map('n', '<leader>pu', ':PackerUpdate<CR>')
 map('n', '<leader>pc', ':PackerCompile<CR>')
 map('n', '<leader>ps', ':PackerSync<CR>')
+map('n', '<leader>pt', ':PackerStatus<CR>')
 map('n', '<leader>pi', ':PackerInstall<CR>')
 map('n', '<leader>pd', ':PackerClean<CR>')

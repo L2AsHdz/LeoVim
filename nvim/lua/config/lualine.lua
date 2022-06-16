@@ -32,6 +32,7 @@ local bubbles_theme = {
     visual = { a = { fg = colors.black, bg = colors.cyan } },
     replace = { a = { fg = colors.black, bg = colors.orange } },
     command = { a = { fg = colors.black, bg = colors.green } },
+    terminal = {a = { fg = colors.black, bg = colors.white }},
 
     inactive = {
         a = { fg = colors.white, bg = colors.grey },
@@ -94,7 +95,7 @@ lualine.setup({
                     if str == 'NORMAL' then
                         return ' ' .. str
                     elseif str == 'INSERT' then
-                        return 'ﲵ ' .. str
+                        return 'פֿ ' .. str
                     elseif str == 'VISUAL' or str == 'V-LINE' then
                         return ' ' .. str
                     elseif str == 'REPLACE' then
@@ -103,6 +104,8 @@ lualine.setup({
                         return ' ' .. str
                     elseif str == 'SELECT' then
                         return '濾' .. str
+                    elseif str == 'TERMINAL' then
+                        return ' ' .. str
                     else
                         return ' ' .. str
                     end

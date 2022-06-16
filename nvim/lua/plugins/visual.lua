@@ -30,7 +30,7 @@ return {
     {
         'kevinhwang91/rnvimr',
         config = function()
-            vim.g.rnvimr_ex_enable = 1
+            vim.g.rnvimr_enable_ex = 1
             vim.g.rnvimr_enable_picker = 1
         end,
     },
@@ -62,6 +62,7 @@ return {
         after = 'rose-pine',
     },
     { 'RRethy/vim-illuminate', config = G_getConfig('cursorline') },
+    { 'edluffy/specs.nvim', config = G_getConfig('specs') },
     { 'lukas-reineke/indent-blankline.nvim', event = 'BufReadPre', config = G_getConfig('blankline') },
     {
         'VonHeikemen/fine-cmdline.nvim',
@@ -70,12 +71,7 @@ return {
             { 'MunifTanjim/nui.nvim' },
         },
     },
-    {
-        'VonHeikemen/searchbox.nvim',
-        requires = {
-            { 'MunifTanjim/nui.nvim' },
-        },
-    },
+    { 'VonHeikemen/searchbox.nvim', requires = 'MunifTanjim/nui.nvim' },
     { 'norcalli/nvim-colorizer.lua', event = 'BufReadPre', config = G_getSetup('colorizer', { '*' }) },
     {
         'iamcco/markdown-preview.nvim',

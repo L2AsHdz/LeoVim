@@ -16,4 +16,10 @@ cybu.setup({
         padding = 5,
     },
     display_time = 1000,
+    exclude = {
+        'Nvim-Tree',
+        'qf',
+        'alpha',
+        'Outline'
+    },
 })

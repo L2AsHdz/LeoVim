@@ -5,7 +5,7 @@ if not ok then
 end
 
 nvim_tree.setup({
-    auto_reload_on_write = true,
+    update_cwd = true,
     hijack_cursor = true,
     respect_buf_cwd = true,
     update_focused_file = {

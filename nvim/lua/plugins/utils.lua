@@ -10,6 +10,7 @@ return {
     { 'JoosepAlviste/nvim-ts-context-commentstring' },
     { 'phaazon/hop.nvim', config = G_getSetup('hop', {}) },
     { 'https://gitlab.com/yorickpeterse/nvim-window.git' },
+    { 'lewis6991/spaceless.nvim', config = G_getSetup('spaceless', {}) },
     { 'kwkarlwang/bufresize.nvim' },
     {
         'L2AsHdz/smart-splits.nvim',

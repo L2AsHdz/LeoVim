@@ -14,7 +14,7 @@ dashboard.section.header.val = {
 }
 dashboard.section.buttons.val = {
     dashboard.button('f', '  Find file', ':Telescope find_files <CR>'),
-    dashboard.button('e', '  New file', ':ene <BAR> startinsert <CR>'),
+    dashboard.button('n', '  New file', ':ene <BAR> startinsert <CR>'),
     dashboard.button('s', '  Sessions', ':SessionManager load_session<CR>'),
     dashboard.button('l', 'ﮦ  Restore last session', ':SessionManager load_last_session<CR>'),
     dashboard.button('r', '  Recently used files', ':Telescope oldfiles <CR>'),

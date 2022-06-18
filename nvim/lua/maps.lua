@@ -1,3 +1,5 @@
+-- TODO: separar mapeos en distintos archivos por categoria
+
 local map = require('utils').map
 local split = require('split').split_command
 vim.g.mapleader = ' '
@@ -256,6 +258,11 @@ map('n', '<leader>rc', ':RunCode<CR>')
 map('n', '<leader>rf', ':RunFile<CR>')
 map('n', '<leader>rj', ':RunProject<CR>')
 map('n', '<leader>rC', ':RunClose<CR>')
+
+-- todo-comments
+map('n', '<leader>tt', ':TodoTelescope<CR>')
+map('n', '<leader>tb', ':TodoTrouble<CR>')
+map('n', '<leader>tq', ':TodoQuickFix<CR>')
 
 -- Telescope
 map('n', '<leader>ff', function()

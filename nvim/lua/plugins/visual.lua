@@ -64,6 +64,7 @@ return {
     { 'RRethy/vim-illuminate', config = G_getConfig('cursorline') },
     { 'edluffy/specs.nvim', config = G_getConfig('specs') },
     { 'lukas-reineke/indent-blankline.nvim', event = 'BufReadPre', config = G_getConfig('blankline') },
+    { 'folke/todo-comments.nvim', config = G_getSetup('todo-comments', {}) },
     {
         'VonHeikemen/fine-cmdline.nvim',
         config = G_getSetup('fine-cmdline', { cmdline = { prompt = '濫' }, popup = { position = { row = '90%' } } }),

@@ -18,7 +18,7 @@ local colors = {
   orange        = '#fe8019',
   green         = '#44bd32',
   error         = '#c23616',
-  background    = '#232136'
+  background    = '#191724'
 }
 
 local bubbles_theme = {

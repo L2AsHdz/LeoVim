@@ -7,6 +7,6 @@ end
 vim.notify = notify
 
 notify.setup({
-    stages = 'fade',
+    stages = 'slide',
     timeout = 2000
 })

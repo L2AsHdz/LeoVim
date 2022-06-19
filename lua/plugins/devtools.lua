@@ -15,7 +15,7 @@ return {
     },
     { 'L3MON4D3/LuaSnip' },
     { 'rafamadriz/friendly-snippets' },
-    { 'ray-x/lsp_signature.nvim', config = G_getSetup('lsp_signature', { hint_prefix = ' ' }) },
+    { 'ray-x/lsp_signature.nvim', config = G_getSetup('lsp_signature', { hint_prefix = ' ' }) },
     { 'jose-elias-alvarez/null-ls.nvim', config = G_getConfig('null-ls') },
     { 'ThePrimeagen/refactoring.nvim', config = G_getSetup('refactoring', {}) },
     {

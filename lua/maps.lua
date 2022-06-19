@@ -264,6 +264,10 @@ map('n', '<leader>tt', ':TodoTelescope<CR>')
 map('n', '<leader>tb', ':TodoTrouble<CR>')
 map('n', '<leader>tq', ':TodoQuickFix<CR>')
 
+-- comment-box
+map({ 'n', 'v' }, '<leader>cb', ':CBcbox<CR>')
+map('n', '<leader>cl', ':CBline<cR>')
+
 -- Telescope
 map('n', '<leader>ff', function()
     local builtin = require('telescope.builtin')

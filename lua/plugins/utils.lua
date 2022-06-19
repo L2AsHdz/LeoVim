@@ -25,6 +25,7 @@ return {
     },
     { 'sindrets/winshift.nvim' },
     { 'famiu/bufdelete.nvim' },
+    { 'nacro90/numb.nvim', config = G_getSetup('numb', {}) },
     { 'Pocco81/AutoSave.nvim', config = G_getConfig('autosave') },
     { 'ethanholz/nvim-lastplace', config = G_getSetup('nvim-lastplace', {}) },
     { 'gbprod/cutlass.nvim', config = G_getSetup('cutlass', { cut_key = 't', exclude = { 'ns', 'nS' } }) },

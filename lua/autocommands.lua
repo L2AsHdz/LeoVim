@@ -1,5 +1,5 @@
-local ac = vim.api.nvim_create_autocmd
-local ag = vim.api.nvim_create_augroup
+local ac = require('utils.core').ac
+local ag = require('utils.core').ag
 local getCursor = vim.api.nvim_win_get_cursor
 
 function StayCentered(inInsert)
@@ -14,24 +14,9 @@ function StayCentered(inInsert)
     end
 end
 
-local group = ag('StayCentered', { clear = true })
-ac('CursorMovedI', {
-    group = group,
-    callback = function()
-        StayCentered(true)
-    end,
-})
-ac('CursorMoved', {
-    group = group,
-    callback = function()
-        StayCentered(false)
-    end,
-})
+local stay_group = ag('StayCentered')
+ac('CursorMovedI', stay_group, function() StayCentered(true) end)
+ac('CursorMoved', stay_group, function() StayCentered(false) end)
 
-local group_resize = ag('Resize', { clear = true })
-ac('VimResized', {
-    group = group_resize,
-    callback = function()
-        return require('bufresize').resize()
-    end
-})
+local resize_group = ag('Resize')
+ac('VimResized', resize_group, function() require('bufresize').resize() end)

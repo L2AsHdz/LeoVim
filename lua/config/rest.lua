@@ -1,6 +1,4 @@
 local ok, rest = pcall(require, 'rest-nvim')
-local au = vim.api.nvim_create_autocmd
-local map = require('utils').bufmap
 if not ok then
     return
 end

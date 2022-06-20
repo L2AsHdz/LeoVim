@@ -59,7 +59,7 @@ local function lsp_nvim_navic(client, bufnr)
     navic.attach(client, bufnr)
 end
 
-local bufMap = require('utils').bufmap
+local bufMap = require('utils.core').bufmap
 
 local function lsp_keymaps(bufnr)
     bufMap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')

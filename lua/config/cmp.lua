@@ -1,16 +1,16 @@
-vim.cmd[[
-    highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
-    highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
-    highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
-    highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
-    highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
-    highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
-    highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
-    highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
-    highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
-    highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
-    highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
-]]
+local hl = require('utils.core').hl
+
+hl('CmpItemAbbrDeprecated', { bg = '', fg = '#808080' })
+hl('CmpItemAbbrMatch', { bg = '',  fg = '#569CD6' })
+hl('CmpItemAbbrMatchFuzzy', { bg = '',  fg = '#569CD6' })
+hl('CmpItemKindVariable', { bg = '',  fg = '#9CDCFE' })
+hl('CmpItemKindInterface', { bg = '',  fg = '#9CDCFE' })
+hl('CmpItemKindText', { bg = '',  fg = '#9CDCFE' })
+hl('CmpItemKindFunction', { bg = '',  fg = '#C586C0' })
+hl('CmpItemKindMethod', { bg = '',  fg = '#C586C0' })
+hl('CmpItemKindKeyword', { bg = '',  fg = '#D4D4D4' })
+hl('CmpItemKindProperty', { bg = '',  fg = '#D4D4D4' })
+hl('CmpItemKindUnit', { bg = '',  fg = '#D4D4D4' })
 
 local kind_icons = {
   Text = "",

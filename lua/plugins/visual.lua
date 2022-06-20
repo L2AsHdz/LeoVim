@@ -21,6 +21,7 @@ return {
         config = G_getConfig('bufferline'),
     },
     { 'nvim-lualine/lualine.nvim', event = 'VimEnter', config = G_getConfig('lualine') },
+    -- { 'b0o/incline.nvim', config = G_getSetup('incline', {}) },
     { 'j-hui/fidget.nvim', config = G_getSetup('fidget', { text = { spinner = 'moon' } }) },
     -- { 'sidebar-nvim/sidebar.nvim', config = getConfig('sidebar') },
     { 'simrat39/symbols-outline.nvim', cmd = 'SymbolsOutline' },
@@ -57,7 +58,7 @@ return {
         event = 'BufReadPre',
         config = function()
             G_getSetup('virt-column', {})
-            vim.cmd([[highlight VirtColumn guifg=#353b48]])
+            require('utils.core').hl('VirtColumn', { fg = '#353b48' })
         end,
         after = 'rose-pine',
     },

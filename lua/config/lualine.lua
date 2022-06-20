@@ -32,7 +32,7 @@ local bubbles_theme = {
     visual = { a = { fg = colors.black, bg = colors.cyan } },
     replace = { a = { fg = colors.black, bg = colors.orange } },
     command = { a = { fg = colors.black, bg = colors.green } },
-    terminal = {a = { fg = colors.black, bg = colors.white }},
+    terminal = { a = { fg = colors.black, bg = colors.white } },
 
     inactive = {
         a = { fg = colors.white, bg = colors.grey },
@@ -117,7 +117,11 @@ lualine.setup({
             { navic.get_location, cond = navic.is_available },
         },
         lualine_x = {},
-        lualine_y = { diagnostics, 'diff', 'branch' },
+        lualine_y = {
+            diagnostics,
+            { 'branch', icon = { 'שׂ', color = { fg = colors.red } } },
+            { 'diff', symbols = { added = ' ', modified = ' ', removed = ' ' } },
+        },
         lualine_z = {
             { 'location', separator = {} },
             { '%p%%/%L', separator = { right = '' } },

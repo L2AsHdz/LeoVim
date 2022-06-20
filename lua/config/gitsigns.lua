@@ -1,4 +1,11 @@
-require('gitsigns').setup({
+local ok, gitsigns = pcall(require, 'gitsigns')
+local hl = require('utils.core').hl
+
+if not ok then
+    return
+end
+
+gitsigns.setup({
     signs = {
         add          = {hl = 'GitSignsAdd'   , text = '┃', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
         change       = {hl = 'GitSignsChange', text = '┃', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
@@ -6,11 +13,8 @@ require('gitsigns').setup({
         topdelete    = {hl = 'GitSignsDelete', text = '┃', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
         changedelete = {hl = 'GitSignsChange', text = '┃', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
     },
-    keymaps = {}
 })
+hl('GitSignsAddLn', { bg = '#9ccfd8', fg = '#2a273f' })
+hl('GitSignsDeleteLn', { bg = '#eb6f92', fg = '#2a273f' })
+hl('GitSignsChangeLn', { bg = '#ea9a97', fg = '#2a273f' })
  -- 
-vim.cmd([[
-    hi GitSignsAddLn guibg=#9ccfd8  guifg=#2a273f
-    hi GitSignsDeleteLn guibg=#eb6f92 guifg=#2a273f
-    hi GitSignsChangeLn guibg=#ea9a97 guifg=#2a273f
-]])

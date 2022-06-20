@@ -1,7 +1,7 @@
 -- TODO: separar mapeos en distintos archivos por categoria
 
-local map = require('utils').map
-local split = require('split').split_command
+local map = require('utils.core').map
+local split = require('utils.window').split_command
 vim.g.mapleader = ' '
 
 -- Keymaps propios
@@ -12,10 +12,10 @@ map('n', '<leader>bW', ':wq<CR>')
 map('n', '<leader>qf', ':q!<CR>')
 map('n', '<leader>bb', ':Bdelete<CR>')
 map('n', '<leader>bo', ':BufferLineCloseRight<CR>|:BufferLineCloseLeft<CR>')
-map('n', '<leader>n', ':noh<CR>')
--- map({ 'i', 'v' }, 'ii', '<ESC>')
+map('n', '<leader>nh', ':noh<CR>')
 map('n', '<leader>y', ':%y+<CR>')
 map('i', '<C-a>', '<ESC>:%y+<CR>gi')
+map('i', '<C-s>', '<ESC>:w<CR>gi')
 
 map('n', ';', ':FineCmdline<CR>')
 
@@ -88,8 +88,8 @@ map('n', '<leader>ws', function()
     require('winshift').cmd_winshift('swap')
 end)
 
-map('n', '<C-x>', function()
-    return require('utils').focus_max_or_equal()
+map('n', '<leader>ww', function()
+    return require('utils.window').max_or_equal()
 end)
 
 map('n', '<leader>wp', function()
@@ -102,8 +102,8 @@ map('n', '<S-TAB>', '<Plug>(CybuLastusedNext)')
 -- Bufferline
 map('n', '<S-k>', ':BufferLineCycleNext<CR>')
 map('n', '<S-j>', ':BufferLineCyclePrev<CR>')
-map('n', '<leader>k', ':BufferLineMoveNext<CR>')
-map('n', '<leader>j', ':BufferLineMovePrev<CR>')
+map('n', '<leader>bk', ':BufferLineMoveNext<CR>')
+map('n', '<leader>bj', ':BufferLineMovePrev<CR>')
 map('n', '<leader>bp', ':BufferLinePick<CR>')
 map('n', '<leader>bc', ':BufferLinePickClose<CR>')
 

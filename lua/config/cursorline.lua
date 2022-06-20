@@ -1,16 +1,14 @@
-local hl = vim.api.nvim_set_hl
-local au = vim.api.nvim_create_autocmd
-local ag = vim.api.nvim_create_augroup
+local core = require('utils.core')
+local hl = core.hl
+local ac = core.ac
+local ag = core.ag
 
-local group = ag('illuminate_augroup', { clear = true } )
+local illuminate_group = ag('illuminate_augroup')
 
-au('VimEnter', {
-    group = group,
-    callback = function()
-        hl(0, 'CursorWord', { underline = true })
-        hl(0, 'LspReferenceWrite', { underline = true })
-        hl(0, 'LspReferenceText', { underline = true })
-        hl(0, 'LspReferenceRead', { underline = true })
-        hl(0, 'illuminatedWord', { link = 'CursorWord' })
-    end,
-})
+ac('VimEnter', illuminate_group, function()
+    hl('CursorWord', { underline = true })
+    hl('LspReferenceWrite', { underline = true })
+    hl('LspReferenceText', { underline = true })
+    hl('LspReferenceRead', { underline = true })
+    hl('illuminatedWord', { link = 'CursorWord' })
+end)

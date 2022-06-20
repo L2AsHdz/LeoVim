@@ -1,7 +1,17 @@
 local status_ok, blankline = pcall(require, 'indent_blankline')
+local hl = require('utils.core').hl
 if not status_ok then
     return
 end
+
+hl('IndentBlanklineIndent0', { fg = '#ffeaa7', nocombine = true })
+hl('IndentBlanklineIndent1', { fg = '#c23616', nocombine = true })
+hl('IndentBlanklineIndent2', { fg = '#44bd32', nocombine = true })
+hl('IndentBlanklineIndent3', { fg = '#9c88ff', nocombine = true })
+hl('IndentBlanklineIndent4', { fg = '#3742fa', nocombine = true })
+hl('IndentBlanklineIndent5', { fg = '#ff6b81', nocombine = true })
+hl('IndentBlanklineIndent6', { fg = '#18dcff', nocombine = true })
+hl('IndentBlanklineIndent7', { fg = '#e1b12c', nocombine = true })
 
 vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_filetype_exclude = {
@@ -43,17 +53,6 @@ vim.g.indent_blankline_context_patterns = {
     'import_statement',
     'operation_type',
 }
-
-vim.cmd([[
-    highlight IndentBlanklineIndent0 guifg=#ffeaa7  gui=nocombine
-    highlight IndentBlanklineIndent1 guifg=#c23616 gui=nocombine
-    highlight IndentBlanklineIndent2 guifg=#44bd32 gui=nocombine
-    highlight IndentBlanklineIndent3 guifg=#9c88ff gui=nocombine
-    highlight IndentBlanklineIndent4 guifg=#3742fa gui=nocombine
-    highlight IndentBlanklineIndent5 guifg=#ff6b81 gui=nocombine
-    highlight IndentBlanklineIndent6 guifg=#18dcff gui=nocombine
-    highlight IndentBlanklineIndent7 guifg=#e1b12c gui=nocombine
-]])
 
 vim.g.indent_blankline_context_highlight_list = {
     'IndentBlanklineIndent0',

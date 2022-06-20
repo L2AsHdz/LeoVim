@@ -15,7 +15,13 @@ cybu.setup({
         hide_buffer_id = true,
         padding = 5,
     },
-    display_time = 1000,
+    behavior = {
+        mode = {
+            last_used = {
+                switch = 'immediate',
+            }
+        }
+    },
     exclude = {
         'Nvim-Tree',
         'qf',

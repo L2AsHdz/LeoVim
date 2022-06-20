@@ -1,11 +1,11 @@
-local theme = 'rose-pine'
-local ok, colorscheme = pcall(require, theme)
+local ok, rose_pine = pcall(require, 'rose-pine')
+local hl = require('utils.core').hl
 if not ok then
     return
 end
 -- vim.g.everforest_background = 'hard'
 -- vim.g.everforest_sign_column_background = 'none'
-colorscheme.setup({
+rose_pine.setup({
     dark_variant = 'main',
     -- dim_nc_background = true,
     -- disable_background = true,
@@ -24,8 +24,6 @@ colorscheme.setup({
     }
 })
 
-vim.cmd([[
-    colorscheme rose-pine
-    hi CursorLine guibg=#44415a
-    hi Search guibg=#596275
-]])
+vim.api.nvim_command('colorscheme rose-pine')
+hl('CursorLine', { bg = '#44415a' })
+hl('Search', { bg = '#ebbcba', fg = '#191724' })

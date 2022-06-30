@@ -27,7 +27,7 @@ return {
     { 'nvim-treesitter/nvim-treesitter-textobjects' },
     { 'p00f/nvim-ts-rainbow' },
     { 'RRethy/nvim-treesitter-endwise' },
-    { 'yioneko/nvim-yati' },
+    -- { 'yioneko/nvim-yati' },
     { 'm-demare/hlargs.nvim', config = G_getSetup('hlargs', {}) },
     { 'folke/trouble.nvim', config = G_getSetup('trouble', {}) },
     { 'NTBBloodbath/rest.nvim', ft = 'http' },
@@ -40,8 +40,9 @@ return {
     {
         'michaelb/sniprun',
         run = 'bash ./install.sh',
-        config = G_getSetup('sniprun', { display = { 'Classic' } }),
+        config = G_getSetup('sniprun', { display = { 'TempFloatingWindow' } }),
     },
     { 'CRAG666/code_runner.nvim', config = G_getConfig('code-runner') },
+    { 'monaqa/dial.nvim', config = G_getConfig('dial') },
     { 'gpanders/editorconfig.nvim' },
 }

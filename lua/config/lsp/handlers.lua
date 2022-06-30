@@ -59,25 +59,36 @@ local function lsp_nvim_navic(client, bufnr)
     navic.attach(client, bufnr)
 end
 
+local lsp_formatting = function(bufnr)
+    vim.lsp.buf.format({
+        async = true,
+        filter = function(client)
+            return client.name == 'null-ls'
+        end,
+        bufnr = bufnr,
+    })
+end
+
 local bufMap = require('utils.core').bufmap
+local map = require('utils.core').map
 
 local function lsp_keymaps(bufnr)
-    bufMap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-    bufMap(bufnr, 'n', 'gd', '<cmd>Trouble lsp_definitions<CR>')
-    bufMap(bufnr, 'n', 'L', '<cmd>lua vim.lsp.buf.hover()<CR>')
-    bufMap(bufnr, 'n', 'gi', '<cmd>Trouble lsp_implementations<CR>')
-    bufMap(bufnr, 'n', '<A-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
-    bufMap(bufnr, 'n', 'gr', '<cmd>Trouble lsp_references<CR>')
-    bufMap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>')
-    bufMap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>')
-    bufMap(bufnr, 'n', '<leader>cf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-    bufMap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-    bufMap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+    local opts = { buffer = bufnr }
+    map('n', 'gD', vim.lsp.buf.declaration, opts)
+    bufMap(bufnr, 'n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
+    map('n', 'L', vim.lsp.buf.hover, opts)
+    bufMap(bufnr, 'n', 'gi', ':Trouble lsp_implementations<CR>')
+    map('n', '<A-k>', vim.lsp.buf.signature_help, opts)
+    bufMap(bufnr, 'n', 'gr', ':Trouble lsp_references<CR>')
+    map('n', '[d', function () vim.diagnostic.goto_prev({ border = "rounded" }) end, opts)
+    map('n', ']d', function () vim.diagnostic.goto_next({ border = "rounded" }) end, opts)
+    map('n', '<leader>cf', function() lsp_formatting(bufnr) end, opts)
+    map('n', '<leader>rn', vim.lsp.buf.rename, opts)
+    map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
     bufMap(bufnr, 'v', 'ff', ":'<,'>lua vim.lsp.buf.range_code_action()<CR>")
-    bufMap(bufnr, 'n', '<leader>cd', '<cmd>lua vim.diagnostic.open_float()<CR>')
-    bufMap(bufnr, 'n', '<leader>cw', '<cmd>Trouble workspace_diagnostics<CR>')
-    bufMap(bufnr, 'n', '<leader>cD', '<cmd>Trouble document_diagnostics<CR>')
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>")
+    map('n', '<leader>cd', vim.diagnostic.open_float, opts)
+    bufMap(bufnr, 'n', '<leader>cw', ':Trouble workspace_diagnostics<CR>')
+    bufMap(bufnr, 'n', '<leader>cD', ':Trouble document_diagnostics<CR>')
 end
 
 local function flutter_keymaps(bufnr)
@@ -92,9 +103,6 @@ local function flutter_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-    if client.name == 'tsserver' or client.name == 'sumneko_lua' then
-        client.resolved_capabilities.document_formatting = false
-    end
     if client.name == 'dartls' then
         flutter_keymaps(bufnr)
     end

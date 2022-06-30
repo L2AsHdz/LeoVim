@@ -96,8 +96,8 @@ map('n', '<leader>wp', function()
     return require('nvim-window').pick()
 end)
 
-map('n', '<TAB>', '<Plug>(CybuLastusedPrev)')
-map('n', '<S-TAB>', '<Plug>(CybuLastusedNext)')
+map('n', '<TAB>', '<Plug>(CybuLastusedNext)')
+map('n', '<S-TAB>', '<Plug>(CybuLastusedPrev)')
 
 -- Bufferline
 map('n', '<S-k>', ':BufferLineCycleNext<CR>')
@@ -149,6 +149,10 @@ end)
 map('n', '<A-o>', function()
     return require('illuminate').next_reference({ wrap = true })
 end)
+
+-- dial
+vim.api.nvim_set_keymap('n', '<C-a>', require('dial.map').dec_normal('mygroup'), { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-s>', require('dial.map').inc_normal('mygroup'), { noremap = true })
 
 -- specs
 map('n', '<leader><leader>', function() return require("specs").show_specs() end)

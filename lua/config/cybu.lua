@@ -22,6 +22,7 @@ cybu.setup({
             }
         }
     },
+    display_time = 1000,
     exclude = {
         'Nvim-Tree',
         'qf',

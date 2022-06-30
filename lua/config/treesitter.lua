@@ -33,10 +33,10 @@ configs.setup {
     ensure_installed = servers,
     sync_install = false,
     ignore_install = { "" },
-    indent = { enable = false },
+    indent = { enable = true },
     autopairs = { enable = true },
     autotag = { enable = true },
-    yati = { enable = true },
+    yati = { enable = false },
     highlight = {
         enable = true, -- false will disable the whole extension
         disable = { "" }, -- list of language that will be disabled

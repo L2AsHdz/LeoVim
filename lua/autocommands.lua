@@ -20,3 +20,8 @@ ac('CursorMoved', stay_group, function() StayCentered(false) end)
 
 local resize_group = ag('Resize')
 ac('VimResized', resize_group, function() require('bufresize').resize() end)
+
+-- local winbar_group = ag('NiceWinBar')
+-- ac({ 'CursorMoved', 'CursorMovedI', 'BufWinEnter' }, winbar_group, function()
+--     require('config.winbar').get_winbar()
+-- end)

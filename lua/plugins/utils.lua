@@ -13,8 +13,7 @@ return {
     { 'lewis6991/spaceless.nvim', config = G_getSetup('spaceless', {}) },
     { 'kwkarlwang/bufresize.nvim' },
     {
-        'L2AsHdz/smart-splits.nvim',
-        branch = 'addHooks',
+        'mrjones2014/smart-splits.nvim',
         config = G_getSetup('smart-splits', {
             resize_mode = {
                 hooks = {

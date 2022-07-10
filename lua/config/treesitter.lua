@@ -4,44 +4,44 @@ if not ok then
 end
 
 local servers = {
-        'bash',
-        'c',
-        'comment',
-        'cpp',
-        'css',
-        'dart',
-        'dockerfile',
-        'dot',
-        'graphql',
-        'html',
-        'http',
-        'java',
-        'javascript',
-        'json',
-        'json5',
-        'lua',
-        'markdown',
-        'php',
-        'python',
-        'tsx',
-        'typescript',
-        'vim',
-        'yaml',
+    'bash',
+    'c',
+    'comment',
+    'cpp',
+    'css',
+    'dart',
+    'dockerfile',
+    'dot',
+    'graphql',
+    'html',
+    'http',
+    'java',
+    'javascript',
+    'json',
+    'json5',
+    'lua',
+    'markdown',
+    'php',
+    'python',
+    'sql',
+    'tsx',
+    'typescript',
+    'vim',
+    'yaml',
 }
 
-configs.setup {
+configs.setup({
     ensure_installed = servers,
     sync_install = false,
-    ignore_install = { "" },
+    ignore_install = { '' },
     indent = { enable = true },
     autopairs = { enable = true },
     autotag = { enable = true },
     yati = { enable = false },
     highlight = {
         enable = true, -- false will disable the whole extension
-        disable = { "" }, -- list of language that will be disabled
+        disable = { '' }, -- list of language that will be disabled
         additional_vim_regex_highlighting = false,
-
     },
     rainbow = {
         enable = true,
@@ -60,47 +60,47 @@ configs.setup {
 
             keymaps = {
                 -- You can use the capture groups defined in textobjects.scm
-                ["af"] = "@function.outer",
-                ["if"] = "@function.inner",
-                ["ac"] = "@class.outer",
-                ["ic"] = "@class.inner",
+                ['af'] = '@function.outer',
+                ['if'] = '@function.inner',
+                ['ac'] = '@class.outer',
+                ['ic'] = '@class.inner',
             },
         },
         swap = {
             enable = true,
             swap_next = {
-                ["<leader>e"] = "@parameter.inner",
+                ['<leader>e'] = '@parameter.inner',
             },
             swap_previous = {
-                ["<leader>E"] = "@parameter.inner",
+                ['<leader>E'] = '@parameter.inner',
             },
         },
         move = {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
-                ["]f"] = "@function.outer",
-                ["]]"] = "@class.outer",
+                [']f'] = '@function.outer',
+                [']]'] = '@class.outer',
             },
             goto_next_end = {
-                ["]F"] = "@function.outer",
-                ["]["] = "@class.outer",
+                [']F'] = '@function.outer',
+                [']['] = '@class.outer',
             },
             goto_previous_start = {
-                ["[f"] = "@function.outer",
-                ["[["] = "@class.outer",
+                ['[f'] = '@function.outer',
+                ['[['] = '@class.outer',
             },
             goto_previous_end = {
-                ["[F"] = "@function.outer",
-                ["[]"] = "@class.outer",
+                ['[F'] = '@function.outer',
+                ['[]'] = '@class.outer',
             },
         },
         lsp_interop = {
             enable = true,
             border = 'none',
             peek_definition_code = {
-                ["<leader>cc"] = "@function.outer",
-                ["<leader>ci"] = "@class.outer",
+                ['<leader>cc'] = '@function.outer',
+                ['<leader>ci'] = '@class.outer',
             },
         },
     },
@@ -109,9 +109,9 @@ configs.setup {
         enable_autocmd = false,
     },
     endwise = {
-        enable = true
+        enable = true,
     },
     matchup = {
-        enable = true
-    }
-}
+        enable = true,
+    },
+})

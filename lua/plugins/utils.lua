@@ -36,5 +36,5 @@ return {
     { 'ghillb/cybu.nvim', config = G_getConfig('cybu') },
     { 'max397574/better-escape.nvim', config = G_getSetup('better_escape', { mapping = { 'ii' } }) },
     { 'AckslD/nvim-neoclip.lua', config = G_getSetup('neoclip', {}) },
-    { 'nathom/filetype.nvim' },
+    -- { 'nathom/filetype.nvim' },
 }

@@ -12,8 +12,8 @@ neogit.setup({
         diffview = true
     },
     signs = {
-        section = { "", "﬌" },
-        item = { "", "﬌" },
+        section = { "", "" },
+        item = { "", "" },
         hunk = { "", "" },
     },
     disable_context_highlighting = true,

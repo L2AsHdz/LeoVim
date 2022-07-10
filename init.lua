@@ -1,7 +1,5 @@
 local ok, impatient = pcall(require, 'impatient')
-if not ok then
-    vim.notify('there was a problem loading impatient', vim.log.levels.WARN)
-end
+if ok then impatient.enable_profile() end
 require('settings')
 require('plugins')
 require('maps')

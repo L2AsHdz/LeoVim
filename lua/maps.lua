@@ -178,7 +178,7 @@ map('n', '<leader>gs', ':Neogit kind=vsplit<CR>')
 -- diffview
 map('n', '<leader>dv', ':DiffviewOpen<CR>')
 map('n', '<leader>dh', ':DiffviewFileHistory<CR>')
-map('n', '<leader>dq', ':tabclose<CR>')
+map('n', '<leader>dq', ':DiffviewClose<CR>')
 map('n', '<leader>df', ':DiffviewToggleFiles<CR>')
 map('n', '<leader>dr', ':DiffviewRefresh<CR>')
 

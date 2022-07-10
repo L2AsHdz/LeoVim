@@ -12,7 +12,7 @@ null_ls.setup({
         formatting.stylua.with({
             extra_args = { '--quote-style', 'AutoPreferSingle', '--indent-type', 'Spaces', 'indent-width', '4' },
         }),
-        formatting.shfmt,
+        formatting.beautysh,
         formatting.uncrustify,
         formatting.prettierd,
         formatting.sqlfluff.with({ extra_args = { '--dialect', 'postgres' } }),

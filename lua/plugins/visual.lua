@@ -45,7 +45,7 @@ return {
         }),
     },
     { 'dstein64/nvim-scrollview' },
-    { 'luukvbaal/stabilize.nvim', config = G_getSetup('stabilize', {}) },
+    -- { 'luukvbaal/stabilize.nvim', config = G_getSetup('stabilize', {}) },
     { 'nvim-telescope/telescope.nvim', config = G_getConfig('telescope') },
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     { 'nvim-telescope/telescope-packer.nvim' },
@@ -82,6 +82,14 @@ return {
         cmd = 'MarkDownPreview',
         config = function()
             vim.g.mkdp_port = '9000'
+        end,
+    },
+    {
+        'anuvyklack/pretty-fold.nvim',
+        requires = 'anuvyklack/nvim-keymap-amend',
+        config = function()
+            G_getSetup('pretty-fold', { fill_char = '' })
+            G_getSetup('pretty-fold.preview', {})
         end,
     },
 }

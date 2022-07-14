@@ -32,11 +32,11 @@ return {
     { 'folke/trouble.nvim', config = G_getSetup('trouble', {}) },
     { 'NTBBloodbath/rest.nvim', ft = 'http' },
     { 'nvim-pack/nvim-spectre', event = 'BufReadPre', config = G_getSetup('spectre', {}) },
-    {
-        'akinsho/flutter-tools.nvim',
-        ft = { 'flutter', 'dart' },
-        config = G_getConfig('flutter'),
-    },
+    -- {
+    --     'akinsho/flutter-tools.nvim',
+    --     ft = { 'flutter', 'dart' },
+    --     config = G_getConfig('flutter'),
+    -- },
     {
         'michaelb/sniprun',
         run = 'bash ./install.sh',

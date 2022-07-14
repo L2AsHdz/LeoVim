@@ -2,7 +2,7 @@ return {
     { 'Shatur/neovim-session-manager', config = G_getConfig('session') },
     { 'windwp/nvim-autopairs', config = G_getConfig('autopairs') },
     { 'windwp/nvim-ts-autotag' },
-    { 'blackCauldron7/surround.nvim', config = G_getSetup('surround', { mappings_style = 'surround' }) },
+    { 'kylechui/nvim-surround', config = G_getSetup('nvim-surround', {}) },
     { 'abecodes/tabout.nvim', config = G_getSetup('tabout', {}) },
     { 'andymass/vim-matchup', event = 'VimEnter' },
     { 'kevinhwang91/nvim-hlslens', config = G_getSetup('hlslens', { calm_down = true, nearest_only = true }) },
@@ -32,9 +32,12 @@ return {
     -- { 'gbprod/yanky.nvim', config = getSetup('yanky', {}) },
     { 'dstein64/vim-startuptime', cmd = 'StartupTime' },
     { 'mg979/vim-visual-multi', branch = 'master' },
-    -- { 'numToStr/Navigator.nvim', config = getSetup('Navigator', {}) },
     { 'ghillb/cybu.nvim', config = G_getConfig('cybu') },
     { 'max397574/better-escape.nvim', config = G_getSetup('better_escape', { mapping = { 'ii' } }) },
+    {
+        'jghauser/fold-cycle.nvim',
+        config = G_getSetup('fold-cycle', { open_if_max_closed = false, close_if_max_opened = false }),
+    },
     { 'AckslD/nvim-neoclip.lua', config = G_getSetup('neoclip', {}) },
     -- { 'nathom/filetype.nvim' },
 }

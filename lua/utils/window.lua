@@ -41,6 +41,7 @@ M.split_command = function(direction)
             cmd('wincmd ' .. direction)
         end
     end
+    vim.api.nvim_command('normal! zz')
 end
 
 return M

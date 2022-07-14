@@ -6,7 +6,7 @@ local set = vim.opt
 set.termguicolors = true                --Activa true colors en la terminal
 set.number = true                       -- Muestra los numeros de las lineas
 set.relativenumber = true               -- Numeros de linea relativos
-set.signcolumn = 'yes:2'                -- Always show the sign column
+set.signcolumn = 'yes'                  -- Always show the sign column
 set.numberwidth = 1                     -- Numeros de columna mas ajustados
 set.laststatus = 3                      -- globa status line
 set.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
@@ -74,7 +74,7 @@ set.hlsearch = true                     -- Highlights search results
 -- │                         Folding                          │
 -- ╰──────────────────────────────────────────────────────────╯
 set.foldenable = true                   -- Activa folding
-set.foldlevelstart = 10                 -- 10 folds closed
-set.foldnestmax = 10                    -- Máximo de 10
-set.foldmethod = 'indent'               -- Basado en identado
+set.foldlevelstart = 10                 -- 10 folds no closed
+set.foldmethod = 'expr'                 -- Basado en expr
+set.foldexpr = 'nvim_treesitter#foldexpr()'
 -- ────────────────────────────────────────────────────────────

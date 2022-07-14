@@ -96,7 +96,7 @@ lualine.setup({
                         return ' ' .. str
                     elseif str == 'INSERT' then
                         return 'פֿ ' .. str
-                    elseif str == 'VISUAL' or str == 'V-LINE' then
+                    elseif str == 'VISUAL' or str == 'V-LINE' or str == 'V-BLOCK' then
                         return ' ' .. str
                     elseif str == 'REPLACE' then
                         return '﯒ ' .. str

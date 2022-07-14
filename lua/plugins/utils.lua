@@ -27,9 +27,11 @@ return {
     { 'nacro90/numb.nvim', config = G_getSetup('numb', {}) },
     { 'Pocco81/AutoSave.nvim', config = G_getConfig('autosave') },
     { 'ethanholz/nvim-lastplace', config = G_getSetup('nvim-lastplace', {}) },
-    { 'gbprod/cutlass.nvim', config = G_getSetup('cutlass', { cut_key = 't', exclude = { 'ns', 'nS' } }) },
+    {
+        'gbprod/cutlass.nvim',
+        config = G_getSetup('cutlass', { cut_key = 't', exclude = { 'ns', 'nS', 'nx', 'nX', 'xx' } }),
+    },
     { 'gbprod/substitute.nvim', config = G_getSetup('substitute', {}) },
-    -- { 'gbprod/yanky.nvim', config = getSetup('yanky', {}) },
     { 'dstein64/vim-startuptime', cmd = 'StartupTime' },
     { 'mg979/vim-visual-multi', branch = 'master' },
     { 'ghillb/cybu.nvim', config = G_getConfig('cybu') },
@@ -39,5 +41,4 @@ return {
         config = G_getSetup('fold-cycle', { open_if_max_closed = false, close_if_max_opened = false }),
     },
     { 'AckslD/nvim-neoclip.lua', config = G_getSetup('neoclip', {}) },
-    -- { 'nathom/filetype.nvim' },
 }

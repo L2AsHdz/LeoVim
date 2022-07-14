@@ -35,13 +35,18 @@ return {
             vim.g.rnvimr_enable_picker = 1
         end,
     },
-    { 'karb94/neoscroll.nvim', config = G_getSetup('neoscroll', {}) },
+    {
+        'karb94/neoscroll.nvim',
+        config = G_getSetup('neoscroll', { mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>', '<C-y>', '<C-e>' } }),
+    },
     {
         'declancm/cinnamon.nvim',
         module = 'cinnamon',
         config = G_getSetup('cinnamon', {
             default_keymaps = false,
-            centered = false,
+            centered = true,
+            hide_cursor = true,
+            always_scroll = true,
         }),
     },
     { 'dstein64/nvim-scrollview' },

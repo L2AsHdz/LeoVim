@@ -209,6 +209,8 @@ map('n', 'g#', function() scroll('g#', 1); hlslens() end)
 map('n', 'zz', function() scroll('zz', 0, 1) end)
 map('n', 'zt', function() scroll('zt', 0, 1) end)
 map('n', 'zb', function() scroll('zb', 0, 1) end)
+map('n', '<ScrollWheelUp>', function() scroll('k', 1, 0) end)
+map('n', '<ScrollWheelDown>', function() scroll('j', 1, 0) end)
 
 --Substitute
 local substitute = require('substitute')

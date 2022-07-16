@@ -40,29 +40,16 @@ lsp_installer.setup({
     },
 })
 
--- Cambiar esto a un archivo aparte
-local enhance_server_opts = {
-    ['html'] = function(opts)
-        opts.init_options = { provideFormatter = false }
-    end,
-    --     ["emmet_ls"] = function (opts)
-    --         opts.filetypes = { "html", "css", "php" }
-    --     end
-}
-
 for _, server in pairs(servers) do
-    local opts = {
+    local opts
+    opts = {
         on_attach = handlers.on_attach,
         capabilities = handlers.capabilities,
     }
 
     local has_custom_opts, server_custom_opts = pcall(require, 'config.lsp.settings.' .. server)
     if has_custom_opts then
-        opts = vim.tbl_deep_extend('force', server_custom_opts, opts)
-    end
-
-    if enhance_server_opts[server] then
-        enhance_server_opts[server](opts)
+        opts = vim.tbl_deep_extend('force', opts, server_custom_opts)
     end
 
     lspconfig[server].setup(opts)

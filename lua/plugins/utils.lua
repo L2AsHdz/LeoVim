@@ -4,7 +4,16 @@ return {
     { 'windwp/nvim-ts-autotag' },
     { 'kylechui/nvim-surround', config = G_getSetup('nvim-surround', {}) },
     { 'abecodes/tabout.nvim', config = G_getSetup('tabout', {}) },
-    { 'andymass/vim-matchup', event = 'VimEnter' },
+    {
+        'andymass/vim-matchup',
+        event = 'VimEnter',
+        config = function()
+            local hl = require('utils.core').hl
+            vim.g.matchup_matchparen_offscreen = {}
+            hl('MatchParen', { fg = '#f6c177', bold = true })
+            hl('MatchWord', { link = 'CursorWord' })
+        end,
+    },
     { 'kevinhwang91/nvim-hlslens', config = G_getSetup('hlslens', { calm_down = true, nearest_only = true }) },
     { 'numToStr/Comment.nvim', config = G_getConfig('comment') },
     { 'JoosepAlviste/nvim-ts-context-commentstring' },

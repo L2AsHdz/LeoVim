@@ -6,7 +6,7 @@ end
 
 code_runner.setup({
     filetype = {
-        java = 'cd $dir && javac $fileName && java $fileNameWithoutExt',
+        java = 'cd $dir && java $fileName',
         javascript = 'node',
         python = 'python3 -u',
         typescript = 'deno run',

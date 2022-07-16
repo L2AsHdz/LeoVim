@@ -3,11 +3,6 @@ if not ok_l then
     return
 end
 
-local ok_navic, navic = pcall(require, 'nvim-navic')
-if not ok_navic then
-    return
-end
-
 local colors = {
   black         = '#090D1B',
   white         = '#FBFBFE',
@@ -113,9 +108,7 @@ lualine.setup({
             },
         },
         lualine_b = { filetype, filename },
-        lualine_c = {
-            { navic.get_location, cond = navic.is_available },
-        },
+        lualine_c = {},
         lualine_x = {},
         lualine_y = {
             diagnostics,

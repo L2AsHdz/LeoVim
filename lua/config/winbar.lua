@@ -39,8 +39,9 @@ local get_filename = function()
             file_icon_color = ''
         end
 
-        return ' ' .. '%#' .. hl_group .. '#' .. file_icon .. '%*' .. ' ' .. '%#LineNr#' .. filename .. '%*'
+        return ' ' .. '%#' .. hl_group .. '#' .. file_icon .. '%*' .. ' ' .. '%#CursorLineNr#' .. filename .. '%*'
     end
+    return ''
 end
 
 local excludes = function()
@@ -53,27 +54,20 @@ end
 
 M.get_winbar = function()
     if excludes() then
-        return
+        return ''
     end
 
     local value = get_filename()
 
     local ok, navic = pcall(require, 'nvim-navic')
-    if ok and navic.is_available() then
-        local location = navic.get_location()
-        if not isEmpty(location) then
+
+    if ok then
+        if navic.is_available() and not isEmpty(navic.get_location()) then
             value = value .. ' > ' .. navic.get_location()
-        else
-            return
         end
-    else
-        return
     end
 
-    local status_ok, _ = pcall(vim.api.nvim_set_option_value, 'winbar', value, { scope = 'local' })
-    if not status_ok then
-        return
-    end
+    return value
 end
 
 return M

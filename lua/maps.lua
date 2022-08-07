@@ -95,8 +95,8 @@ map('n', '<leader>wp', function()
     return require('nvim-window').pick()
 end)
 
-map('n', '<TAB>', '<Plug>(CybuLastusedNext)')
-map('n', '<S-TAB>', '<Plug>(CybuLastusedPrev)')
+map('n', '<TAB>', '<Plug>(CybuLastusedNext)|:normal! zz<CR>')
+map('n', '<S-TAB>', '<Plug>(CybuLastusedPrev)|:normal! zz<CR>')
 
 -- Bufferline
 map('n', '<S-k>', ':BufferLineCycleNext<CR>|:normal! zz<CR>')

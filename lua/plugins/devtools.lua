@@ -32,7 +32,7 @@ return {
     { 'm-demare/hlargs.nvim', config = G_getSetup('hlargs', {}) },
     { 'folke/trouble.nvim', config = G_getSetup('trouble', {}) },
     { 'NTBBloodbath/rest.nvim', ft = 'http' },
-    { 'nvim-pack/nvim-spectre', event = 'BufReadPre', config = G_getSetup('spectre', {}) },
+    { 'windwp/nvim-spectre', event = 'BufReadPre', config = G_getSetup('spectre', {}) },
     -- {
     --     'akinsho/flutter-tools.nvim',
     --     ft = { 'flutter', 'dart' },

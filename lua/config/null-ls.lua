@@ -13,6 +13,7 @@ local sources = {
     b.formatting.uncrustify,
     b.formatting.prettierd,
     b.formatting.sqlfluff.with({ extra_args = { '--dialect', 'postgres' } }),
+    b.formatting.pint,
 
     b.diagnostics.cppcheck,
     b.diagnostics.luacheck.with({ extra_args = { '--no-global', '--no-unused' } }),

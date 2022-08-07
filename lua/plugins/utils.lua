@@ -3,7 +3,7 @@ return {
     { 'windwp/nvim-autopairs', config = G_getConfig('autopairs') },
     { 'windwp/nvim-ts-autotag' },
     { 'kylechui/nvim-surround', config = G_getSetup('nvim-surround', {}) },
-    { 'abecodes/tabout.nvim', config = G_getSetup('tabout', {}) },
+    { 'abecodes/tabout.nvim', config = G_getSetup('tabout', { act_as_shift_tab = true }) },
     {
         'andymass/vim-matchup',
         event = 'VimEnter',
@@ -34,7 +34,7 @@ return {
     { 'sindrets/winshift.nvim' },
     { 'famiu/bufdelete.nvim' },
     { 'nacro90/numb.nvim', config = G_getSetup('numb', {}) },
-    { 'Pocco81/AutoSave.nvim', config = G_getConfig('autosave') },
+    { 'Pocco81/auto-save.nvim', config = G_getConfig('autosave') },
     { 'ethanholz/nvim-lastplace', config = G_getSetup('nvim-lastplace', {}) },
     {
         'gbprod/cutlass.nvim',

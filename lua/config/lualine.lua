@@ -39,6 +39,7 @@ local bubbles_theme = {
 
 local filetype = {
     'filetype',
+    separator = { left = '' },
     icon_only = true,
 }
 
@@ -61,16 +62,16 @@ local diagnostics = {
     update_in_insert = true,
 }
 
-local sidebar_extension = {
-    options = {
-        theme = bubbles_theme,
-        component_separators = '',
-        section_separators = { left = '', right = '' },
-    },
-    sections = {
-        lualine_a = { { 'filetype', colored = true } },
-    },
-    filetypes = { 'SidebarNvim' },
+local disabled_filetypes = {
+    'packer',
+    'NeogitStatus',
+    'NeogitPopup',
+    'Trouble',
+    'alpha',
+    'lir',
+    'Outline',
+    'spectre_panel',
+    'TelescopePrompt',
 }
 
 lualine.setup({
@@ -78,14 +79,15 @@ lualine.setup({
         theme = bubbles_theme,
         component_separators = '',
         section_separators = { left = '', right = '' },
-        disabled_filetypes = { 'alpha', 'dashboard', 'Outline' },
+        disabled_filetypes = {
+            statusline = disabled_filetypes,
+        },
     },
     sections = {
         lualine_a = {
             {
                 'mode',
                 separator = { left = '' },
-                right_padding = 2,
                 fmt = function(str)
                     if str == 'NORMAL' then
                         return ' ' .. str
@@ -113,7 +115,11 @@ lualine.setup({
         lualine_y = {
             diagnostics,
             { 'branch', icon = { 'שׂ', color = { fg = colors.red } } },
-            { 'diff', symbols = { added = ' ', modified = ' ', removed = ' ' } },
+            {
+                'diff',
+                separator = { right = '' },
+                symbols = { added = ' ', modified = ' ', removed = ' ' },
+            },
         },
         lualine_z = {
             { 'location', separator = {} },
@@ -128,6 +134,5 @@ lualine.setup({
         lualine_y = {},
         lualine_z = { 'location' },
     },
-    tabline = {},
-    extensions = { 'nvim-tree', sidebar_extension },
+    extensions = { 'nvim-tree' },
 })

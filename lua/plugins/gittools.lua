@@ -2,7 +2,7 @@ return {
     { 'lewis6991/gitsigns.nvim', event = 'BufReadPre', config = G_getConfig('gitsigns') },
     { 'TimUntersberger/neogit', cmd = 'Neogit', config = G_getConfig('neogit') },
     { 'sindrets/diffview.nvim' },
-    { 'akinsho/git-conflict.nvim', config = G_getSetup('git-conflict', {}) },
+    { 'akinsho/git-conflict.nvim', tag='*', config = G_getSetup('git-conflict', {}) },
     {
         'APZelos/blamer.nvim',
         config = function()

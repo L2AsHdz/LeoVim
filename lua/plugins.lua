@@ -10,6 +10,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
         'https://github.com/wbthomason/packer.nvim',
         install_path,
     })
+    vim.cmd('packadd packer.nvim')
     print('Installing packer, close and reopen Neovim...')
 end
 
@@ -25,8 +26,6 @@ function G_getSetup(name, opts)
         req.setup(opts)
     end
 end
-
-vim.api.nvim_command('packadd packer.nvim')
 
 local status_ok, packer = pcall(require, 'packer')
 if not status_ok then

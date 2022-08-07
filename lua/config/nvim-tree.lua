@@ -5,6 +5,7 @@ if not ok then
 end
 
 nvim_tree.setup({
+    create_in_closed_folder = true,
     update_cwd = true,
     hijack_cursor = true,
     respect_buf_cwd = true,
@@ -12,6 +13,7 @@ nvim_tree.setup({
         enable = true,
     },
     view = {
+        width = 35,
         number = true,
         relativenumber = true,
         signcolumn = 'yes',
@@ -22,10 +24,12 @@ nvim_tree.setup({
         },
     },
     renderer = {
+        add_trailing = true,
+        group_empty = true,
+        highlight_git = true,
         indent_markers = {
             enable = true,
         },
-        add_trailing = true,
         icons = {
             git_placement = 'signcolumn',
             glyphs = {

@@ -21,11 +21,15 @@ return {
         config = G_getConfig('bufferline'),
     },
     { 'nvim-lualine/lualine.nvim', event = 'VimEnter', config = G_getConfig('lualine') },
-    -- { 'b0o/incline.nvim', config = G_getSetup('incline', {}) },
-    { 'j-hui/fidget.nvim', config = G_getSetup('fidget', { text = { spinner = 'moon' } }) },
+    { 'j-hui/fidget.nvim', config = G_getSetup('fidget', { text = { spinner = 'dots_bounce' } }) },
     -- { 'sidebar-nvim/sidebar.nvim', config = getConfig('sidebar') },
     { 'simrat39/symbols-outline.nvim', cmd = 'SymbolsOutline' },
-    { 'SmiteshP/nvim-navic' },
+    {
+        'SmiteshP/nvim-navic',
+        config = function()
+            vim.g.navic_silence = true
+        end,
+    },
     { 'akinsho/toggleterm.nvim', tag = 'v2.*', config = G_getConfig('term') },
     { 'kyazdani42/nvim-tree.lua', config = G_getConfig('nvim-tree') },
     {
@@ -89,12 +93,10 @@ return {
             vim.g.mkdp_port = '9000'
         end,
     },
+    { 'anuvyklack/pretty-fold.nvim', config = G_getSetup('pretty-fold', { fill_char = '' }) },
     {
-        'anuvyklack/pretty-fold.nvim',
+        'anuvyklack/fold-preview.nvim',
         requires = 'anuvyklack/nvim-keymap-amend',
-        config = function()
-            G_getSetup('pretty-fold', { fill_char = '' })
-            G_getSetup('pretty-fold.preview', {})
-        end,
+        config = G_getSetup('fold-preview', {}),
     },
 }

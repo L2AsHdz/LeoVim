@@ -11,6 +11,7 @@ cybu.setup({
         max_win_height = 10,
     },
     style = {
+        path = 'tail',
         border = 'rounded',
         hide_buffer_id = true,
         padding = 5,

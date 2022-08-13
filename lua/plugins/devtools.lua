@@ -11,12 +11,21 @@ return {
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-nvim-lua' },
             { 'saadparwaiz1/cmp_luasnip' },
+            { 'zbirenbaum/copilot-cmp', module = 'copilot_cmp' },
         },
         config = G_getConfig('cmp'),
     },
     { 'L3MON4D3/LuaSnip' },
     { 'rafamadriz/friendly-snippets' },
-    { 'folke/lua-dev.nvim' },
+    {
+        'zbirenbaum/copilot.lua',
+        event = { 'VimEnter' },
+        config = function()
+            vim.defer_fn(function()
+                require('copilot').setup()
+            end, 100)
+        end,
+    },
     { 'ray-x/lsp_signature.nvim', config = G_getSetup('lsp_signature', { hint_prefix = ' ' }) },
     { 'jose-elias-alvarez/null-ls.nvim', config = G_getConfig('null-ls') },
     { 'ThePrimeagen/refactoring.nvim', config = G_getSetup('refactoring', {}) },

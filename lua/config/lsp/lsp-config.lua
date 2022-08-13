@@ -1,13 +1,8 @@
 local ok_lspconfig, lspconfig = pcall(require, 'lspconfig')
-local status_ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
+local mason_ok, mason = pcall(require, 'mason')
+local mason_lspconf_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
 local ok, handlers = pcall(require, 'config.lsp.handlers')
-if not status_ok then
-    return
-end
-if not ok then
-    return
-end
-if not ok_lspconfig then
+if not mason_ok or not mason_lspconf_ok or not ok_lspconfig or not ok then
     return
 end
 
@@ -29,15 +24,28 @@ local servers = {
     'yamlls',
 }
 
-lsp_installer.setup({
-    ensure_installed = servers,
+local others = {
+    'eslint_d',
+    'prettierd',
+    'sqlfluff',
+    'stylua',
+    'vint'
+}
+
+mason.setup({
     ui = {
+        border = 'single',
         icons = {
             server_installed = '✓',
             server_pending = '➜',
             server_uninstalled = '✗',
         },
     },
+})
+
+mason_lspconfig.setup({
+    ensure_installed = others,
+    automatic_installation = true
 })
 
 for _, server in pairs(servers) do

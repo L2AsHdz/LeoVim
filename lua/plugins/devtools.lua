@@ -1,6 +1,7 @@
 return {
     { 'neovim/nvim-lspconfig', config = G_getConfig('lsp') },
-    { 'williamboman/nvim-lsp-installer' },
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
     {
         'hrsh7th/nvim-cmp',
         requires = {
@@ -28,6 +29,7 @@ return {
     { 'nvim-treesitter/nvim-treesitter-textobjects' },
     { 'p00f/nvim-ts-rainbow' },
     { 'RRethy/nvim-treesitter-endwise' },
+    { 'haringsrob/nvim_context_vt', config = G_getSetup('nvim_context_vt', { prefix = '──' }),},
     -- { 'yioneko/nvim-yati' },
     { 'm-demare/hlargs.nvim', config = G_getSetup('hlargs', {}) },
     { 'folke/trouble.nvim', config = G_getSetup('trouble', {}) },

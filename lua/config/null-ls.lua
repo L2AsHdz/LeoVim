@@ -6,9 +6,7 @@ end
 local b = null_ls.builtins
 
 local sources = {
-    b.formatting.stylua.with({
-        extra_args = { '--quote-style', 'AutoPreferSingle', '--indent-type', 'Spaces', 'indent-width', '4' },
-    }),
+    b.formatting.stylua,
     b.formatting.beautysh,
     b.formatting.uncrustify,
     b.formatting.prettierd,

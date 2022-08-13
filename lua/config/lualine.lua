@@ -4,16 +4,16 @@ if not ok_l then
 end
 
 local colors = {
-  black         = '#090D1B',
-  white         = '#FBFBFE',
-  red           = '#eb3b5a',
-  blue          = '#4b7bec',
-  cyan          = '#00d2d3',
-  grey          = '#576574',
-  orange        = '#fe8019',
-  green         = '#44bd32',
-  error         = '#c23616',
-  background    = '#191724'
+    black         = '#090D1B',
+    white         = '#FBFBFE',
+    red           = '#eb3b5a',
+    blue          = '#4b7bec',
+    cyan          = '#00d2d3',
+    grey          = '#303030',
+    orange        = '#fe8019',
+    green         = '#44bd32',
+    error         = '#c23616',
+    background    = '#191724'
 }
 
 local bubbles_theme = {

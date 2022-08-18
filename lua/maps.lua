@@ -24,10 +24,9 @@ map('v', '<', '<gv')
 map('v', '>', '>gv')
 
 -- fold-cycle
-local fold = require('fold-cycle')
-map('n', '<CR>', fold.open)
-map('n', '<BS>', fold.close)
-map('n', '<C-CR>', fold.toggle_all)
+map('n', '<CR>', function() return require('fold-cycle').open() end)
+map('n', '<BS>', function() return require('fold-cycle').close() end)
+map('n', '<C-CR>', function() return require('fold-cycle').toggle_all() end)
 
 -- split
 map('n', '<leader>wh', ':sp<CR>')
@@ -95,8 +94,8 @@ map('n', '<leader>wp', function()
     return require('nvim-window').pick()
 end)
 
-map('n', '<TAB>', '<Plug>(CybuLastusedNext)')
-map('n', '<S-TAB>', '<Plug>(CybuLastusedPrev)')
+map('n', '<TAB>', ':CybuLastusedNext<CR>')
+map('n', '<S-TAB>', ':CybuLastusedPrev<CR>')
 
 -- Bufferline
 map('n', '<S-k>', ':BufferLineCycleNext<CR>')
@@ -171,6 +170,9 @@ map('n', '<leader>gB', ':Gitsigns reset_buffer<CR>')
 map('n', '<leader>gg', ':Gitsigns refresh<CR>')
 map('n', '<leader>gG', ':Gitsigns attach<CR>')
 
+-- git-messenger
+map('n', '<leader>gm', ':GitMessenger<CR>')
+
 --  Open neogit pane
 map('n', '<leader>gs', ':Neogit kind=vsplit<CR>')
 
@@ -213,17 +215,15 @@ map('n', '<ScrollWheelUp>', function() scroll('k', 1, 0) end)
 map('n', '<ScrollWheelDown>', function() scroll('j', 1, 0) end)
 
 --Substitute
-local substitute = require('substitute')
-local exchange = require('substitute.exchange')
-map('n', 's', substitute.operator)
-map('n', 'ss', substitute.line)
-map('n', 'S', substitute.eol)
-map('x', 's', substitute.visual)
+map('n', 's', function() return require('substitute').operator() end)
+map('n', 'ss', function() return require('substitute').line() end)
+map('n', 'S', function() return require('substitute').eol() end)
+map('x', 's', function() return require('substitute').visual() end)
 
-map('n', 'sx', exchange.operator)
-map('n', 'sxx', exchange.line)
-map('x', 'X', exchange.visual)
-map('n', 'sxc', exchange.cancel)
+map('n', 'sx', function() return require('substitute.exchange').operator() end)
+map('n', 'sxx', function() return require('substitute.exchange').line() end)
+map('x', 'X', function() return require('substitute.exchange').visual() end)
+map('n', 'sxc', function() return require('substitute.exchange').cancel() end)
 
 -- Rest
 map('n', '<leader>rr', '<Plug>RestNvim')

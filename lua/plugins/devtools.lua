@@ -28,7 +28,7 @@ return {
     },
     { 'ray-x/lsp_signature.nvim', config = G_getSetup('lsp_signature', { hint_prefix = ' ' }) },
     { 'jose-elias-alvarez/null-ls.nvim', config = G_getConfig('null-ls') },
-    { 'ThePrimeagen/refactoring.nvim', config = G_getSetup('refactoring', {}) },
+    --[[ { 'ThePrimeagen/refactoring.nvim', config = G_getSetup('refactoring', {}) }, ]]
     {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
@@ -38,12 +38,12 @@ return {
     { 'nvim-treesitter/nvim-treesitter-textobjects' },
     { 'p00f/nvim-ts-rainbow' },
     { 'RRethy/nvim-treesitter-endwise' },
-    { 'haringsrob/nvim_context_vt', config = G_getSetup('nvim_context_vt', { prefix = '──' }),},
+    { 'haringsrob/nvim_context_vt', config = G_getSetup('nvim_context_vt', { prefix = '──' }) },
     -- { 'yioneko/nvim-yati' },
     { 'm-demare/hlargs.nvim', config = G_getSetup('hlargs', {}) },
     { 'folke/trouble.nvim', config = G_getSetup('trouble', {}) },
     { 'NTBBloodbath/rest.nvim', ft = 'http' },
-    { 'windwp/nvim-spectre', event = 'BufReadPre', config = G_getSetup('spectre', {}) },
+    { 'windwp/nvim-spectre', module = 'spectre', config = G_getSetup('spectre', {}) },
     -- {
     --     'akinsho/flutter-tools.nvim',
     --     ft = { 'flutter', 'dart' },
@@ -54,7 +54,11 @@ return {
         run = 'bash ./install.sh',
         config = G_getSetup('sniprun', { display = { 'TempFloatingWindow' } }),
     },
-    { 'CRAG666/code_runner.nvim', config = G_getConfig('code-runner') },
-    { 'monaqa/dial.nvim', config = G_getConfig('dial') },
+    {
+        'CRAG666/code_runner.nvim',
+        cmd = { 'RunCode', 'RunFile', 'RunProject', 'RunClose' },
+        config = G_getConfig('code-runner'),
+    },
+    { 'monaqa/dial.nvim', module = 'dial', config = G_getConfig('dial') },
     { 'gpanders/editorconfig.nvim' },
 }

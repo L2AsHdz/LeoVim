@@ -17,24 +17,34 @@ return {
     {
         'akinsho/bufferline.nvim',
         tag = 'v2.*',
-        event = 'BufReadPre',
+        event = 'UIEnter',
         config = G_getConfig('bufferline'),
     },
     -- { 'nvim-lualine/lualine.nvim', event = 'VimEnter', config = G_getConfig('lualine') },
     { 'feline-nvim/feline.nvim', config = G_getConfig('feline') },
     { 'j-hui/fidget.nvim', config = G_getSetup('fidget', { text = { spinner = 'dots_bounce' } }) },
     -- { 'sidebar-nvim/sidebar.nvim', config = getConfig('sidebar') },
-    { 'simrat39/symbols-outline.nvim', cmd = 'SymbolsOutline' },
+    { 'simrat39/symbols-outline.nvim', cmd = 'SymbolsOutline', config = G_getSetup('symbols-outline', {}) },
     {
         'SmiteshP/nvim-navic',
         config = function()
             vim.g.navic_silence = true
         end,
     },
-    { 'akinsho/toggleterm.nvim', tag = 'v2.*', config = G_getConfig('term') },
-    { 'kyazdani42/nvim-tree.lua', config = G_getConfig('nvim-tree') },
+    {
+        'akinsho/toggleterm.nvim',
+        tag = 'v2.*',
+        event = { 'CmdwinEnter', 'CmdlineEnter' },
+        config = G_getConfig('term'),
+    },
+    {
+        'kyazdani42/nvim-tree.lua',
+        cmd = { 'NvimTreeToggle', 'NvimTreeRefresh', 'NvimTreeFindFile' },
+        config = G_getConfig('nvim-tree'),
+    },
     {
         'kevinhwang91/rnvimr',
+        cmd = 'RnvimrToggle',
         config = function()
             vim.g.rnvimr_enable_ex = 1
             vim.g.rnvimr_enable_picker = 1
@@ -54,13 +64,13 @@ return {
             always_scroll = true,
         }),
     },
-    { 'dstein64/nvim-scrollview' },
+    { 'dstein64/nvim-scrollview', event = { 'CursorMoved', 'CursorMovedI' } },
     -- { 'luukvbaal/stabilize.nvim', config = G_getSetup('stabilize', {}) },
     { 'nvim-telescope/telescope.nvim', config = G_getConfig('telescope') },
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     { 'nvim-telescope/telescope-packer.nvim' },
     { 'goolord/alpha-nvim', config = G_getConfig('alpha') },
-    { 'stevearc/dressing.nvim', config = G_getConfig('dressing') },
+    { 'stevearc/dressing.nvim', event = 'VimEnter', config = G_getConfig('dressing') },
     { 'kevinhwang91/nvim-bqf', ft = 'qf' },
     { 'folke/which-key.nvim', event = 'VimEnter', config = G_getConfig('whichkey') },
     {
@@ -73,18 +83,23 @@ return {
         after = 'rose-pine',
     },
     { 'RRethy/vim-illuminate', config = G_getConfig('cursorline') },
-    { 'edluffy/specs.nvim', config = G_getConfig('specs') },
+    { 'edluffy/specs.nvim', module = 'specs', config = G_getConfig('specs') },
     { 'lukas-reineke/indent-blankline.nvim', event = 'BufReadPre', config = G_getConfig('blankline') },
     { 'folke/todo-comments.nvim', config = G_getSetup('todo-comments', {}) },
     { 'LudoPinelli/comment-box.nvim' },
     {
         'VonHeikemen/fine-cmdline.nvim',
+        cmd = 'FineCmdline',
         config = G_getSetup('fine-cmdline', { cmdline = { prompt = '濫' }, popup = { position = { row = '90%' } } }),
         requires = {
             { 'MunifTanjim/nui.nvim' },
         },
     },
-    { 'VonHeikemen/searchbox.nvim', requires = 'MunifTanjim/nui.nvim' },
+    {
+        'VonHeikemen/searchbox.nvim',
+        cmd = { 'SearchBoxMatchAll', 'SearchBoxReplace' },
+        requires = 'MunifTanjim/nui.nvim',
+    },
     { 'norcalli/nvim-colorizer.lua', event = 'BufReadPre', config = G_getSetup('colorizer', { '*' }) },
     {
         'iamcco/markdown-preview.nvim',

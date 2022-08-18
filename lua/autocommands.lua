@@ -11,8 +11,3 @@ ac('VimResized', resize_group, function() require('bufresize').resize() end)
 
 local yank_group = ag('Yank')
 ac('TextYankPost', yank_group, function() vim.highlight.on_yank({ higroup = 'Search', timeout = 300 }) end)
-
--- local winbar_group = ag('NiceWinBar')
--- ac({ 'CursorMoved', 'CursorMovedI', 'BufWinEnter' }, winbar_group, function()
---     require('config.winbar').get_winbar()
--- end)

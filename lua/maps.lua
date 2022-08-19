@@ -264,7 +264,7 @@ map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fg', ':Telescope live_grep theme=ivy <CR>')
 map('n', '<leader>fi', ':Telescope builtin<CR>')
 map('n', '<leader>fh', ':Telescope help_tags<CR>')
-map('n', '<leader>fn', ':Telescope neoclip<CR>')
+--[[ map('n', '<leader>fn', ':Telescope neoclip<CR>') ]]
 map('n', '<leader>fo', ':Telescope oldfiles<CR>')
 map('n', '<leader>fp', ':Telescope packer<CR>')
 map('n', '<leader>fN', ':Telescope notify <CR>')

@@ -3,10 +3,7 @@ if not status_ok then
     return
 end
 
-local highlights = require('rose-pine.plugins.toggleterm')
-
 toggleterm.setup({
-    highlights = highlights,
     open_mapping = [[<A-\>]],
     hide_numbers = true,
     shade_filetypes = {},

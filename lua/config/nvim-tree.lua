@@ -14,8 +14,6 @@ nvim_tree.setup({
     },
     view = {
         width = 35,
-        number = true,
-        relativenumber = true,
         signcolumn = 'yes',
     },
     actions = {

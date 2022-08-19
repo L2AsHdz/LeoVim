@@ -7,11 +7,11 @@ end
 specs.setup({
     show_jumps = false,
     popup = {
-        winhl = 'NvimTreeWindowPicker',
+        winhl = 'IncSearch',
         inc_ms = 10,
-        width = 40,
+        width = 20,
         fader = require('specs').linear_fader,
-        resizer = require('specs').slide_resizer,
+        resizer = require('specs').empty_resizer,
     },
     ignore_filetypes = {},
     ignore_buftypes = {

@@ -20,7 +20,7 @@ local colors = {
     green = '#44bd32',
     error = '#ea6f92',
     warn = '#f6c177',
-    bg = '#191724',
+    bg = '#1e1e2e',
 }
 
 local disabled_filetypes = {

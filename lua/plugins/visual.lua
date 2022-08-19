@@ -5,12 +5,12 @@ return {
         --  'navarasu/onedark.nvim'
         -- 'ghifarit53/tokyonight-vim'
         -- 'frenzyexists/aquarium-vim'
-        -- "catppuccin/nvim",
-        -- as = "catppuccin"
+        'catppuccin/nvim',
+        as = 'catppuccin',
         -- 'dracula/vim',
         -- as = "dracula",
-        'rose-pine/neovim',
-        as = 'rose-pine',
+        --[[ 'rose-pine/neovim', ]]
+        --[[ as = 'rose-pine', ]]
         config = G_getConfig('colorscheme'),
     },
     { 'rcarriga/nvim-notify', config = G_getConfig('notify') },
@@ -80,7 +80,7 @@ return {
             G_getSetup('virt-column', {})
             require('utils.core').hl('VirtColumn', { fg = '#353b48' })
         end,
-        after = 'rose-pine',
+        after = 'catppuccin',
     },
     { 'RRethy/vim-illuminate', config = G_getConfig('cursorline') },
     { 'edluffy/specs.nvim', module = 'specs', config = G_getConfig('specs') },

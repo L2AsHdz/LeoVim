@@ -55,5 +55,5 @@ return {
         module = 'fold-cycle',
         config = G_getSetup('fold-cycle', { open_if_max_closed = false, close_if_max_opened = false }),
     },
-    { 'AckslD/nvim-neoclip.lua', config = G_getSetup('neoclip', {}) },
+    --[[ { 'AckslD/nvim-neoclip.lua', config = G_getSetup('neoclip', {}) }, ]]
 }

@@ -14,6 +14,7 @@ autosave.setup({
         cleaning_interval = 1500,
     },
     trigger_events = { 'InsertLeave', 'TextChanged', 'FocusLost' },
+    -- TODO: validate if file exists
     condition = function(buf)
         local fn = vim.fn
         local utils = require('auto-save.utils.data')

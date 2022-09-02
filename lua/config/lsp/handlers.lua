@@ -43,14 +43,6 @@ M.setup = function()
     })
 end
 
-local function lsp_highlight_document(client)
-    local ok, illuminate = pcall(require, 'illuminate')
-    if not ok then
-        return
-    end
-    illuminate.on_attach(client)
-end
-
 local function lsp_nvim_navic(client, bufnr)
     local ok, navic = pcall(require, 'nvim-navic')
     if not ok then
@@ -108,7 +100,6 @@ M.on_attach = function(client, bufnr)
         flutter_keymaps(bufnr)
     end
     lsp_keymaps(bufnr)
-    lsp_highlight_document(client)
     lsp_nvim_navic(client, bufnr)
 end
 

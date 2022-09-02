@@ -33,6 +33,7 @@ local disabled_filetypes = {
     'Outline',
     'spectre_panel',
     'TelescopePrompt',
+    'NvimTree'
 }
 
 local function get_icon_mode(mode)

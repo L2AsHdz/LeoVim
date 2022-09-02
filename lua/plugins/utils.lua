@@ -11,7 +11,7 @@ return {
             local hl = require('utils.core').hl
             vim.g.matchup_matchparen_offscreen = {}
             hl('MatchParen', { fg = '#f6c177', bold = true })
-            hl('MatchWord', { link = 'CursorWord' })
+            hl('MatchWord', { link = 'IlluminatedWordText' })
         end,
     },
     { 'kevinhwang91/nvim-hlslens', config = G_getSetup('hlslens', { calm_down = true, nearest_only = true }) },

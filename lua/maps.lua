@@ -142,10 +142,10 @@ end)
 
 -- Illuminate navigation
 map('n', '[w', function()
-    return require('illuminate').next_reference({ reverse = true, wrap = true })
+    return require('illuminate').goto_prev_reference(true)
 end)
 map('n', ']w', function()
-    return require('illuminate').next_reference({ wrap = true })
+    return require('illuminate').goto_next_reference(true)
 end)
 
 -- dial

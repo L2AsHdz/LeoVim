@@ -4,9 +4,10 @@ if not ok then
 end
 
 -- local highlights = require('rose-pine.plugins.bufferline')
+local highlights = require('catppuccin.groups.integrations.bufferline').get()
 
 bufferline.setup({
-    -- highlights = highlights,
+    highlights = highlights,
     options = {
         themable = true,
         separator_style = 'padded_slant',

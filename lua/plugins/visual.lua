@@ -82,7 +82,7 @@ return {
         end,
         after = 'catppuccin',
     },
-    { 'RRethy/vim-illuminate', config = G_getConfig('cursorline') },
+    { 'RRethy/vim-illuminate' },
     { 'edluffy/specs.nvim', module = 'specs', config = G_getConfig('specs') },
     { 'lukas-reineke/indent-blankline.nvim', event = 'BufReadPre', config = G_getConfig('blankline') },
     { 'folke/todo-comments.nvim', config = G_getSetup('todo-comments', {}) },
@@ -100,7 +100,7 @@ return {
         cmd = { 'SearchBoxMatchAll', 'SearchBoxReplace' },
         requires = 'MunifTanjim/nui.nvim',
     },
-    { 'norcalli/nvim-colorizer.lua', event = 'BufReadPre', config = G_getSetup('colorizer', { '*' }) },
+    { 'NvChad/nvim-colorizer.lua', event = 'BufReadPre', config = G_getSetup('colorizer', {}) },
     {
         'iamcco/markdown-preview.nvim',
         ft = 'markdown',

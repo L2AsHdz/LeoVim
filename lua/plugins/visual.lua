@@ -54,15 +54,7 @@ return {
         'karb94/neoscroll.nvim',
         config = G_getSetup('neoscroll', { mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>', '<C-y>', '<C-e>' } }),
     },
-    {
-        'declancm/cinnamon.nvim',
-        module = 'cinnamon',
-        config = G_getSetup('cinnamon', {
-            default_keymaps = false,
-            centered = true,
-            hide_cursor = true,
-            always_scroll = true,
-        }),
+    { 'declancm/cinnamon.nvim', module = 'cinnamon', config = G_getConfig('cinnamon'),
     },
     { 'dstein64/nvim-scrollview', event = { 'CursorMoved', 'CursorMovedI' } },
     -- { 'luukvbaal/stabilize.nvim', config = G_getSetup('stabilize', {}) },

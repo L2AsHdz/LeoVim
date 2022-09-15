@@ -21,7 +21,6 @@ opts = {
     },
 }
 
-local lua_dev = require('lua-dev').setup({ library = { plugins = false } })
-opts = vim.tbl_deep_extend('force', opts, lua_dev)
+require('lua-dev').setup({ library = { plugins = false } })
 
 return opts

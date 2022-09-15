@@ -35,11 +35,10 @@ M.split_command = function(direction)
     if winnr == vim.api.nvim_get_current_win() then
         if direction == 'h' or direction == 'l' then
             cmd('wincmd v')
-            cmd('wincmd ' .. direction)
         elseif direction == 'j' or direction == 'k' then
             cmd('wincmd s')
-            cmd('wincmd ' .. direction)
         end
+        cmd('wincmd ' .. direction)
     end
     vim.api.nvim_command('normal! zz')
 end

@@ -1,6 +1,7 @@
 local trouble = require('trouble.providers.telescope')
 local status_ok, telescope = pcall(require, 'telescope')
-if not status_ok then
+local ok, actions = pcall(require, 'telescope.actions')
+if not status_ok and not ok then
     return
 end
 
@@ -10,7 +11,11 @@ telescope.setup({
         selection_caret = ' ',
         path_display = { 'smart' },
         mappings = {
-            i = { ['<c-t>'] = trouble.open_with_trouble },
+            i = {
+                ['<c-t>'] = trouble.open_with_trouble,
+                ['<TAB>'] = actions.move_selection_next,
+                ['<S-TAB>'] = actions.move_selection_previous,
+            },
             n = { ['<c-t>'] = trouble.open_with_trouble },
         },
     },

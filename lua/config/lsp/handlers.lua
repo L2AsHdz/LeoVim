@@ -48,6 +48,7 @@ local function lsp_nvim_navic(client, bufnr)
     if not ok then
         return
     end
+    navic.setup({ highlight = true })
     navic.attach(client, bufnr)
 end
 

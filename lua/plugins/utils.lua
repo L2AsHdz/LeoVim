@@ -39,7 +39,6 @@ return {
     { 'sindrets/winshift.nvim', module = 'winshift' },
     { 'famiu/bufdelete.nvim', cmd = 'Bdelete' },
     { 'nacro90/numb.nvim', config = G_getSetup('numb', {}) },
-    { 'Pocco81/auto-save.nvim', config = G_getConfig('autosave') },
     { 'ethanholz/nvim-lastplace', config = G_getSetup('nvim-lastplace', {}) },
     {
         'gbprod/cutlass.nvim',

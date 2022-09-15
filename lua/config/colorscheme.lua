@@ -17,9 +17,16 @@ colorscheme.setup({
         conditionals = {},
     },
     integrations = {
-        which_key = true,
+        gitsigns = true,
+        navic = {
+            enabled = true,
+            custom_bg = 'NONE',
+        },
         neogit = true,
+        symbols_outline = true,
+        treesitter_context = true,
         ts_rainbow = true,
+        which_key = true,
     },
 })
 --[[ rose_pine.setup({ ]]

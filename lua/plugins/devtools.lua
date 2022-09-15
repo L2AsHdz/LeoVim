@@ -11,7 +11,7 @@ return {
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-nvim-lua' },
             { 'saadparwaiz1/cmp_luasnip' },
-            { 'zbirenbaum/copilot-cmp', module = 'copilot_cmp' },
+            { 'zbirenbaum/copilot-cmp', after = 'copilot.lua', config = G_getSetup('copilot_cmp', {}) },
         },
         config = G_getConfig('cmp'),
     },
@@ -61,4 +61,5 @@ return {
     },
     { 'monaqa/dial.nvim', module = 'dial', config = G_getConfig('dial') },
     { 'gpanders/editorconfig.nvim' },
+    { 'turbio/bracey.vim', run = 'npm install --prefix server', ft = { 'html' } },
 }

@@ -21,11 +21,12 @@ bufferline.setup({
                 text_align = 'center',
             },
             {
-                filetype = 'SidebarNvim',
-                text = 'SidebarNvim',
+                filetype = 'Outline',
+                text = 'Outline',
                 text_align = 'center',
             },
         },
         show_tab_indicators = true,
+        persist_buffer_sort = true,
     },
 })

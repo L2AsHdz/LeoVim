@@ -132,6 +132,10 @@ map('n', '<leader>s?', ':SearchBoxMatchAll reverse=true<CR>')
 map('n', '<leader>sR', ':SearchBoxReplace confirm="menu"<CR>')
 map('n', '<leader>sr', ':SearchBoxReplace confirm="menu" -- <C-r>=expand("<cword>")<CR><CR>')
 
+-- Browse
+map('n', '<leader>sg', function() return require('browse').input_search() end)
+map('n', '<leader>sf', function() return require('browse.devdocs').search() end)
+
 --Spectre
 map('n', '<leader>rs', function()
     return require('spectre').open({ is_insert_mode = true })
@@ -265,7 +269,9 @@ map('n', '<leader>fg', ':Telescope live_grep theme=ivy <CR>')
 map('n', '<leader>fi', ':Telescope builtin<CR>')
 map('n', '<leader>fh', ':Telescope help_tags<CR>')
 --[[ map('n', '<leader>fn', ':Telescope neoclip<CR>') ]]
-map('n', '<leader>fo', ':Telescope oldfiles<CR>')
+map('n', '<leader>fo', function()
+    return require('telescope').extensions.recent_files.pick(themes.get_dropdown({ previewer = false }))
+end)
 map('n', '<leader>fp', ':Telescope packer<CR>')
 map('n', '<leader>fN', ':Telescope notify <CR>')
 
@@ -276,8 +282,10 @@ map('n', '<leader>sd', ':SessionManager delete_session<CR>')
 
 -- packer
 map('n', '<leader>pu', ':PackerUpdate<CR>')
+map('n', '<leader>pU', ':PackerUpdate --preview<CR>')
 map('n', '<leader>pc', ':PackerCompile<CR>')
 map('n', '<leader>ps', ':PackerSync<CR>')
+map('n', '<leader>pS', ':PackerSync --preview<CR>')
 map('n', '<leader>pt', ':PackerStatus<CR>')
 map('n', '<leader>pi', ':PackerInstall<CR>')
 map('n', '<leader>pd', ':PackerClean<CR>')

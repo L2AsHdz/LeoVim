@@ -1,5 +1,6 @@
 return {
     { 'Shatur/neovim-session-manager', cmd = 'SessionManager', config = G_getConfig('session') },
+    { 'lalitmee/browse.nvim', module = 'browse' },
     { 'windwp/nvim-autopairs', event = 'InsertEnter', config = G_getConfig('autopairs') },
     { 'windwp/nvim-ts-autotag' },
     { 'kylechui/nvim-surround', config = G_getSetup('nvim-surround', {}) },

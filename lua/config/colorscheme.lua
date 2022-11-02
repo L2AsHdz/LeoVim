@@ -8,10 +8,7 @@ end
 -- vim.g.everforest_sign_column_background = 'none'
 vim.g.catppuccin_flavour = 'mocha'
 colorscheme.setup({
-    compile = {
-        enabled = true,
-        path = vim.fn.stdpath('cache') .. '/catppuccin',
-    },
+    compile_path = vim.fn.stdpath('cache') .. '/catppuccin',
     styles = {
         comments = {},
         conditionals = {},

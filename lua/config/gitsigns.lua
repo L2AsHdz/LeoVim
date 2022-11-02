@@ -17,4 +17,7 @@ gitsigns.setup({
 hl('GitSignsAddLn', { bg = '#9ccfd8', fg = '#2a273f' })
 hl('GitSignsDeleteLn', { bg = '#eb6f92', fg = '#2a273f' })
 hl('GitSignsChangeLn', { bg = '#ea9a97', fg = '#2a273f' })
- -- 
+hl('DiffAdd', { link = 'GitSignsAddLn' })
+hl('DiffDelete', { link = 'GitSignsDeleteLn' })
+hl('DiffChange', { link = 'GitSignsChangeLn' })
+ --  change

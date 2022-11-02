@@ -13,7 +13,8 @@ return {
         --[[ as = 'rose-pine', ]]
         config = G_getConfig('colorscheme'),
     },
-    { 'rcarriga/nvim-notify', config = G_getConfig('notify') },
+    -- { 'rcarriga/nvim-notify', config = G_getConfig('notify') },
+    { 'vigoux/notifier.nvim', config = G_getSetup('notifier', {}) },
     {
         'akinsho/bufferline.nvim',
         tag = 'v2.*',
@@ -54,15 +55,20 @@ return {
         'karb94/neoscroll.nvim',
         config = G_getSetup('neoscroll', { mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>', '<C-y>', '<C-e>' } }),
     },
-    { 'declancm/cinnamon.nvim', module = 'cinnamon', config = G_getConfig('cinnamon'),
-    },
+    { 'declancm/cinnamon.nvim', module = 'cinnamon', config = G_getConfig('cinnamon') },
     { 'dstein64/nvim-scrollview', event = { 'CursorMoved', 'CursorMovedI' } },
     -- { 'luukvbaal/stabilize.nvim', config = G_getSetup('stabilize', {}) },
     { 'nvim-telescope/telescope.nvim', config = G_getConfig('telescope') },
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     { 'nvim-telescope/telescope-packer.nvim' },
+    { 'smartpde/telescope-recent-files' },
     { 'goolord/alpha-nvim', config = G_getConfig('alpha') },
     { 'stevearc/dressing.nvim', event = 'VimEnter', config = G_getConfig('dressing') },
+    {
+        'smjonas/inc-rename.nvim',
+        event = 'CmdlineEnter',
+        G_getSetup('inc_rename', { show_message = false, input_buffer_type = 'dressing' }),
+    },
     { 'kevinhwang91/nvim-bqf', ft = 'qf' },
     { 'folke/which-key.nvim', event = 'VimEnter', config = G_getConfig('whichkey') },
     {

@@ -26,10 +26,14 @@ telescope.setup({
             override_file_sorter = true,
             case_mode = 'smart_case',
         },
+        recent_files = {
+            only_cwd = true,
+        }
     },
 })
 
 telescope.load_extension('fzf')
 --[[ telescope.load_extension('neoclip') ]]
 telescope.load_extension('packer')
-telescope.load_extension('notify')
+-- telescope.load_extension('notify')
+telescope.load_extension('recent_files')
